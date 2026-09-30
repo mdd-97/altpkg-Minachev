@@ -1,0 +1,800 @@
+hsh: Executing wrapper: systemd-run  --user --scope --same-dir --property=Delegate=yes --send-sighup --collect
+Running as unit: run-p4956-i5256.scope; invocation ID: 109b75a3454c4209934bdae672bc5c08
+hsh: changed working directory to `/home/user/hasher'
+hsh: Locked working directory `/home/user/hasher'
+hsh: Acquiring lock for config file `/etc/hasher-priv/user.d/1000'...
+hsh: Locked config file `/etc/hasher-priv/user.d/1000'
+hsh-rmchroot: changed working directory to `/home/user/hasher'
+hsh-rmchroot: Changed working directory to `/home/user/hasher/chroot'.
+удалён '/home/user/hasher/chroot/.host/sh'
+'/usr/bin/ash.static' -> '/home/user/hasher/chroot/.host/sh'
+удалён '/home/user/hasher/chroot/.host/find'
+'/usr/bin/find.static' -> '/home/user/hasher/chroot/.host/find'
+hsh-rmchroot: Installed .host programs.
+группа '.' оставлена как user_a
+группа 'dev' оставлена как user_a
++ /.host/sh -c :>/dev/null
++ exec
+hsh-rmchroot: Removed files owned by user2.
++ /.host/sh -c :>/dev/null
++ exec
+hsh-rmchroot: Removed files owned by user1.
+удалён '/home/user/hasher/chroot/.host/sh'
+удалён '/home/user/hasher/chroot/.host/cpio'
+удалён '/home/user/hasher/chroot/.host/entry'
+удалён '/home/user/hasher/chroot/.host/find'
+удалён '/home/user/hasher/chroot/.host/contents_index_bin'
+удалён каталог '/home/user/hasher/chroot/.host'
+удалён каталог '/home/user/hasher/chroot/dev'
+удалён каталог '/home/user/hasher/chroot/.out'
+удалён каталог '/home/user/hasher/chroot/sys/fs/cgroup'
+удалён каталог '/home/user/hasher/chroot/sys/fs'
+удалён каталог '/home/user/hasher/chroot/sys'
+удалён '/home/user/hasher/chroot/proc/cpuinfo'
+удалён '/home/user/hasher/chroot/proc/filesystems'
+удалён каталог '/home/user/hasher/chroot/proc'
+удалён каталог '/home/user/hasher/chroot/.in'
+удалён каталог '/home/user/hasher/chroot'
+mkaptbox: changed working directory to `/home/user/hasher'
+mkdir: создан каталог 'aptbox'
+mkaptbox: Changed working directory to `/home/user/hasher/aptbox'.
+mkdir: создан каталог './etc'
+mkdir: создан каталог './etc/apt'
+mkdir: создан каталог './etc/apt/apt.conf.d'
+mkdir: создан каталог './etc/apt/sources.list.d'
+mkdir: создан каталог './etc/apt/vendors.list.d'
+mkdir: создан каталог './home'
+mkdir: создан каталог './home/user'
+mkdir: создан каталог './var'
+mkdir: создан каталог './var/cache'
+mkdir: создан каталог './var/cache/apt'
+mkdir: создан каталог './var/cache/apt/archives'
+mkdir: создан каталог './var/cache/apt/archives/partial'
+mkdir: создан каталог './var/lib'
+mkdir: создан каталог './var/lib/apt'
+mkdir: создан каталог './var/lib/apt/lists'
+mkdir: создан каталог './var/lib/apt/lists/partial'
+mkdir: создан каталог './var/lib/rpm'
+права доступа 'setarch' изменены с 0644 (rw-r--r--) на 0755 (rwxr-xr-x)
+mkaptbox: created apt-cache wrapper
+права доступа 'apt-cache' изменены с 0644 (rw-r--r--) на 0755 (rwxr-xr-x)
+mkaptbox: created apt-config wrapper
+права доступа 'apt-config' изменены с 0644 (rw-r--r--) на 0755 (rwxr-xr-x)
+mkaptbox: created apt-get wrapper
+права доступа 'apt-get' изменены с 0644 (rw-r--r--) на 0755 (rwxr-xr-x)
+mkaptbox: created regenbasedir
+права доступа 'regenbasedir' изменены с 0644 (rw-r--r--) на 0755 (rwxr-xr-x)
+'/etc/apt/pkgpriorities' -> '/home/user/hasher/aptbox/etc/apt/pkgpriorities'
+mkaptbox: Created APT configuration file `/home/user/hasher/aptbox/etc/apt/apt.conf'.
+mkaptbox: Created APT source list file `./etc/apt/sources.list'.
+mkaptbox: Created RPM database in `./var/lib/rpm/'.
+Получено: 1 http://ftp.altlinux.org p11/branch/x86_64 release [4210B]
+Получено: 2 http://ftp.altlinux.org p11/branch/x86_64-i586 release [1665B]
+Получено: 3 http://ftp.altlinux.org p11/branch/noarch release [2831B]
+Получено 8706B за 0s (19,3kB/s).
+Получено: 1 http://ftp.altlinux.org p11/branch/x86_64/classic pkglist [29,6MB]
+Получено: 2 http://ftp.altlinux.org p11/branch/x86_64/classic release [137B]
+Получено: 3 http://ftp.altlinux.org p11/branch/x86_64-i586/classic pkglist [20,3MB]
+Получено: 4 http://ftp.altlinux.org p11/branch/x86_64-i586/classic release [142B]
+Получено: 5 http://ftp.altlinux.org p11/branch/noarch/classic pkglist [7940kB]
+Получено: 6 http://ftp.altlinux.org p11/branch/noarch/classic release [137B]
+Получено 57,8MB за 48s (1189kB/s).
+Чтение списков пакетов...
+Построение дерева зависимостей...
+hsh-mkchroot: changed working directory to `/home/user/hasher'
+mkdir: создан каталог 'chroot'
+hsh-mkchroot: Changed working directory to `/home/user/hasher/chroot'.
+mkdir: создан каталог '.host'
+mkdir: создан каталог '.in'
+mkdir: создан каталог 'dev'
+изменена группа '.' с user на 1001
+изменена группа 'dev' с user на 1001
+mkdir: создан каталог '.out'
+изменена группа '.out' с user на 1002
+hsh-mkchroot: Created directory tree.
+'/usr/bin/ash.static' -> '/home/user/hasher/chroot/.host/sh'
+'/usr/bin/find.static' -> '/home/user/hasher/chroot/.host/find'
+'/usr/bin/cpio.static' -> '/home/user/hasher/chroot/.host/cpio'
+hsh-mkchroot: Installed .host programs.
+hsh-initroot: changed working directory to `/home/user/hasher'
+удалён каталог '/home/user/hasher/cache/chroot/list.new'
+mkdir: создан каталог '/home/user/hasher/cache/chroot/list.new'
+mkdir: создан каталог '/home/user/hasher/cache/chroot/package.new'
+Чтение списков пакетов...
+Построение дерева зависимостей...
+Selected version fakeroot#1.29-alt3:p11+348779.600.1.1@1716502783 for fakeroot>=0:0.7.3
+Следующие дополнительные пакеты будут установлены:
+  bash       getopt            libelf        libpopt             sh
+  bash5      glibc-core        libgcc1       libreadline8        sh5
+  bashrc     glibc-preinstall  libgcrypt20   librpm7             terminfo
+  bzlib      grep              libgmp10      libselinux          zlib
+  coreutils  libacl            libgpg-error  libsha1detectcoll1
+  fakeroot   libattr           liblua5.3     libtinfo6
+  findutils  libcap            liblzma       libzstd
+  gawk       libdb4.7          libpcre2      sed
+Следующие НОВЫЕ пакеты будут установлены:
+  bash        gawk              libdb4.7      libpcre2            rpm
+  bash5       getopt            libelf        libpopt             sed
+  bashrc      glibc-core        libgcc1       libreadline8        setup
+  bzlib       glibc-preinstall  libgcrypt20   librpm7             sh
+  coreutils   grep              libgmp10      libselinux          sh5
+  fakeroot    libacl            libgpg-error  libsha1detectcoll1  terminfo
+  filesystem  libattr           liblua5.3     libtinfo6           zlib
+  findutils   libcap            liblzma       libzstd
+0 будет обновлено, 39 новых установлено, 0 пакетов будет удалено и 0 не будет обновлено.
+Необходимо получить 13,0MB архивов.
+После распаковки потребуется дополнительно 53,6MB дискового пространства.
+Получено: 1 http://ftp.altlinux.org p11/branch/noarch/classic setup 2.2.21-alt1:p11+348780.100.1.1@1716835182 [32,7kB]
+Получено: 2 http://ftp.altlinux.org p11/branch/x86_64/classic filesystem 3.1-alt1:p11+348780.200.1.1@1716835208 [22,3kB]
+Получено: 3 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-preinstall 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [281kB]
+Получено: 4 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-core 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [1611kB]
+Получено: 5 http://ftp.altlinux.org p11/branch/x86_64/classic libgcc1 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [92,4kB]
+Получено: 6 http://ftp.altlinux.org p11/branch/noarch/classic terminfo 6.5.20250705-alt1:p11+414777.100.1.1@1775807998 [91,6kB]
+Получено: 7 http://ftp.altlinux.org p11/branch/x86_64/classic libtinfo6 6.5.20250705-alt1:p11+414777.100.1.1@1775807998 [78,0kB]
+Получено: 8 http://ftp.altlinux.org p11/branch/x86_64/classic libreadline8 8.2.10-alt1:sisyphus+338911.100.4.1@1706717067 [147kB]
+Получено: 9 http://ftp.altlinux.org p11/branch/noarch/classic bashrc 1.0-alt1@1533298978 [3095B]
+Получено: 10 http://ftp.altlinux.org p11/branch/x86_64/classic sh5 5.2.37-alt1:p11+364786.100.1.1@1733981156 [388kB]
+Получено: 11 http://ftp.altlinux.org p11/branch/x86_64/classic bash5 5.2.37-alt1:p11+364786.100.1.1@1733981156 [1639kB]
+Получено: 12 http://ftp.altlinux.org p11/branch/noarch/classic sh 5.2.15-alt1:p11+348780.500.1.1@1716835625 [3506B]
+Получено: 13 http://ftp.altlinux.org p11/branch/noarch/classic bash 5.2.15-alt1:p11+348780.500.1.1@1716835625 [8646B]
+Получено: 14 http://ftp.altlinux.org p11/branch/x86_64/classic bzlib 1:1.0.8-alt3:sisyphus+327286.5000.14.1@1711487039 [48,6kB]
+Получено: 15 http://ftp.altlinux.org p11/branch/x86_64/classic libacl 2.3.1.0.20.d265-alt1:p11+348779.300.1.1@1716502641 [18,1kB]
+Получено: 16 http://ftp.altlinux.org p11/branch/x86_64/classic libattr 2.5.1-alt2:p11+348779.400.1.1@1716502692 [14,1kB]
+Получено: 17 http://ftp.altlinux.org p11/branch/x86_64/classic libcap 1:2.69-alt2:p11+364189.200.11.1@1738139020 [30,5kB]
+Получено: 18 http://ftp.altlinux.org p11/branch/x86_64/classic libgmp10 6.3.0-alt1:sisyphus+328118.100.2.1@1693294124 [247kB]
+Получено: 19 http://ftp.altlinux.org p11/branch/x86_64/classic libpcre2 10.46-alt1:p11+393424.100.2.1@1757182560 [567kB]
+Получено: 20 http://ftp.altlinux.org p11/branch/x86_64/classic libselinux 1:3.8-alt2:p11+375090.100.2.1@1741857925 [88,8kB]
+Получено: 21 http://ftp.altlinux.org p11/branch/x86_64/classic coreutils 9.4.0.75.7f2c97-alt1:p11+350390.200.2.1@1717585049 [2831kB]
+Получено: 22 http://ftp.altlinux.org p11/branch/x86_64/classic getopt 2.39.2-alt2:p11+375427.100.8.1@1744210694 [66,3kB]
+Получено: 23 http://ftp.altlinux.org p11/branch/x86_64/classic fakeroot 1.29-alt3:p11+348779.600.1.1@1716502783 [40,2kB]
+Получено: 24 http://ftp.altlinux.org p11/branch/x86_64/classic findutils 4.9.0.0.9.e5c6-alt1:sisyphus+327286.4700.14.1@1711486980 [283kB]
+Получено: 25 http://ftp.altlinux.org p11/branch/x86_64/classic gawk 5.1.0.0.213.d04f-alt1:p11+348780.1000.1.1@1716836074 [1037kB]
+Получено: 26 http://ftp.altlinux.org p11/branch/x86_64/classic grep 3.11.0.20.dd8f-alt1:p11+348779.1000.1.1@1716503040 [252kB]
+Получено: 27 http://ftp.altlinux.org p11/branch/x86_64/classic libdb4.7 4.7.25-alt13:sisyphus+341099.200.4.1@1709732031 [534kB]
+Получено: 28 http://ftp.altlinux.org p11/branch/x86_64/classic zlib 1.3.1-alt1:sisyphus+342532.100.1.1@1710232285 [64,1kB]
+Получено: 29 http://ftp.altlinux.org p11/branch/x86_64/classic libzstd 1.5.5-alt2:p11+348780.1700.1.1@1716838450 [244kB]
+Получено: 30 http://ftp.altlinux.org p11/branch/x86_64/classic libelf 0.191-alt1:sisyphus+347509.100.1.1@1714859321 [196kB]
+Получено: 31 http://ftp.altlinux.org p11/branch/x86_64/classic libgpg-error 1.47-alt1:p11+348889.100.1.1@1716545325 [185kB]
+Получено: 32 http://ftp.altlinux.org p11/branch/x86_64/classic libgcrypt20 1.10.4-alt1:p11+416668.100.2.1@1777977164 [483kB]
+Получено: 33 http://ftp.altlinux.org p11/branch/x86_64/classic liblua5.3 5.3.6-alt3:p11+349176.100.1.1@1716623083 [105kB]
+Получено: 34 http://ftp.altlinux.org p11/branch/x86_64/classic liblzma 5.4.5-alt1:p11+348780.1600.1.1@1716837944 [127kB]
+Получено: 35 http://ftp.altlinux.org p11/branch/x86_64/classic libpopt 1:1.18-alt1:p11+348963.100.1.1@1716579157 [46,3kB]
+Получено: 36 http://ftp.altlinux.org p11/branch/x86_64/classic libsha1detectcoll1 1.0.3-alt1:p11+349540.100.1.1@1716808625 [16,1kB]
+Получено: 37 http://ftp.altlinux.org p11/branch/x86_64/classic librpm7 4.13.0.1-alt45:p11+418689.100.2.1@1781016121 [353kB]
+Получено: 38 http://ftp.altlinux.org p11/branch/x86_64/classic sed 1:4.9.0.32.5420-alt1:sisyphus+336930.2500.1.1@1703107483 [266kB]
+Получено: 39 http://ftp.altlinux.org p11/branch/x86_64/classic rpm 4.13.0.1-alt45:p11+418689.100.2.1@1781016121 [437kB]
+Получено 13,0MB за 12s (1063kB/s).
+Запуск RPM (hsh-rpmi-print-files -U -v -h -r /home/user/hasher/aptbox --oldpackage)...
+/home/user/hasher/aptbox/var/cache/apt/archives/setup_2.2.21-alt1%3ap11+348780.100.1.1@1716835182_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/filesystem_3.1-alt1%3ap11+348780.200.1.1@1716835208_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-preinstall_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-core_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgcc1_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/terminfo_6.5.20250705-alt1%3ap11+414777.100.1.1@1775807998_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libtinfo6_6.5.20250705-alt1%3ap11+414777.100.1.1@1775807998_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libreadline8_8.2.10-alt1%3asisyphus+338911.100.4.1@1706717067_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bashrc_1.0-alt1@1533298978_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/sh5_5.2.37-alt1%3ap11+364786.100.1.1@1733981156_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bash5_5.2.37-alt1%3ap11+364786.100.1.1@1733981156_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/sh_5.2.15-alt1%3ap11+348780.500.1.1@1716835625_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bash_5.2.15-alt1%3ap11+348780.500.1.1@1716835625_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bzlib_1%3a1.0.8-alt3%3asisyphus+327286.5000.14.1@1711487039_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libacl_2.3.1.0.20.d265-alt1%3ap11+348779.300.1.1@1716502641_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libattr_2.5.1-alt2%3ap11+348779.400.1.1@1716502692_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libcap_1%3a2.69-alt2%3ap11+364189.200.11.1@1738139020_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgmp10_6.3.0-alt1%3asisyphus+328118.100.2.1@1693294124_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libpcre2_10.46-alt1%3ap11+393424.100.2.1@1757182560_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libselinux_1%3a3.8-alt2%3ap11+375090.100.2.1@1741857925_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/coreutils_9.4.0.75.7f2c97-alt1%3ap11+350390.200.2.1@1717585049_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/getopt_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/fakeroot_1.29-alt3%3ap11+348779.600.1.1@1716502783_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/findutils_4.9.0.0.9.e5c6-alt1%3asisyphus+327286.4700.14.1@1711486980_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gawk_5.1.0.0.213.d04f-alt1%3ap11+348780.1000.1.1@1716836074_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/grep_3.11.0.20.dd8f-alt1%3ap11+348779.1000.1.1@1716503040_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libdb4.7_4.7.25-alt13%3asisyphus+341099.200.4.1@1709732031_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/zlib_1.3.1-alt1%3asisyphus+342532.100.1.1@1710232285_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libzstd_1.5.5-alt2%3ap11+348780.1700.1.1@1716838450_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libelf_0.191-alt1%3asisyphus+347509.100.1.1@1714859321_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgpg-error_1.47-alt1%3ap11+348889.100.1.1@1716545325_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgcrypt20_1.10.4-alt1%3ap11+416668.100.2.1@1777977164_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/liblua5.3_5.3.6-alt3%3ap11+349176.100.1.1@1716623083_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/liblzma_5.4.5-alt1%3ap11+348780.1600.1.1@1716837944_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libpopt_1%3a1.18-alt1%3ap11+348963.100.1.1@1716579157_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libsha1detectcoll1_1.0.3-alt1%3ap11+349540.100.1.1@1716808625_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/librpm7_4.13.0.1-alt45%3ap11+418689.100.2.1@1781016121_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/sed_1%3a4.9.0.32.5420-alt1%3asisyphus+336930.2500.1.1@1703107483_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpm_4.13.0.1-alt45%3ap11+418689.100.2.1@1781016121_x86%5f64.rpm
+Завершено.
+hsh-initroot: Calculated package file list.
+hsh-initroot: Generated initial package file list.
+Чтение списков пакетов...
+Построение дерева зависимостей...
+Selected version rpm-build#4.0.4.212-alt1:p11+418655.300.5.1@1782823081 for rpm-build>=0:4.0.4-alt21
+Version kernel-headers-common#1.2.9-alt1:sisyphus+320648.100.1.1@1684309073 for kernel-headers-common>=0:1.1.4-alt1 is already selected for install
+Selected version sisyphus_check#0.8.71-alt1:p11+383039.100.3.1@1749570640 for sisyphus_check>=0:0.7.3
+Следующие дополнительные пакеты будут установлены:
+  alt-os-release                      libmount
+  autoconf                            libmpc3
+  autoconf-common                     libmpfr6
+  autoconf_2.71                       libncursesw6
+  automake                            libpam0
+  automake-common                     libpasswdqc
+  automake_1.16                       libpcre2
+  bash                                libpopt
+  bash5                               libproc2_1
+  bashrc                              libreadline8
+  binutils                            librpm
+  bison                               librpm7
+  bison-runtime                       librpmbuild
+  branding-xalt-kworkstation-release  librpmbuild7
+  bzip2                               libseccomp
+  bzlib                               libselinux
+  chkconfig                           libsframe1
+  common-licenses                     libsha1detectcoll1
+  control                             libshell
+  coreutils                           libsmartcols
+  cpio                                libstdc++6
+  cpp                                 libtcb
+  cpp13                               libtic6
+  debugedit                           libtinfo6
+  diffutils                           libtool
+  elfutils                            libtool-common
+  emacs-base                          libtool_2.4
+  etcskel                             libtsan2
+  file                                libubsan1
+  filesystem                          libudev1
+  findutils                           libunistring2
+  gawk                                libuuid
+  gcc                                 libvtv0
+  gcc-common                          libxml2
+  gcc13                               libzio
+  getopt                              libzstd
+  gettext                             m4
+  gettext-tools                       make
+  glib2                               nss_tcb
+  glib2-locales                       pam
+  glibc                               pam-config
+  glibc-core                          pam-config-control
+  glibc-devel                         pam0_mktemp
+  glibc-gconv-modules                 pam0_passwdqc
+  glibc-kernheaders                   pam0_tcb
+  glibc-kernheaders-generic           pam0_userpass
+  glibc-kernheaders-x86               passwdqc-control
+  glibc-locales                       patch
+  glibc-nss                           perl-CPAN-Meta-Requirements
+  glibc-preinstall                    perl-base
+  glibc-pthread                       perl-parent
+  glibc-timezones                     perl-threads
+  glibc-utils                         pkg-config
+  gnu-config                          procps
+  grep                                psmisc
+  gzip                                rootfiles
+  iconv                               rpm
+  info-install                        rpm-build
+  kernel-headers-common               rpm-build-file
+  libacl                              rpm-build-perl
+  libasan8                            rpm-macros-python
+  libasm                              rpm-macros-python3
+  libatomic1                          rpm-macros-systemd
+  libattr                             rpmspec
+  libaudit-common                     sed
+  libaudit1                           service
+  libbeecrypt7                        setarch
+  libblkid                            setup
+  libcap                              sh
+  libcap-ng                           sh5
+  libcap-utils                        shadow-convert
+  libcrypt                            shadow-utils
+  libcrypt-devel                      sisyphus_check
+  libctf-nobfd0                       sysvinit-utils
+  libdb4.7                            tar
+  libdw                               tcb-utils
+  libelf                              terminfo
+  libffi8                             termutils
+  libgcc1                             tzdata
+  libgcrypt20                         util-linux
+  libgmp10                            util-linux-control
+  libgpg-error                        vim-minimal
+  libgpm                              vitmp
+  libhwasan0                          which
+  libitm1                             xml-common
+  liblsan0                            xz
+  liblua5.3                           zlib
+  liblzma                             zstd
+  libmagic
+Следующие НОВЫЕ пакеты будут установлены:
+  alt-os-release                      libmount
+  autoconf                            libmpc3
+  autoconf-common                     libmpfr6
+  autoconf_2.71                       libncursesw6
+  automake                            libpam0
+  automake-common                     libpasswdqc
+  automake_1.16                       libpcre2
+  basesystem                          libpopt
+  bash                                libproc2_1
+  bash5                               libreadline8
+  bashrc                              librpm
+  binutils                            librpm7
+  bison                               librpmbuild
+  bison-runtime                       librpmbuild7
+  branding-xalt-kworkstation-release  libseccomp
+  bzip2                               libselinux
+  bzlib                               libsframe1
+  chkconfig                           libsha1detectcoll1
+  common-licenses                     libshell
+  control                             libsmartcols
+  coreutils                           libstdc++6
+  cpio                                libtcb
+  cpp                                 libtic6
+  cpp13                               libtinfo6
+  debugedit                           libtool
+  diffutils                           libtool-common
+  elfutils                            libtool_2.4
+  emacs-base                          libtsan2
+  etcskel                             libubsan1
+  file                                libudev1
+  filesystem                          libunistring2
+  findutils                           libuuid
+  gawk                                libvtv0
+  gcc                                 libxml2
+  gcc-common                          libzio
+  gcc13                               libzstd
+  getopt                              m4
+  gettext                             make
+  gettext-tools                       nss_tcb
+  glib2                               pam
+  glib2-locales                       pam-config
+  glibc                               pam-config-control
+  glibc-core                          pam0_mktemp
+  glibc-devel                         pam0_passwdqc
+  glibc-gconv-modules                 pam0_tcb
+  glibc-kernheaders                   pam0_userpass
+  glibc-kernheaders-generic           passwdqc-control
+  glibc-kernheaders-x86               patch
+  glibc-locales                       perl-CPAN-Meta-Requirements
+  glibc-nss                           perl-base
+  glibc-preinstall                    perl-parent
+  glibc-pthread                       perl-threads
+  glibc-timezones                     pkg-config
+  glibc-utils                         procps
+  gnu-config                          psmisc
+  grep                                rootfiles
+  gzip                                rpm
+  iconv                               rpm-build
+  info-install                        rpm-build-file
+  kernel-headers-common               rpm-build-perl
+  libacl                              rpm-macros-python
+  libasan8                            rpm-macros-python3
+  libasm                              rpm-macros-systemd
+  libatomic1                          rpmspec
+  libattr                             sed
+  libaudit-common                     service
+  libaudit1                           setarch
+  libbeecrypt7                        setup
+  libblkid                            sh
+  libcap                              sh5
+  libcap-ng                           shadow-convert
+  libcap-utils                        shadow-utils
+  libcrypt                            sisyphus_check
+  libcrypt-devel                      sysvinit-utils
+  libctf-nobfd0                       tar
+  libdb4.7                            tcb-utils
+  libdw                               terminfo
+  libelf                              termutils
+  libffi8                             time
+  libgcc1                             tzdata
+  libgcrypt20                         util-linux
+  libgmp10                            util-linux-control
+  libgpg-error                        vim-minimal
+  libgpm                              vitmp
+  libhwasan0                          which
+  libitm1                             xml-common
+  liblsan0                            xz
+  liblua5.3                           zlib
+  liblzma                             zstd
+  libmagic
+0 будет обновлено, 179 новых установлено, 0 пакетов будет удалено и 0 не будет обновлено.
+Необходимо получить 73,7MB/86,6MB архивов.
+После распаковки потребуется дополнительно 515MB дискового пространства.
+Получено: 1 http://ftp.altlinux.org p11/branch/x86_64/classic libtic6 6.5.20250705-alt1:p11+414777.100.1.1@1775807998 [45,7kB]
+Получено: 2 http://ftp.altlinux.org p11/branch/x86_64/classic termutils 6.5.20250705-alt1:p11+414777.100.1.1@1775807998 [100kB]
+Получено: 3 http://ftp.altlinux.org p11/branch/x86_64/classic libcap-utils 1:2.69-alt2:p11+364189.200.11.1@1738139020 [36,6kB]
+Получено: 4 http://ftp.altlinux.org p11/branch/noarch/classic control 0.8.0-alt3:p11+361706.100.1.1@1730789114 [15,5kB]
+Получено: 5 http://ftp.altlinux.org p11/branch/noarch/classic passwdqc-control 2.0.3-alt3:p11+405461.100.1.1@1768762099 [12,2kB]
+Получено: 6 http://ftp.altlinux.org p11/branch/x86_64/classic libpasswdqc 2.0.3-alt3:p11+405461.100.1.1@1768762099 [51,4kB]
+Получено: 7 http://ftp.altlinux.org p11/branch/x86_64/classic libcrypt 4.4.36-alt1:sisyphus+335411.100.1.1@1701329049 [87,8kB]
+Получено: 8 http://ftp.altlinux.org p11/branch/noarch/classic libaudit-common 4.2.1-alt1:p11+426513.200.2.1@1785397221 [20,8kB]
+Получено: 9 http://ftp.altlinux.org p11/branch/x86_64/classic libcap-ng 0.8.5-alt1:sisyphus+348204.100.1.1@1715863011 [24,7kB]
+Получено: 10 http://ftp.altlinux.org p11/branch/x86_64/classic libaudit1 4.2.1-alt1:p11+426513.200.2.1@1785397221 [54,8kB]
+Получено: 11 http://ftp.altlinux.org p11/branch/x86_64/classic libtcb 1.2-alt2:p11+349608.100.1.3@1716834520 [23,3kB]
+Получено: 12 http://ftp.altlinux.org p11/branch/x86_64/classic nss_tcb 1.2-alt2:p11+349608.100.1.3@1716834520 [14,9kB]
+Получено: 13 http://ftp.altlinux.org p11/branch/x86_64/classic pam0_tcb 1.2-alt2:p11+349608.100.1.3@1716834520 [31,3kB]
+Получено: 14 http://ftp.altlinux.org p11/branch/x86_64/classic pam 1.7.1-alt1:p11+390642.100.1.1@1753279873 [374kB]
+Получено: 15 http://ftp.altlinux.org p11/branch/x86_64/classic pam0_mktemp 1.1.1-alt4:p11+349331.100.1.1@1716719151 [10,9kB]
+Получено: 16 http://ftp.altlinux.org p11/branch/x86_64/classic pam0_passwdqc 2.0.3-alt3:p11+405461.100.1.1@1768762099 [19,1kB]
+Получено: 17 http://ftp.altlinux.org p11/branch/x86_64/classic diffutils 3.10.0.207.774b-alt1:sisyphus+336930.1000.1.1@1703105501 [327kB]
+Получено: 18 http://ftp.altlinux.org p11/branch/noarch/classic pam-config-control 1.10.0-alt0.p11.2:p11+405959.20.5.1@1781550898 [12,4kB]
+Получено: 19 http://ftp.altlinux.org p11/branch/noarch/classic pam-config 1.10.0-alt0.p11.2:p11+405959.20.5.1@1781550898 [21,9kB]
+Получено: 20 http://ftp.altlinux.org p11/branch/x86_64/classic libpam0 1.7.1-alt1:p11+390642.100.1.1@1753279873 [68,2kB]
+Получено: 21 http://ftp.altlinux.org p11/branch/x86_64/classic libgpm 1.20.1-alt19:sisyphus+328124.100.1.1@1693248097 [21,2kB]
+Получено: 22 http://ftp.altlinux.org p11/branch/x86_64/classic libncursesw6 6.5.20250705-alt1:p11+414777.100.1.1@1775807998 [151kB]
+Получено: 23 http://ftp.altlinux.org p11/branch/x86_64/classic libudev1 1:257.9-alt1:p11+395282.100.4.1@1759817746 [142kB]
+Получено: 24 http://ftp.altlinux.org p11/branch/noarch/classic util-linux-control 2.39.2-alt2:p11+375427.100.8.1@1744210694 [54,6kB]
+Получено: 25 http://ftp.altlinux.org p11/branch/x86_64/classic libuuid 2.39.2-alt2:p11+375427.100.8.1@1744210694 [66,8kB]
+Получено: 26 http://ftp.altlinux.org p11/branch/x86_64/classic libblkid 2.39.2-alt2:p11+375427.100.8.1@1744210694 [149kB]
+Получено: 27 http://ftp.altlinux.org p11/branch/x86_64/classic libmount 2.39.2-alt2:p11+375427.100.8.1@1744210694 [175kB]
+Получено: 28 http://ftp.altlinux.org p11/branch/x86_64/classic libsmartcols 2.39.2-alt2:p11+375427.100.8.1@1744210694 [94,5kB]
+Получено: 29 http://ftp.altlinux.org p11/branch/x86_64/classic setarch 2.39.2-alt2:p11+375427.100.8.1@1744210694 [64,2kB]
+Получено: 30 http://ftp.altlinux.org p11/branch/x86_64/classic util-linux 2.39.2-alt2:p11+375427.100.8.1@1744210694 [2239kB]
+Получено: 31 http://ftp.altlinux.org p11/branch/noarch/classic libshell 0.4.13-alt1:sisyphus+340108.100.1.1@1707399175 [56,3kB]
+Получено: 32 http://ftp.altlinux.org p11/branch/noarch/classic alt-os-release 0.3.0-alt1:p11+397470.100.2.1@1762855343 [4030B]
+Получено: 33 http://ftp.altlinux.org p11/branch/noarch/classic branding-xalt-kworkstation-release 11.4.0-alt2:p11+428126.100.3.1@1786634646 [33,1kB]
+Получено: 34 http://ftp.altlinux.org p11/branch/noarch/classic common-licenses 3.27.0-alt1:p11+401530.100.1.1@1764611095 [501kB]
+Получено: 35 http://ftp.altlinux.org p11/branch/x86_64/classic shadow-convert 1:4.17.4-alt3:p11+430795.100.1.1@1787665827 [57,2kB]
+Получено: 36 http://ftp.altlinux.org p11/branch/x86_64/classic tcb-utils 1.2-alt2:p11+349608.100.1.3@1716834520 [22,0kB]
+Получено: 37 http://ftp.altlinux.org p11/branch/x86_64/classic pam0_userpass 1.0.2-alt7:p11+349333.100.1.1@1716720034 [10,3kB]
+Получено: 38 http://ftp.altlinux.org p11/branch/x86_64/classic shadow-utils 1:4.17.4-alt3:p11+430795.100.1.1@1787665827 [492kB]
+Получено: 39 http://ftp.altlinux.org p11/branch/noarch/classic etcskel 2.0.17-alt1:p11+348780.700.1.1@1716836002 [43,8kB]
+Получено: 40 http://ftp.altlinux.org p11/branch/x86_64/classic gzip 1.13-alt3:p11+348780.1100.1.1@1716836206 [104kB]
+Получено: 41 http://ftp.altlinux.org p11/branch/noarch/classic perl-parent 0.241-alt1:sisyphus+315289.100.1.1@1676475376 [8005B]
+Получено: 42 http://ftp.altlinux.org p11/branch/x86_64/classic perl-base 1:5.38.4-alt1.p11:p11+415674.400.4.1@1776697020 [1996kB]
+Получено: 43 http://ftp.altlinux.org p11/branch/noarch/classic rootfiles alt-alt14:p11+370924.100.1.1@1737597750 [11,7kB]
+Получено: 44 http://ftp.altlinux.org p11/branch/x86_64/classic tar 1.35.0.20.1cdad4cc-alt1:p11+348780.1400.1.1@1716837788 [744kB]
+Получено: 45 http://ftp.altlinux.org p11/branch/x86_64/classic vim-minimal 4:9.2.1067-alt1:p11+432562.100.1.1@1789141908 [851kB]
+Получено: 46 http://ftp.altlinux.org p11/branch/x86_64/classic vitmp 1.0-alt4.qa1:p11+349756.100.1.1@1716928764 [6474B]
+Получено: 47 http://ftp.altlinux.org p11/branch/x86_64/classic xz 5.4.5-alt1:p11+348780.1600.1.1@1716837944 [156kB]
+Получено: 48 http://ftp.altlinux.org p11/branch/x86_64/classic zstd 1.5.5-alt2:p11+348780.1700.1.1@1716838450 [264kB]
+Получено: 49 http://ftp.altlinux.org p11/branch/noarch/classic basesystem 1:sisyphus-alt25:p11+349623.100.2.1@1716844434 [8831B]
+Получено: 50 http://ftp.altlinux.org p11/branch/noarch/classic autoconf-common 0.3.2-alt1:sisyphus+264199.100.1.1@1609281515 [3426B]
+Получено: 51 http://ftp.altlinux.org p11/branch/x86_64/classic m4 1.4.19.0.15.bb35-alt1:sisyphus+336930.2000.1.1@1703106995 [190kB]
+Получено: 52 http://ftp.altlinux.org p11/branch/noarch/classic gnu-config 2023.01.21-alt1:sisyphus+313857.100.1.1@1674301506 [29,9kB]
+Получено: 53 http://ftp.altlinux.org p11/branch/noarch/classic autoconf_2.71 2.71-alt3:sisyphus+327753.100.1.1@1692735633 [613kB]
+Получено: 54 http://ftp.altlinux.org p11/branch/noarch/classic autoconf 2:2.71-alt1:sisyphus+325013.300.1.1@1690141700 [5216B]
+Получено: 55 http://ftp.altlinux.org p11/branch/noarch/classic automake-common 0.4.2-alt1:sisyphus+264199.200.1.1@1609281542 [3482B]
+Получено: 56 http://ftp.altlinux.org p11/branch/x86_64/classic perl-threads 1:5.38.4-alt1.p11:p11+415674.400.4.1@1776697020 [63,0kB]
+Получено: 57 http://ftp.altlinux.org p11/branch/noarch/classic automake_1.16 1.16.5-alt1:sisyphus+325642.300.5.1@1690582104 [624kB]
+Получено: 58 http://ftp.altlinux.org p11/branch/noarch/classic automake 1:1.16-alt1:sisyphus+226889.100.2.1@1554763109 [3090B]
+Получено: 59 http://ftp.altlinux.org p11/branch/x86_64/classic libstdc++6 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [790kB]
+Получено: 60 http://ftp.altlinux.org p11/branch/x86_64/classic libctf-nobfd0 1:2.41-alt2:p11+425562.100.1.1@1784279362 [115kB]
+Получено: 61 http://ftp.altlinux.org p11/branch/x86_64/classic libsframe1 1:2.41-alt2:p11+425562.100.1.1@1784279362 [38,3kB]
+Получено: 62 http://ftp.altlinux.org p11/branch/x86_64/classic binutils 1:2.41-alt2:p11+425562.100.1.1@1784279362 [5007kB]
+Получено: 63 http://ftp.altlinux.org p11/branch/noarch/classic bison-runtime 3.8.2-alt1:sisyphus+336930.400.1.1@1703105149 [22,4kB]
+Получено: 64 http://ftp.altlinux.org p11/branch/x86_64/classic bison 3.8.2-alt1:sisyphus+336930.400.1.1@1703105149 [729kB]
+Получено: 65 http://ftp.altlinux.org p11/branch/x86_64/classic bzip2 1:1.0.8-alt3:sisyphus+327286.5000.14.1@1711487039 [46,2kB]
+Получено: 66 http://ftp.altlinux.org p11/branch/x86_64/classic chkconfig 1.3.59-alt4:p11+348779.100.1.1@1716502552 [119kB]
+Получено: 67 http://ftp.altlinux.org p11/branch/x86_64/classic cpio 2.15-alt1:sisyphus+338924.100.1.1@1706126736 [228kB]
+Получено: 68 http://ftp.altlinux.org p11/branch/x86_64/classic gcc-common 1.4.28-alt1:sisyphus+348678.100.1.1@1716396142 [14,3kB]
+Получено: 69 http://ftp.altlinux.org p11/branch/x86_64/classic libmpfr6 4.2.1-alt1:sisyphus+327740.100.1.1@1692720847 [303kB]
+Получено: 70 http://ftp.altlinux.org p11/branch/x86_64/classic libmpc3 1.3.1-alt1:sisyphus+322962.200.2.1@1686691678 [58,1kB]
+Получено: 71 http://ftp.altlinux.org p11/branch/x86_64/classic cpp13 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [10,0MB]
+Получено: 72 http://ftp.altlinux.org p11/branch/x86_64/classic cpp 13-alt1:sisyphus+323337.300.1.1@1687267966 [5411B]
+Получено: 73 http://ftp.altlinux.org p11/branch/x86_64/classic libdw 0.191-alt1:sisyphus+347509.100.1.1@1714859321 [220kB]
+Получено: 74 http://ftp.altlinux.org p11/branch/x86_64/classic debugedit 5.0.0.27.6dd2-alt1:sisyphus+347441.100.1.1@1714777408 [46,8kB]
+Получено: 75 http://ftp.altlinux.org p11/branch/x86_64/classic libasm 0.191-alt1:sisyphus+347509.100.1.1@1714859321 [26,4kB]
+Получено: 76 http://ftp.altlinux.org p11/branch/x86_64/classic elfutils 0.191-alt1:sisyphus+347509.100.1.1@1714859321 [428kB]
+Получено: 77 http://ftp.altlinux.org p11/branch/noarch/classic emacs-base 0.0.11-alt1:sisyphus+307458.200.1.1@1664286951 [16,4kB]
+Получено: 78 http://ftp.altlinux.org p11/branch/x86_64/classic libseccomp 2.6.1-alt1:p11+431709.100.2.1@1789652265 [47,1kB]
+Получено: 79 http://ftp.altlinux.org p11/branch/x86_64/classic libmagic 5.45-alt1:p11+348779.700.1.1@1716502839 [81,8kB]
+Получено: 80 http://ftp.altlinux.org p11/branch/x86_64/classic file 5.45-alt1:p11+348779.700.1.1@1716502839 [720kB]
+Получено: 81 http://ftp.altlinux.org p11/branch/noarch/classic glibc-kernheaders-generic 6.18-alt1:p11+413702.100.2.1@1775223363 [1506kB]
+Получено: 82 http://ftp.altlinux.org p11/branch/noarch/classic glibc-kernheaders-x86 6.18-alt1:p11+413702.100.2.1@1775223363 [62,6kB]
+Получено: 83 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-kernheaders 6.18-alt1:p11+413702.100.2.1@1775223363 [17,3kB]
+Получено: 84 http://ftp.altlinux.org p11/branch/x86_64/classic sysvinit-utils 3.00-alt2:p11+349606.100.1.1@1716833073 [47,5kB]
+Получено: 85 http://ftp.altlinux.org p11/branch/x86_64/classic psmisc 23.6-alt3:p11+349381.100.1.1@1716737260 [151kB]
+Получено: 86 http://ftp.altlinux.org p11/branch/x86_64/classic service 0.5.34-alt1:p11+404496.100.1.1@1767600927 [53,7kB]
+Получено: 87 http://ftp.altlinux.org p11/branch/x86_64/classic kernel-headers-common 1.2.9-alt1:sisyphus+320648.100.1.1@1684309073 [14,2kB]
+Получено: 88 http://ftp.altlinux.org p11/branch/noarch/classic glib2-locales 2.84.4-alt1:p11+396318.100.2.1@1760211330 [1267kB]
+Получено: 89 http://ftp.altlinux.org p11/branch/x86_64/classic libffi8 1:3.5.1-alt1:p11+392680.100.2.1@1757920520 [22,7kB]
+Получено: 90 http://ftp.altlinux.org p11/branch/x86_64/classic glib2 2.84.4-alt1:p11+396318.100.2.1@1760211330 [986kB]
+Получено: 91 http://ftp.altlinux.org p11/branch/x86_64/classic pkg-config 0.29.2-alt3:p11+349359.100.1.1@1716728182 [49,9kB]
+Получено: 92 http://ftp.altlinux.org p11/branch/x86_64/classic libcrypt-devel 4.4.36-alt1:sisyphus+335411.100.1.1@1701329049 [18,6kB]
+Получено: 93 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-pthread 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [62,0kB]
+Получено: 94 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-nss 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [73,0kB]
+Получено: 95 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-locales 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [14,1MB]
+Получено: 96 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-gconv-modules 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [1144kB]
+Получено: 97 http://ftp.altlinux.org p11/branch/x86_64/classic iconv 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [77,9kB]
+Получено: 98 http://ftp.altlinux.org p11/branch/noarch/classic tzdata 2024a-alt1:sisyphus+344801.100.1.1@1712691698 [390kB]
+Получено: 99 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-timezones 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [82,7kB]
+Получено: 100 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-utils 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [433kB]
+Получено: 101 http://ftp.altlinux.org p11/branch/x86_64/classic glibc 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [46,7kB]
+Получено: 102 http://ftp.altlinux.org p11/branch/x86_64/classic glibc-devel 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [2172kB]
+Получено: 103 http://ftp.altlinux.org p11/branch/x86_64/classic libatomic1 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [43,2kB]
+Получено: 104 http://ftp.altlinux.org p11/branch/x86_64/classic libasan8 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [437kB]
+Получено: 105 http://ftp.altlinux.org p11/branch/x86_64/classic libtsan2 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [385kB]
+Получено: 106 http://ftp.altlinux.org p11/branch/x86_64/classic libitm1 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [59,8kB]
+Получено: 107 http://ftp.altlinux.org p11/branch/x86_64/classic libhwasan0 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [218kB]
+Получено: 108 http://ftp.altlinux.org p11/branch/x86_64/classic liblsan0 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [212kB]
+Получено: 109 http://ftp.altlinux.org p11/branch/x86_64/classic libubsan1 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [200kB]
+Получено: 110 http://ftp.altlinux.org p11/branch/x86_64/classic libvtv0 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [45,7kB]
+Получено: 111 http://ftp.altlinux.org p11/branch/x86_64/classic gcc13 13.2.1-alt3:sisyphus+339335.100.1.1@1706563486 [13,3MB]
+Получено: 112 http://ftp.altlinux.org p11/branch/x86_64/classic gcc 13-alt1:sisyphus+323337.300.1.1@1687267966 [7138B]
+Получено: 113 http://ftp.altlinux.org p11/branch/x86_64/classic gettext 0.21-alt2:sisyphus+328153.300.3.1@1693315380 [87,5kB]
+Получено: 114 http://ftp.altlinux.org p11/branch/x86_64/classic libunistring2 0.9.10-alt1:p11+349006.100.1.2@1716604783 [373kB]
+Получено: 115 http://ftp.altlinux.org p11/branch/noarch/classic xml-common 0.6.3-alt15:sisyphus+276099.100.1.1@1624817971 [21,4kB]
+Получено: 116 http://ftp.altlinux.org p11/branch/x86_64/classic libxml2 1:2.12.10-alt2:p11+387430.100.2.1@1751381745 [604kB]
+Получено: 117 http://ftp.altlinux.org p11/branch/x86_64/classic gettext-tools 0.21-alt2:sisyphus+328153.300.3.1@1693315380 [1668kB]
+Получено: 118 http://ftp.altlinux.org p11/branch/x86_64/classic libzio 1.06-alt1:p11+349029.100.1.2@1716613752 [15,6kB]
+Получено: 119 http://ftp.altlinux.org p11/branch/x86_64/classic info-install 7.1-alt1:sisyphus+338907.200.3.1@1706718831 [33,9kB]
+Получено: 120 http://ftp.altlinux.org p11/branch/x86_64/classic libbeecrypt7 4.2.1-alt8:p11+348779.500.1.1@1716502739 [86,2kB]
+Получено: 121 http://ftp.altlinux.org p11/branch/x86_64/classic libproc2_1 4.0.6-alt1:p11+409352.100.2.1@1772706372 [60,8kB]
+Получено: 122 http://ftp.altlinux.org p11/branch/x86_64/classic librpm 4.0.4.212-alt1:p11+418655.300.5.1@1782823081 [326kB]
+Получено: 123 http://ftp.altlinux.org p11/branch/x86_64/classic librpmbuild 4.0.4.212-alt1:p11+418655.300.5.1@1782823081 [171kB]
+Получено: 124 http://ftp.altlinux.org p11/branch/x86_64/classic librpmbuild7 4.13.0.1-alt45:p11+418689.100.2.1@1781016121 [147kB]
+Получено: 125 http://ftp.altlinux.org p11/branch/x86_64/classic libtool-common 0.2.3-alt1:p11+349000.100.1.1@1716588432 [7119B]
+Получено: 126 http://ftp.altlinux.org p11/branch/x86_64/classic libtool_2.4 2.4.7-alt5:sisyphus+341963.200.3.1@1711659208 [395kB]
+Получено: 127 http://ftp.altlinux.org p11/branch/noarch/classic libtool 3:2.4.2-alt7@1533461531 [2738B]
+Получено: 128 http://ftp.altlinux.org p11/branch/x86_64/classic make 2:4.4.0-alt2:p11+349160.100.1.1@1716618644 [497kB]
+Получено: 129 http://ftp.altlinux.org p11/branch/x86_64/classic patch 2.7.6.0.27.7623-alt1:sisyphus+336930.2300.1.1@1703107341 [101kB]
+Получено: 130 http://ftp.altlinux.org p11/branch/noarch/classic perl-CPAN-Meta-Requirements 2.143-alt1:sisyphus+323462.100.1.1@1687421801 [15,4kB]
+Получено: 131 http://ftp.altlinux.org p11/branch/x86_64/classic procps 4.0.6-alt1:p11+409352.100.2.1@1772706372 [291kB]
+Получено: 132 http://ftp.altlinux.org p11/branch/x86_64/classic rpm-build-file 4.26-alt18:p11+349465.100.1.1@1716791164 [142kB]
+Получено: 133 http://ftp.altlinux.org p11/branch/noarch/classic rpm-build-perl 0.85-alt6:sisyphus+335974.100.1.1@1701887945 [37,0kB]
+Получено: 134 http://ftp.altlinux.org p11/branch/noarch/classic rpm-macros-python 0.43.2-alt1:sisyphus+271106.100.1.1@1619868598 [22,3kB]
+Получено: 135 http://ftp.altlinux.org p11/branch/noarch/classic rpm-macros-python3 0.1.29-alt1:p11+398031.540.1.1@1762796334 [22,0kB]
+Получено: 136 http://ftp.altlinux.org p11/branch/noarch/classic rpm-macros-systemd 6-alt2:p11+356646.100.26.1@1729360985 [5995B]
+Получено: 137 http://ftp.altlinux.org p11/branch/x86_64/classic rpmspec 4.13.0.1-alt45:p11+418689.100.2.1@1781016121 [94,6kB]
+Получено: 138 http://ftp.altlinux.org p11/branch/noarch/classic sisyphus_check 0.8.71-alt1:p11+383039.100.3.1@1749570640 [39,1kB]
+Получено: 139 http://ftp.altlinux.org p11/branch/x86_64/classic time 1:1.7-alt4:p11+349641.100.1.1@1716880527 [16,8kB]
+Получено: 140 http://ftp.altlinux.org p11/branch/x86_64/classic which 2.20-alt2.qa1:p11+349768.100.1.1@1716936615 [22,1kB]
+Получено: 141 http://ftp.altlinux.org p11/branch/x86_64/classic rpm-build 4.0.4.212-alt1:p11+418655.300.5.1@1782823081 [182kB]
+Получено 73,7MB за 1m6s (1113kB/s).
+Запуск RPM (hsh-rpmi-print-files -U -v -h -r /home/user/hasher/aptbox --oldpackage)...
+/home/user/hasher/aptbox/var/cache/apt/archives/bashrc_1.0-alt1@1533298978_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/setup_2.2.21-alt1%3ap11+348780.100.1.1@1716835182_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/filesystem_3.1-alt1%3ap11+348780.200.1.1@1716835208_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-preinstall_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-core_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgcc1_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/sh5_5.2.37-alt1%3ap11+364786.100.1.1@1733981156_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/sh_5.2.15-alt1%3ap11+348780.500.1.1@1716835625_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libacl_2.3.1.0.20.d265-alt1%3ap11+348779.300.1.1@1716502641_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libattr_2.5.1-alt2%3ap11+348779.400.1.1@1716502692_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libcap_1%3a2.69-alt2%3ap11+364189.200.11.1@1738139020_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgmp10_6.3.0-alt1%3asisyphus+328118.100.2.1@1693294124_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libpcre2_10.46-alt1%3ap11+393424.100.2.1@1757182560_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libselinux_1%3a3.8-alt2%3ap11+375090.100.2.1@1741857925_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/terminfo_6.5.20250705-alt1%3ap11+414777.100.1.1@1775807998_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libtinfo6_6.5.20250705-alt1%3ap11+414777.100.1.1@1775807998_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/coreutils_9.4.0.75.7f2c97-alt1%3ap11+350390.200.2.1@1717585049_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/grep_3.11.0.20.dd8f-alt1%3ap11+348779.1000.1.1@1716503040_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/findutils_4.9.0.0.9.e5c6-alt1%3asisyphus+327286.4700.14.1@1711486980_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/sed_1%3a4.9.0.32.5420-alt1%3asisyphus+336930.2500.1.1@1703107483_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libtic6_6.5.20250705-alt1%3ap11+414777.100.1.1@1775807998_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/termutils_6.5.20250705-alt1%3ap11+414777.100.1.1@1775807998_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libpopt_1%3a1.18-alt1%3ap11+348963.100.1.1@1716579157_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libreadline8_8.2.10-alt1%3asisyphus+338911.100.4.1@1706717067_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bash5_5.2.37-alt1%3ap11+364786.100.1.1@1733981156_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bash_5.2.15-alt1%3ap11+348780.500.1.1@1716835625_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gawk_5.1.0.0.213.d04f-alt1%3ap11+348780.1000.1.1@1716836074_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/getopt_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bzlib_1%3a1.0.8-alt3%3asisyphus+327286.5000.14.1@1711487039_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libdb4.7_4.7.25-alt13%3asisyphus+341099.200.4.1@1709732031_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/zlib_1.3.1-alt1%3asisyphus+342532.100.1.1@1710232285_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libzstd_1.5.5-alt2%3ap11+348780.1700.1.1@1716838450_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libelf_0.191-alt1%3asisyphus+347509.100.1.1@1714859321_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgpg-error_1.47-alt1%3ap11+348889.100.1.1@1716545325_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgcrypt20_1.10.4-alt1%3ap11+416668.100.2.1@1777977164_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/liblua5.3_5.3.6-alt3%3ap11+349176.100.1.1@1716623083_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/liblzma_5.4.5-alt1%3ap11+348780.1600.1.1@1716837944_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libsha1detectcoll1_1.0.3-alt1%3ap11+349540.100.1.1@1716808625_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/librpm7_4.13.0.1-alt45%3ap11+418689.100.2.1@1781016121_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpm_4.13.0.1-alt45%3ap11+418689.100.2.1@1781016121_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libcap-utils_1%3a2.69-alt2%3ap11+364189.200.11.1@1738139020_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/control_0.8.0-alt3%3ap11+361706.100.1.1@1730789114_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/passwdqc-control_2.0.3-alt3%3ap11+405461.100.1.1@1768762099_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libpasswdqc_2.0.3-alt3%3ap11+405461.100.1.1@1768762099_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libcrypt_4.4.36-alt1%3asisyphus+335411.100.1.1@1701329049_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libaudit-common_4.2.1-alt1%3ap11+426513.200.2.1@1785397221_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libcap-ng_0.8.5-alt1%3asisyphus+348204.100.1.1@1715863011_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libaudit1_4.2.1-alt1%3ap11+426513.200.2.1@1785397221_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libtcb_1.2-alt2%3ap11+349608.100.1.3@1716834520_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/nss%5ftcb_1.2-alt2%3ap11+349608.100.1.3@1716834520_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/pam0%5ftcb_1.2-alt2%3ap11+349608.100.1.3@1716834520_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/pam_1.7.1-alt1%3ap11+390642.100.1.1@1753279873_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/pam0%5fmktemp_1.1.1-alt4%3ap11+349331.100.1.1@1716719151_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/pam0%5fpasswdqc_2.0.3-alt3%3ap11+405461.100.1.1@1768762099_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/diffutils_3.10.0.207.774b-alt1%3asisyphus+336930.1000.1.1@1703105501_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/pam-config-control_1.10.0-alt0.p11.2%3ap11+405959.20.5.1@1781550898_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/pam-config_1.10.0-alt0.p11.2%3ap11+405959.20.5.1@1781550898_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libpam0_1.7.1-alt1%3ap11+390642.100.1.1@1753279873_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libgpm_1.20.1-alt19%3asisyphus+328124.100.1.1@1693248097_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libncursesw6_6.5.20250705-alt1%3ap11+414777.100.1.1@1775807998_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libudev1_1%3a257.9-alt1%3ap11+395282.100.4.1@1759817746_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/util-linux-control_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libuuid_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libblkid_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libmount_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libsmartcols_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/setarch_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/util-linux_2.39.2-alt2%3ap11+375427.100.8.1@1744210694_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libshell_0.4.13-alt1%3asisyphus+340108.100.1.1@1707399175_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/alt-os-release_0.3.0-alt1%3ap11+397470.100.2.1@1762855343_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/branding-xalt-kworkstation-release_11.4.0-alt2%3ap11+428126.100.3.1@1786634646_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/common-licenses_3.27.0-alt1%3ap11+401530.100.1.1@1764611095_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/shadow-convert_1%3a4.17.4-alt3%3ap11+430795.100.1.1@1787665827_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/tcb-utils_1.2-alt2%3ap11+349608.100.1.3@1716834520_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/pam0%5fuserpass_1.0.2-alt7%3ap11+349333.100.1.1@1716720034_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/shadow-utils_1%3a4.17.4-alt3%3ap11+430795.100.1.1@1787665827_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/etcskel_2.0.17-alt1%3ap11+348780.700.1.1@1716836002_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gzip_1.13-alt3%3ap11+348780.1100.1.1@1716836206_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/perl-parent_0.241-alt1%3asisyphus+315289.100.1.1@1676475376_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/perl-base_1%3a5.38.4-alt1.p11%3ap11+415674.400.4.1@1776697020_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rootfiles_alt-alt14%3ap11+370924.100.1.1@1737597750_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/tar_1.35.0.20.1cdad4cc-alt1%3ap11+348780.1400.1.1@1716837788_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/vim-minimal_4%3a9.2.1067-alt1%3ap11+432562.100.1.1@1789141908_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/vitmp_1.0-alt4.qa1%3ap11+349756.100.1.1@1716928764_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/xz_5.4.5-alt1%3ap11+348780.1600.1.1@1716837944_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/zstd_1.5.5-alt2%3ap11+348780.1700.1.1@1716838450_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/basesystem_1%3asisyphus-alt25%3ap11+349623.100.2.1@1716844434_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/autoconf-common_0.3.2-alt1%3asisyphus+264199.100.1.1@1609281515_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/m4_1.4.19.0.15.bb35-alt1%3asisyphus+336930.2000.1.1@1703106995_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gnu-config_2023.01.21-alt1%3asisyphus+313857.100.1.1@1674301506_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/autoconf%5f2.71_2.71-alt3%3asisyphus+327753.100.1.1@1692735633_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/autoconf_2%3a2.71-alt1%3asisyphus+325013.300.1.1@1690141700_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/automake-common_0.4.2-alt1%3asisyphus+264199.200.1.1@1609281542_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/perl-threads_1%3a5.38.4-alt1.p11%3ap11+415674.400.4.1@1776697020_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/automake%5f1.16_1.16.5-alt1%3asisyphus+325642.300.5.1@1690582104_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/automake_1%3a1.16-alt1%3asisyphus+226889.100.2.1@1554763109_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libstdc++6_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libctf-nobfd0_1%3a2.41-alt2%3ap11+425562.100.1.1@1784279362_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libsframe1_1%3a2.41-alt2%3ap11+425562.100.1.1@1784279362_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/binutils_1%3a2.41-alt2%3ap11+425562.100.1.1@1784279362_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bison-runtime_3.8.2-alt1%3asisyphus+336930.400.1.1@1703105149_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bison_3.8.2-alt1%3asisyphus+336930.400.1.1@1703105149_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/bzip2_1%3a1.0.8-alt3%3asisyphus+327286.5000.14.1@1711487039_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/chkconfig_1.3.59-alt4%3ap11+348779.100.1.1@1716502552_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/cpio_2.15-alt1%3asisyphus+338924.100.1.1@1706126736_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gcc-common_1.4.28-alt1%3asisyphus+348678.100.1.1@1716396142_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libmpfr6_4.2.1-alt1%3asisyphus+327740.100.1.1@1692720847_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libmpc3_1.3.1-alt1%3asisyphus+322962.200.2.1@1686691678_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/cpp13_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/cpp_13-alt1%3asisyphus+323337.300.1.1@1687267966_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libdw_0.191-alt1%3asisyphus+347509.100.1.1@1714859321_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/debugedit_5.0.0.27.6dd2-alt1%3asisyphus+347441.100.1.1@1714777408_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libasm_0.191-alt1%3asisyphus+347509.100.1.1@1714859321_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/elfutils_0.191-alt1%3asisyphus+347509.100.1.1@1714859321_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/emacs-base_0.0.11-alt1%3asisyphus+307458.200.1.1@1664286951_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libseccomp_2.6.1-alt1%3ap11+431709.100.2.1@1789652265_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libmagic_5.45-alt1%3ap11+348779.700.1.1@1716502839_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/file_5.45-alt1%3ap11+348779.700.1.1@1716502839_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-kernheaders-generic_6.18-alt1%3ap11+413702.100.2.1@1775223363_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-kernheaders-x86_6.18-alt1%3ap11+413702.100.2.1@1775223363_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-kernheaders_6.18-alt1%3ap11+413702.100.2.1@1775223363_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/sysvinit-utils_3.00-alt2%3ap11+349606.100.1.1@1716833073_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/psmisc_23.6-alt3%3ap11+349381.100.1.1@1716737260_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/service_0.5.34-alt1%3ap11+404496.100.1.1@1767600927_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/kernel-headers-common_1.2.9-alt1%3asisyphus+320648.100.1.1@1684309073_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glib2-locales_2.84.4-alt1%3ap11+396318.100.2.1@1760211330_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libffi8_1%3a3.5.1-alt1%3ap11+392680.100.2.1@1757920520_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glib2_2.84.4-alt1%3ap11+396318.100.2.1@1760211330_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/pkg-config_0.29.2-alt3%3ap11+349359.100.1.1@1716728182_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libcrypt-devel_4.4.36-alt1%3asisyphus+335411.100.1.1@1701329049_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-pthread_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-nss_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-locales_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-gconv-modules_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/iconv_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/tzdata_2024a-alt1%3asisyphus+344801.100.1.1@1712691698_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-timezones_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-utils_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/glibc-devel_6%3a2.38.0.223.f053ff-alt1.p11.1%3ap11+422743.100.3.2@1782898848_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libatomic1_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libasan8_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libtsan2_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libitm1_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libhwasan0_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/liblsan0_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libubsan1_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libvtv0_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gcc13_13.2.1-alt3%3asisyphus+339335.100.1.1@1706563486_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gcc_13-alt1%3asisyphus+323337.300.1.1@1687267966_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gettext_0.21-alt2%3asisyphus+328153.300.3.1@1693315380_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libunistring2_0.9.10-alt1%3ap11+349006.100.1.2@1716604783_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/xml-common_0.6.3-alt15%3asisyphus+276099.100.1.1@1624817971_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libxml2_1%3a2.12.10-alt2%3ap11+387430.100.2.1@1751381745_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/gettext-tools_0.21-alt2%3asisyphus+328153.300.3.1@1693315380_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libzio_1.06-alt1%3ap11+349029.100.1.2@1716613752_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/info-install_7.1-alt1%3asisyphus+338907.200.3.1@1706718831_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libbeecrypt7_4.2.1-alt8%3ap11+348779.500.1.1@1716502739_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libproc2%5f1_4.0.6-alt1%3ap11+409352.100.2.1@1772706372_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/librpm_4.0.4.212-alt1%3ap11+418655.300.5.1@1782823081_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/librpmbuild_4.0.4.212-alt1%3ap11+418655.300.5.1@1782823081_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/librpmbuild7_4.13.0.1-alt45%3ap11+418689.100.2.1@1781016121_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libtool-common_0.2.3-alt1%3ap11+349000.100.1.1@1716588432_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libtool%5f2.4_2.4.7-alt5%3asisyphus+341963.200.3.1@1711659208_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/libtool_3%3a2.4.2-alt7@1533461531_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/make_2%3a4.4.0-alt2%3ap11+349160.100.1.1@1716618644_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/patch_2.7.6.0.27.7623-alt1%3asisyphus+336930.2300.1.1@1703107341_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/perl-CPAN-Meta-Requirements_2.143-alt1%3asisyphus+323462.100.1.1@1687421801_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/procps_4.0.6-alt1%3ap11+409352.100.2.1@1772706372_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpm-build-file_4.26-alt18%3ap11+349465.100.1.1@1716791164_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpm-build-perl_0.85-alt6%3asisyphus+335974.100.1.1@1701887945_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpm-macros-python_0.43.2-alt1%3asisyphus+271106.100.1.1@1619868598_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpm-macros-python3_0.1.29-alt1%3ap11+398031.540.1.1@1762796334_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpm-macros-systemd_6-alt2%3ap11+356646.100.26.1@1729360985_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpmspec_4.13.0.1-alt45%3ap11+418689.100.2.1@1781016121_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/sisyphus%5fcheck_0.8.71-alt1%3ap11+383039.100.3.1@1749570640_noarch.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/time_1%3a1.7-alt4%3ap11+349641.100.1.1@1716880527_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/which_2.20-alt2.qa1%3ap11+349768.100.1.1@1716936615_x86%5f64.rpm
+/home/user/hasher/aptbox/var/cache/apt/archives/rpm-build_4.0.4.212-alt1%3ap11+418655.300.5.1@1782823081_x86%5f64.rpm
+Завершено.
+hsh-initroot: Calculated package file list.
+hsh-initroot: Generated build package file list.
+hsh-initroot: Unpacked /home/user/hasher/cache/chroot/rpmdb.tar.
+hsh-initroot: Unpacked /home/user/hasher/cache/chroot/chroot.cpio.
+<86>Sep 30 15:36:49 userdel[5903]: delete user 'rooter'
+<86>Sep 30 15:36:49 userdel[5903]: removed group 'rooter' owned by 'rooter'
+<86>Sep 30 15:36:49 userdel[5903]: removed shadow group 'rooter' owned by 'rooter'
+<86>Sep 30 15:36:49 groupadd[5910]: group added to /etc/group: name=rooter, GID=1001
+<86>Sep 30 15:36:49 groupadd[5910]: group added to /etc/gshadow: name=rooter
+<86>Sep 30 15:36:49 groupadd[5910]: new group: name=rooter, GID=1001
+<86>Sep 30 15:36:49 useradd[5916]: new user: name=rooter, UID=1001, GID=1001, home=/root, shell=/bin/bash, from=none
+<86>Sep 30 15:36:49 userdel[5926]: delete user 'builder'
+<86>Sep 30 15:36:49 userdel[5926]: removed group 'builder' owned by 'builder'
+<86>Sep 30 15:36:49 userdel[5926]: removed shadow group 'builder' owned by 'builder'
+<86>Sep 30 15:36:49 groupadd[5933]: group added to /etc/group: name=builder, GID=1002
+<86>Sep 30 15:36:49 groupadd[5933]: group added to /etc/gshadow: name=builder
+<86>Sep 30 15:36:49 groupadd[5933]: new group: name=builder, GID=1002
+<86>Sep 30 15:36:49 useradd[5939]: new user: name=builder, UID=1002, GID=1002, home=/usr/src, shell=/bin/bash, from=none
+mode of '/usr/src' retained as 1777 (rwxrwxrwt)
+hsh-initroot: First time initialization complete.
+rmdir: удаление каталога, 'chroot/proc'
+rmdir: удаление каталога, 'chroot/sys'
+hsh-initroot: Removed old mount points.
+mkdir: создан каталог 'chroot/proc'
+mkdir: создан каталог 'chroot/sys'
+mkdir: создан каталог 'chroot/sys/fs'
+mkdir: создан каталог 'chroot/sys/fs/cgroup'
+изменена группа 'chroot/proc' с user на 1001
+изменена группа 'chroot/sys' с user на 1001
+изменена группа 'chroot/sys/fs' с user на 1001
+изменена группа 'chroot/sys/fs/cgroup' с user на 1001
+hsh-initroot: Prepared mount points.
+hsh-initroot: Initialized contents state.
+hsh-initroot: Contents part for /home/user/hasher/repo/x86_64/RPMS.hasher/ is up to date.
+hsh-initroot: Contents part for ftp.altlinux.org_pub_distributions_ALTLinux_p11_branch_noarch_base_pkglist.classic is up to date.
+hsh-initroot: Contents part for ftp.altlinux.org_pub_distributions_ALTLinux_p11_branch_x86%5f64-i586_base_pkglist.classic is up to date.
+hsh-initroot: Contents part for ftp.altlinux.org_pub_distributions_ALTLinux_p11_branch_x86%5f64_base_pkglist.classic is up to date.
+hsh-initroot: Contents index is up to date.
+'/home/user/hasher/cache/contents/contents_index_bin' -> 'chroot/.host/contents_index_bin'
+'/etc/skel/.bash_logout' -> '/usr/src/.bash_logout'
+'/etc/skel/.bash_profile' -> '/usr/src/.bash_profile'
+'/etc/skel/.bashrc' -> '/usr/src/.bashrc'
+'/etc/skel/.cache' -> '/usr/src/.cache'
+'/etc/skel/.config' -> '/usr/src/.config'
+'/etc/skel/.local' -> '/usr/src/.local'
+'/etc/skel/.local/share' -> '/usr/src/.local/share'
+'/etc/skel/.lpoptions' -> '/usr/src/.lpoptions'
+'/etc/skel/.mutt' -> '/usr/src/.mutt'
+'/etc/skel/.mutt/color.default' -> '/usr/src/.mutt/color.default'
+'/etc/skel/.mutt/color.default/index' -> '/usr/src/.mutt/color.default/index'
+'/etc/skel/.mutt/color.default/color' -> '/usr/src/.mutt/color.default/color'
+'/etc/skel/.mutt/color.default/body' -> '/usr/src/.mutt/color.default/body'
+'/etc/skel/.mutt/color.default/header' -> '/usr/src/.mutt/color.default/header'
+'/etc/skel/.mutt/folder' -> '/usr/src/.mutt/folder'
+'/etc/skel/.mutt/bind' -> '/usr/src/.mutt/bind'
+'/etc/skel/.mutt/color-select' -> '/usr/src/.mutt/color-select'
+'/etc/skel/.mutt/lists' -> '/usr/src/.mutt/lists'
+'/etc/skel/.mutt/muttrc' -> '/usr/src/.mutt/muttrc'
+'/etc/skel/.mutt/color' -> '/usr/src/.mutt/color'
+'/etc/skel/.mutt/alias' -> '/usr/src/.mutt/alias'
+'/etc/skel/.mutt/set' -> '/usr/src/.mutt/set'
+'/etc/skel/.mutt/gpg' -> '/usr/src/.mutt/gpg'
+'/etc/skel/.mutt/header' -> '/usr/src/.mutt/header'
+'/etc/skel/.mutt/charset' -> '/usr/src/.mutt/charset'
+'/etc/skel/.rpmmacros' -> '/usr/src/.rpmmacros'
+'/etc/skel/.ssh' -> '/usr/src/.ssh'
+'/etc/skel/.ssh/config' -> '/usr/src/.ssh/config'
+'/etc/skel/.ssh/authorized_keys' -> '/usr/src/.ssh/authorized_keys'
+'/etc/skel/.xprofile' -> '/usr/src/.xprofile'
+'/etc/skel/.xsession.d' -> '/usr/src/.xsession.d'
+mkdir: created directory '/usr/src/tmp'
+mkdir: created directory '/usr/src/RPM'
+mkdir: created directory '/usr/src/RPM/BUILD'
+mkdir: created directory '/usr/src/RPM/SOURCES'
+mkdir: created directory '/usr/src/RPM/SPECS'
+mkdir: created directory '/usr/src/RPM/SRPMS'
+mkdir: created directory '/usr/src/RPM/RPMS'
+mkdir: created directory '/usr/src/RPM/RPMS/noarch'
+hsh-initroot: Created RPM build directory tree.
