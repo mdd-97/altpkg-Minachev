@@ -1,0 +1,1 @@
+altpkg-minachev = 1.0-alt2

@@ -1,0 +1,26 @@
+Executing(%install): /bin/sh -e /usr/src/tmp/rpmb-tmp.tepqbk
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ /bin/chmod -Rf u+rwX -- /usr/src/tmp/altpkg-minachev-buildroot
++ :
++ /bin/rm -rf -- /usr/src/tmp/altpkg-minachev-buildroot
++ PATH=/usr/libexec/rpm-build:/usr/src/bin:/usr/bin:/bin:/usr/local/bin:/usr/games
++ install -D -m 0755 /usr/src/RPM/SOURCES/altpkg-minachev.sh /usr/src/tmp/altpkg-minachev-buildroot/usr/bin/altpkg-minachev
++ /usr/lib/rpm/brp-alt
+Cleaning files in /usr/src/tmp/altpkg-minachev-buildroot (auto)
+Verifying and fixing files in /usr/src/tmp/altpkg-minachev-buildroot (binconfig,pkgconfig,libtool,desktop,gnuconfig)
+Checking contents of files in /usr/src/tmp/altpkg-minachev-buildroot/ (default)
+Compressing files in /usr/src/tmp/altpkg-minachev-buildroot (auto)
+Verifying ELF objects in /usr/src/tmp/altpkg-minachev-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
+Splitting links to aliased files under /{,s}bin in /usr/src/tmp/altpkg-minachev-buildroot
+Processing files: altpkg-minachev-1.0-alt2
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.Znc7rD
+find-provides: running scripts (alternatives,debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.7G1G2N
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+Requires: /bin/sh
+Wrote: /usr/src/RPM/SRPMS/altpkg-minachev-1.0-alt2.src.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/noarch/altpkg-minachev-1.0-alt2.noarch.rpm (w2.lzdio)
