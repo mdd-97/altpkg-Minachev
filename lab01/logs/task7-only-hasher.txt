@@ -1,0 +1,10 @@
+binutils-2.41-alt2.x86_64
+branding-xalt-kworkstation-release-11.4.0-alt2.noarch
+libaudit1-4.2.1-alt1.x86_64
+libaudit-common-4.2.1-alt1.noarch
+libctf-nobfd0-2.41-alt2.x86_64
+libseccomp-2.6.1-alt1.x86_64
+libsframe1-2.41-alt2.x86_64
+shadow-convert-4.17.4-alt3.x86_64
+shadow-utils-4.17.4-alt3.x86_64
+vim-minimal-9.2.1067-alt1.x86_64

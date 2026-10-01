@@ -1,0 +1,29 @@
+== имя, версия, релиз, архитектура
+altpkg-minachev 1.0 alt2 noarch
+altpkg-minachev 1.0 alt2 noarch
+== перечень файлов (diff отсортированных rpm -qpl)
+различий нет
+== зависимости (diff отсортированных rpm -qp --requires)
+различий нет
+== sha256 исходного файла из обоих пакетов и из репозитория
+14c10c40685539a3f404d5d7e3e101c5c3e403fa8ea6fc526481fba57252ebd2  /home/user/work/x-manual/usr/bin/altpkg-minachev
+14c10c40685539a3f404d5d7e3e101c5c3e403fa8ea6fc526481fba57252ebd2  /home/user/work/x-auto/usr/bin/altpkg-minachev
+14c10c40685539a3f404d5d7e3e101c5c3e403fa8ea6fc526481fba57252ebd2  lab01/sources/altpkg-minachev.sh
+== sha256 самих файлов пакетов (ожидаемо различаются) и время сборки
+0e07df9b6c443d6f4d6b27fc1b0a87a682cb35e5f4a58405f5924c1cd57c8ba9  /home/user/work/manual/altpkg-minachev-1.0-alt2.noarch.rpm
+75f305d582dca1f9f04410b4bb8857db14fe86fa9e4d942170387dd6ccc7ce8a  /home/user/hasher/repo/x86_64/RPMS.hasher/altpkg-minachev-1.0-alt2.noarch.rpm
+altpkg-minachev-1.0-alt2 собран Ср 30 сен 2026 18:49:31
+altpkg-minachev-1.0-alt2 собран Ср 30 сен 2026 19:06:37
+== число пакетов: хост / окружение
+956
+180
+== только на хосте / только в окружении
+786
+10
+== инструментальные пакеты среди имеющихся только на хосте
+git-core-2.50.1-alt1.x86_64
+hasher-1.7.7-alt1.noarch
+mc-4.8.33-alt1.x86_64
+openssh-clients-9.6p1-alt7.x86_64
+rpmdevtools-9.6-alt2.noarch
+tree-2.1.1-alt2.x86_64

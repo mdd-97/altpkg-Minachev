@@ -1,5 +1,5 @@
 # сопровождающий пакета: попадает в поле Packager собранных пакетов
 packager="Damir Minachev <mdd97@yandex.ru>"
 # отключить проверки, неприменимые при локальной сборке:
-# gpg — пакеты не подписываются ключом, packager — сопровождающий не зарегистрирован в репозитории ALT
-no_sisyphus_check="gpg,packager"
+# gpg — пакеты не подписываются ключом; packager и changelog — сопровождающий и автор записи changelog не зарегистрированы в репозитории ALT
+no_sisyphus_check="gpg,packager,changelog"
