@@ -1,0 +1,26 @@
+ld: /tmp/.private/user/ccEQGSKF.o: предупреждение: перемещение указывает на «COLS» из раздела только для чтения «.text»
+ld: /tmp/.private/user/ccEQGSKF.o: в функции «draw»:
+Show.c:(.text+0x270): undefined reference to `getmaxy'
+ld: Show.c:(.text+0x27f): undefined reference to `getmaxx'
+ld: Show.c:(.text+0x28e): undefined reference to `werase'
+ld: Show.c:(.text+0x2ad): undefined reference to `wmove'
+ld: Show.c:(.text+0x2e2): undefined reference to `waddnstr'
+ld: Show.c:(.text+0x313): undefined reference to `wrefresh'
+ld: /tmp/.private/user/ccEQGSKF.o: в функции «main»:
+Show.c:(.text+0x3c6): undefined reference to `initscr'
+ld: Show.c:(.text+0x3cb): undefined reference to `noecho'
+ld: Show.c:(.text+0x3d0): undefined reference to `cbreak'
+ld: Show.c:(.text+0x3e1): undefined reference to `COLS'
+ld: Show.c:(.text+0x404): undefined reference to `mvprintw'
+ld: Show.c:(.text+0x40b): undefined reference to `stdscr'
+ld: Show.c:(.text+0x413): undefined reference to `wrefresh'
+ld: Show.c:(.text+0x419): undefined reference to `COLS'
+ld: Show.c:(.text+0x41f): undefined reference to `LINES'
+ld: Show.c:(.text+0x433): undefined reference to `newwin'
+ld: Show.c:(.text+0x448): undefined reference to `keypad'
+ld: Show.c:(.text+0x456): undefined reference to `LINES'
+ld: Show.c:(.text+0x4b8): undefined reference to `wgetch'
+ld: Show.c:(.text+0x4cd): undefined reference to `delwin'
+ld: Show.c:(.text+0x4d2): undefined reference to `endwin'
+ld: предупреждение: создаётся DT_TEXTREL в PIE
+collect2: error: ld returned 1 exit status
