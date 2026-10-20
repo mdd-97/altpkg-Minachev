@@ -1,0 +1,12 @@
+== TERM=dumb: возможность clear
+код tput: 2
+== TERM=dumb: возможности перемещения курсора (cup)
+у dumb нет cup — позиционирование курсора невозможно
+#	Reconstructed via infocmp from file: /lib/terminfo/d/dumb
+dumb|80-column dumb tty,
+	am,
+	cols#80,
+	bel=^G,
+	cr=\r,
+	cud1=\n,
+	ind=\n,
