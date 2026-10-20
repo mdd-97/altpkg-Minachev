@@ -1,5 +1,5 @@
 #!/bin/bash
-# check-lab01.sh — функциональная проверка лабораторной работы 1 (задания 2, 4–7)
+# check-lab01.sh — функциональная проверка лабораторной работы 1 (задания 2–7)
 # Запуск из корня клона репозитория: bash lab01/check/check-lab01.sh
 # Рабочий каталог hasher можно переопределить: HSH=/путь bash lab01/check/check-lab01.sh
 set -u
@@ -53,7 +53,19 @@ t2_service() { systemctl is-enabled -q hasher-privd && systemctl is-active -q ha
 t2_files()   { [ -s "$LAB/env/repos.txt" ] && [ -s "$LAB/env/host-packages.txt" ]; }
 t2_count()   { [ "$(wc -l < "$LAB/env/host-packages.txt")" -eq "$(rpm -qa | wc -l)" ]; }
 
-# ---------- Задание 3: проверки будут добавлены после согласования пакета ----------
+# ---------- Задание 3 ----------
+LIB=libinih0
+DEV=libinih-devel
+t3_header()   { [ "$(rpm -ql "$DEV" | grep -c '\.h$')" -ge 1 ]; }
+t3_symlink()  { [ "$(rpm -qlv "$DEV" | grep '^l' | grep -c '\.so')" -ge 1 ]; }
+t3_qf()       { local h; h=$(rpm -ql "$DEV" | grep '\.h$' | head -n1)
+                [ -n "$h" ] && [ "$(rpm -qf --queryformat '%{NAME}' "$h")" = "$DEV" ]; }
+t3_whatprov() { [ "$(rpm -q --queryformat '%{NAME}' --whatprovides "$LIB")" = "$LIB" ]; }
+t3_logs()     { local f
+                for f in qi requires provides whatrequires whatprovides whatrequires-soname files apt-depends; do
+                    [ -s "$LAB/logs/task3-$LIB-$f.txt" ] || return 1
+                done
+                [ -s "$LAB/logs/task3-$DEV-files.txt" ] && [ -s "$LAB/logs/task3-qf-header.txt" ] && [ -s "$LAB/logs/task3-tools.txt" ]; }
 
 # ---------- Задание 4 ----------
 t4_groups() { local g u; g=" $(id -nG) "; u=$(id -un)
@@ -115,6 +127,13 @@ check "2.2 rpm -q: все пакеты курса установлены"       
 check "2.3 hasher-privd: enabled и active"                       t2_service
 check "2.4 env/repos.txt и env/host-packages.txt непусты"       t2_files
 check "2.5 строк в host-packages.txt = rpm -qa | wc -l"          t2_count
+
+echo "== Задание 3. Классификация зависимостей (libinih0 / libinih-devel)"
+check "3.1 devel: не менее одного заголовочного файла"           t3_header
+check "3.2 devel: не менее одной символической ссылки на .so"    t3_symlink
+check "3.3 rpm -qf заголовочного файла возвращает devel-пакет"   t3_qf
+check "3.4 rpm -q --whatprovides libinih0 возвращает libinih0"   t3_whatprov
+check "3.5 выводы команд сохранены в журналах"                   t3_logs
 
 echo "== Задание 4. Изолированное сборочное окружение"
 check "4.1 id: группы hashman, <user>_a, <user>_b"               t4_groups

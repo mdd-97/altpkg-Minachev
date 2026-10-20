@@ -1,0 +1,23 @@
+libinih0-1:58-alt1:sisyphus+340664.100.1.1@1707901011
+  Depends: <libc.so.6(GLIBC_2.14)(64bit)>
+    glibc-core-6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848
+  Depends: <libc.so.6(GLIBC_2.2.5)(64bit)>
+    glibc-core-6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848
+  Depends: <libc.so.6(GLIBC_2.3)(64bit)>
+    glibc-core-6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848
+  Depends: <libc.so.6(GLIBC_2.38)(64bit)>
+    glibc-core-6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848
+  Depends: <libc.so.6(GLIBC_2.4)(64bit)>
+    glibc-core-6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848
+  Depends: <libgcc_s.so.1(GCC_3.0)(64bit)>
+    libgcc1-13.2.1-alt3:sisyphus+339335.100.1.1@1706563486
+  Depends: <libgcc_s.so.1(GCC_3.3.1)(64bit)>
+    libgcc1-13.2.1-alt3:sisyphus+339335.100.1.1@1706563486
+  Depends: <libstdc++.so.6(CXXABI_1.3)(64bit)>
+    libstdc++6-13.2.1-alt3:sisyphus+339335.100.1.1@1706563486
+  Depends: <libstdc++.so.6(GLIBCXX_3.4)(64bit)>
+    libstdc++6-13.2.1-alt3:sisyphus+339335.100.1.1@1706563486
+  Depends: <libstdc++.so.6(GLIBCXX_3.4.21)(64bit)>
+    libstdc++6-13.2.1-alt3:sisyphus+339335.100.1.1@1706563486
+  Depends: <rtld(GNU_HASH)>
+    glibc-core-6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848

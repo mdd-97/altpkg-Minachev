@@ -1,0 +1,8 @@
+rpm-4.13.0.1-alt45.x86_64
+apt-0.5.15lorg2-alt100.x86_64
+rpm-build-4.0.4.212-alt1.x86_64
+hasher-1.7.7-alt1.noarch
+git-core-2.50.1-alt1.x86_64
+gcc-13-alt1.x86_64
+make-4.4.0-alt2.x86_64
+glibc-devel-2.38.0.223.f053ff-alt1.p11.1.x86_64

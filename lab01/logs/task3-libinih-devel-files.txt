@@ -1,0 +1,6 @@
+-rw-r--r--    1 root    root                     4483 янв 24  2024 /usr/include/INIReader.h
+-rw-r--r--    1 root    root                     5825 янв 24  2024 /usr/include/ini.h
+lrwxrwxrwx    1 root    root                       17 фев 14  2024 /usr/lib64/libINIReader.so -> libINIReader.so.0
+lrwxrwxrwx    1 root    root                       12 фев 14  2024 /usr/lib64/libinih.so -> libinih.so.0
+-rw-r--r--    1 root    root                      188 фев 14  2024 /usr/lib64/pkgconfig/INIReader.pc
+-rw-r--r--    1 root    root                      147 фев 14  2024 /usr/lib64/pkgconfig/inih.pc

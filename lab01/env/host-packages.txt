@@ -413,6 +413,7 @@ libiex30-3.1.5-alt2.2.x86_64
 libilmthread30-3.1.5-alt2.2.x86_64
 libimath29-3.1.12-alt1.1.x86_64
 libinih0-58-alt1.x86_64
+libinih-devel-58-alt1.x86_64
 libiptables-1.8.10-alt1.x86_64
 libitm1-13.2.1-alt3.x86_64
 libjansson4-2.14-alt4.x86_64

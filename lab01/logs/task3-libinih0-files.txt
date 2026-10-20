@@ -1,0 +1,5 @@
+-rw-r--r--    1 root    root                    27144 фев 14  2024 /usr/lib64/libINIReader.so.0
+-rw-r--r--    1 root    root                    14520 фев 14  2024 /usr/lib64/libinih.so.0
+drwxr-xr-x    2 root    root                        0 фев 14  2024 /usr/share/doc/libinih0-58
+-rw-r--r--    1 root    root                     1510 янв 24  2024 /usr/share/doc/libinih0-58/LICENSE.txt
+-rw-r--r--    1 root    root                     9898 янв 24  2024 /usr/share/doc/libinih0-58/README.md
