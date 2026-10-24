@@ -1,0 +1,2 @@
+gcc -Wall -O2 -c -o Show.o Show.c
+gcc  -o Show Show.o -lncurses

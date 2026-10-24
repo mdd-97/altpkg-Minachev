@@ -1,0 +1,17 @@
+# M-PM-!M-PM-1M-PM->M-QM-^@M-PM-:M-PM-0 M-PM-?M-QM-^@M-PM->M-PM-3M-QM-^@M-PM-0M-PM-<M-PM-<M-QM-^K Show$
+CC = gcc$
+CFLAGS = -Wall -O2$
+LDLIBS = -lncurses$
+$
+# M-QM-^FM-PM-5M-PM-;M-QM-^L M-PM-?M-PM-> M-QM-^CM-PM-<M-PM->M-PM-;M-QM-^GM-PM-0M-PM-=M-PM-8M-QM-^N (M-PM-?M-PM-5M-QM-^@M-PM-2M-PM-0M-QM-^O M-PM-2 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-5): M-PM-8M-QM-^AM-PM-?M-PM->M-PM-;M-PM-=M-QM-^OM-PM-5M-PM-<M-QM-^KM-PM-9 M-QM-^DM-PM-0M-PM-9M-PM-;$
+Show: Show.o$
+^I$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)$
+$
+Show.o: Show.c$
+^I$(CC) $(CFLAGS) -c -o $@ $<$
+$
+# M-QM-^CM-PM-4M-PM-0M-PM-;M-PM-5M-PM-=M-PM-8M-PM-5 M-PM-?M-QM-^@M-PM->M-PM-4M-QM-^CM-PM-:M-QM-^BM-PM->M-PM-2 M-QM-^AM-PM-1M-PM->M-QM-^@M-PM-:M-PM-8$
+clean:$
+^Irm -f Show Show.o$
+$
+.PHONY: clean$
