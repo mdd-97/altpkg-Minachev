@@ -1,0 +1,120 @@
++ mkdir functional
++ cd functional
++ cp /home/user/rdsu-lab03/repo/lab03/sources/Makefile /home/user/rdsu-lab03/repo/lab03/sources/args.h /home/user/rdsu-lab03/repo/lab03/sources/counter.c /home/user/rdsu-lab03/repo/lab03/sources/main.c /home/user/rdsu-lab03/repo/lab03/sources/output.c .
++ make test
+cc -O2 -Wall -Wextra   -c -o main.o main.c
+cc -O2 -Wall -Wextra   -c -o output.o output.c
+cc -O2 -Wall -Wextra   -c -o counter.o counter.c
+cc  -o rdsu-args-objects main.o output.o counter.o 
+ar -rv librdsuargs.a output.o
+ar: creating librdsuargs.a
+a - output.o
+ar -rv librdsuargs.a counter.o
+a - counter.o
+cc  -o rdsu-args-static main.o librdsuargs.a 
+cc  -O2 -Wall -Wextra -fPIC -c output.c -o output.pic.o
+cc  -O2 -Wall -Wextra -fPIC -c counter.c -o counter.pic.o
+cc  -shared -Wl,-soname,librdsuargs.so -o librdsuargs.so output.pic.o counter.pic.o 
+cc  -o rdsu-args-shared main.o -L. -lrdsuargs 
+set -e; export LD_LIBRARY_PATH="/home/user/rdsu-lab03/experiments.RjSm6v/functional"; \
+for program in rdsu-args-objects rdsu-args-static rdsu-args-shared; do \
+    ./$program > $program.zero.out 2>&1; \
+    ./$program alpha > $program.one.out 2>&1; \
+    ./$program alpha beta gamma > $program.three.out 2>&1; \
+done; \
+for mode in zero one three; do \
+    cmp rdsu-args-objects.$mode.out rdsu-args-static.$mode.out; \
+    cmp rdsu-args-objects.$mode.out rdsu-args-shared.$mode.out; \
+    cmp rdsu-args-static.$mode.out rdsu-args-shared.$mode.out; \
+done
++ echo exit=0
+exit=0
++ ls -1 -- rdsu-args-objects.one.out rdsu-args-objects.three.out rdsu-args-objects.zero.out rdsu-args-shared.one.out rdsu-args-shared.three.out rdsu-args-shared.zero.out rdsu-args-static.one.out rdsu-args-static.three.out rdsu-args-static.zero.out
+rdsu-args-objects.one.out
+rdsu-args-objects.three.out
+rdsu-args-objects.zero.out
+rdsu-args-shared.one.out
+rdsu-args-shared.three.out
+rdsu-args-shared.zero.out
+rdsu-args-static.one.out
+rdsu-args-static.three.out
+rdsu-args-static.zero.out
+++ ls -1 -- rdsu-args-objects.one.out rdsu-args-objects.three.out rdsu-args-objects.zero.out rdsu-args-shared.one.out rdsu-args-shared.three.out rdsu-args-shared.zero.out rdsu-args-static.one.out rdsu-args-static.three.out rdsu-args-static.zero.out
+++ wc -l
++ test 9 -eq 9
++ cp output.c saved.c
++ sed -i 's/%u: %s/%u. %s/' output.c
++ make rdsu-args-objects
+cc -O2 -Wall -Wextra   -c -o output.o output.c
+cc  -o rdsu-args-objects main.o output.o counter.o 
++ expect_error 'differ:|differ in' make -o output.c -o librdsuargs.a -o librdsuargs.so -o rdsu-args-static -o rdsu-args-shared test
++ local 'pattern=differ:|differ in' status=0
++ shift
++ make -o output.c -o librdsuargs.a -o librdsuargs.so -o rdsu-args-static -o rdsu-args-shared test
++ status=2
++ cat error.txt
+set -e; export LD_LIBRARY_PATH="/home/user/rdsu-lab03/experiments.RjSm6v/functional"; \
+for program in rdsu-args-objects rdsu-args-static rdsu-args-shared; do \
+    ./$program > $program.zero.out 2>&1; \
+    ./$program alpha > $program.one.out 2>&1; \
+    ./$program alpha beta gamma > $program.three.out 2>&1; \
+done; \
+for mode in zero one three; do \
+    cmp rdsu-args-objects.$mode.out rdsu-args-static.$mode.out; \
+    cmp rdsu-args-objects.$mode.out rdsu-args-shared.$mode.out; \
+    cmp rdsu-args-static.$mode.out rdsu-args-shared.$mode.out; \
+done
+rdsu-args-objects.one.out rdsu-args-static.one.out differ: byte 8, line 2
+make: *** [Makefile:33: test] Error 1
+rm output.c
++ echo exit=2
+exit=2
++ test 2 -ne 0
++ grep -Ei 'differ:|differ in' error.txt
+rdsu-args-objects.one.out rdsu-args-static.one.out differ: byte 8, line 2
++ mv saved.c output.c
++ rm error.txt
++ make distclean
+rm -f main.o output.o counter.o output.pic.o counter.pic.o
+rm -f rdsu-args-objects rdsu-args-static rdsu-args-shared librdsuargs.a librdsuargs.so rdsu-args-objects.one.out rdsu-args-objects.three.out rdsu-args-objects.zero.out rdsu-args-shared.one.out rdsu-args-shared.three.out rdsu-args-shared.zero.out rdsu-args-static.one.out rdsu-args-static.three.out rdsu-args-static.zero.out
++ make test
+cc -O2 -Wall -Wextra   -c -o main.o main.c
+cc -O2 -Wall -Wextra   -c -o output.o output.c
+cc -O2 -Wall -Wextra   -c -o counter.o counter.c
+cc  -o rdsu-args-objects main.o output.o counter.o 
+ar -rv librdsuargs.a output.o
+ar: creating librdsuargs.a
+a - output.o
+ar -rv librdsuargs.a counter.o
+a - counter.o
+cc  -o rdsu-args-static main.o librdsuargs.a 
+cc  -O2 -Wall -Wextra -fPIC -c output.c -o output.pic.o
+cc  -O2 -Wall -Wextra -fPIC -c counter.c -o counter.pic.o
+cc  -shared -Wl,-soname,librdsuargs.so -o librdsuargs.so output.pic.o counter.pic.o 
+cc  -o rdsu-args-shared main.o -L. -lrdsuargs 
+set -e; export LD_LIBRARY_PATH="/home/user/rdsu-lab03/experiments.RjSm6v/functional"; \
+for program in rdsu-args-objects rdsu-args-static rdsu-args-shared; do \
+    ./$program > $program.zero.out 2>&1; \
+    ./$program alpha > $program.one.out 2>&1; \
+    ./$program alpha beta gamma > $program.three.out 2>&1; \
+done; \
+for mode in zero one three; do \
+    cmp rdsu-args-objects.$mode.out rdsu-args-static.$mode.out; \
+    cmp rdsu-args-objects.$mode.out rdsu-args-shared.$mode.out; \
+    cmp rdsu-args-static.$mode.out rdsu-args-shared.$mode.out; \
+done
++ echo exit=0
+exit=0
++ make distclean
+rm -f main.o output.o counter.o output.pic.o counter.pic.o
+rm -f rdsu-args-objects rdsu-args-static rdsu-args-shared librdsuargs.a librdsuargs.so rdsu-args-objects.one.out rdsu-args-objects.three.out rdsu-args-objects.zero.out rdsu-args-shared.one.out rdsu-args-shared.three.out rdsu-args-shared.zero.out rdsu-args-static.one.out rdsu-args-static.three.out rdsu-args-static.zero.out
++ ls -A
+Makefile
+args.h
+counter.c
+main.c
+output.c
+++ ls -A
+++ wc -l
++ test 5 -eq 5
++ cd ..

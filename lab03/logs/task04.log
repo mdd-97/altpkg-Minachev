@@ -1,0 +1,25 @@
++ ar -rv librdsuargs.a output.o counter.o
+ar: creating librdsuargs.a
+a - output.o
+a - counter.o
++ ar -t librdsuargs.a
+output.o
+counter.o
++ cc -o archive main.o -L. -lrdsuargs
++ ./archive alpha beta gamma
++ cmp arguments.txt archive.out
++ rpm -q glibc-devel-static
+package glibc-devel-static is not installed
++ expect_error 'cannot find -lc|cannot find libc' cc -static -o fully-static main.o -L. -lrdsuargs
++ local 'pattern=cannot find -lc|cannot find libc' status=0
++ shift
++ cc -static -o fully-static main.o -L. -lrdsuargs
++ status=1
++ cat error.txt
+ld: cannot find -lc: No such file or directory
+collect2: error: ld returned 1 exit status
++ echo exit=1
+exit=1
++ test 1 -ne 0
++ grep -Ei 'cannot find -lc|cannot find libc' error.txt
+ld: cannot find -lc: No such file or directory

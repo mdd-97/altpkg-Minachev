@@ -1,0 +1,55 @@
++ cc -Wall main.c output.c counter.c -o direct
++ ./direct
++ echo exit=0
+exit=0
++ test '!' -s noargs.stdout
++ cat noargs.stderr
+rdsu-args 1.0
+Usage: rdsu-args ARG...
++ ./direct alpha beta gamma
++ tee arguments.txt
+BEGIN
+1: alpha
+2: beta
+3: gamma
+END
+++ wc -l
++ test 5 -eq 5
++ cc -E main.c
++ grep -F 'void print_arg(const char *arg);' main.i
+void print_arg(const char *arg);
++ cc -Wall -c main.c output.c counter.c
++ file main.o output.o counter.o
+main.o:    ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), not stripped
+output.o:  ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), not stripped
+counter.o: ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), not stripped
++ strace -f -e trace=execve -o trace.txt cc -o traced main.c output.c counter.c
++ grep -E 'cc1|/as"|collect2|/ld"' trace.txt
+1497  execve("/usr/lib64/gcc/x86_64-alt-linux/13/cc1", ["/usr/lib64/gcc/x86_64-alt-linux/"..., "-quiet", "main.c", "-fstack-protector-strong", "-fstack-clash-protection", "-quiet", "-dumpdir", "traced-", "-dumpbase", "main.c", "-dumpbase-ext", ".c", "-mtune=generic", "-march=x86-64", "-o", "/tmp/.private/user/cc8G0QF4.s"], 0x72fc1c0 /* 25 vars */) = 0
+1498  execve("/bin/as", ["as", "--64", "-o", "/tmp/.private/user/cceNtryY.o", "/tmp/.private/user/cc8G0QF4.s"], 0x72fc1c0 /* 25 vars */) = 0
+1499  execve("/usr/lib64/gcc/x86_64-alt-linux/13/cc1", ["/usr/lib64/gcc/x86_64-alt-linux/"..., "-quiet", "output.c", "-fstack-protector-strong", "-fstack-clash-protection", "-quiet", "-dumpdir", "traced-", "-dumpbase", "output.c", "-dumpbase-ext", ".c", "-mtune=generic", "-march=x86-64", "-o", "/tmp/.private/user/cc8G0QF4.s"], 0x72fc1c0 /* 25 vars */) = 0
+1500  execve("/bin/as", ["as", "--64", "-o", "/tmp/.private/user/cc8INIfe.o", "/tmp/.private/user/cc8G0QF4.s"], 0x72fc1c0 /* 25 vars */) = 0
+1501  execve("/usr/lib64/gcc/x86_64-alt-linux/13/cc1", ["/usr/lib64/gcc/x86_64-alt-linux/"..., "-quiet", "counter.c", "-fstack-protector-strong", "-fstack-clash-protection", "-quiet", "-dumpdir", "traced-", "-dumpbase", "counter.c", "-dumpbase-ext", ".c", "-mtune=generic", "-march=x86-64", "-o", "/tmp/.private/user/cc8G0QF4.s"], 0x72fc1c0 /* 25 vars */) = 0
+1502  execve("/bin/as", ["as", "--64", "-o", "/tmp/.private/user/ccpVqtPt.o", "/tmp/.private/user/cc8G0QF4.s"], 0x72fc1c0 /* 25 vars */) = 0
+1503  execve("/usr/lib64/gcc/x86_64-alt-linux/13/collect2", ["/usr/lib64/gcc/x86_64-alt-linux/"..., "-plugin", "/usr/lib64/gcc/x86_64-alt-linux/"..., "-plugin-opt=/usr/lib64/gcc/x86_6"..., "-plugin-opt=-fresolution=/tmp/.p"..., "-plugin-opt=-pass-through=-lgcc", "-plugin-opt=-pass-through=-lgcc_"..., "-plugin-opt=-pass-through=-lc", "-plugin-opt=-pass-through=-lgcc", "-plugin-opt=-pass-through=-lgcc_"..., "--build-id", "--no-add-needed", "--eh-frame-hdr", "--hash-style=gnu", "-m", "elf_x86_64", "--as-needed", "-dynamic-linker", "/lib64/ld-linux-x86-64.so.2", "-pie", "-z", "now", "-o", "traced", "/usr/lib64/gcc/x86_64-alt-linux/"..., "/usr/lib64/gcc/x86_64-alt-linux/"..., "/usr/lib64/gcc/x86_64-alt-linux/"..., "-L/usr/lib64/gcc/x86_64-alt-linu"..., "-L/usr/lib64/gcc/x86_64-alt-linu"..., "-L/lib/../lib64", "-L/usr/lib/../lib64", "-L/usr/lib64/gcc/x86_64-alt-linu"..., ...], 0x72fc7c0 /* 27 vars */) = 0
+1504  execve("/bin/ld", ["/bin/ld", "-plugin", "/usr/lib64/gcc/x86_64-alt-linux/"..., "-plugin-opt=/usr/lib64/gcc/x86_6"..., "-plugin-opt=-fresolution=/tmp/.p"..., "-plugin-opt=-pass-through=-lgcc", "-plugin-opt=-pass-through=-lgcc_"..., "-plugin-opt=-pass-through=-lc", "-plugin-opt=-pass-through=-lgcc", "-plugin-opt=-pass-through=-lgcc_"..., "--build-id", "--no-add-needed", "--eh-frame-hdr", "--hash-style=gnu", "-m", "elf_x86_64", "--as-needed", "-dynamic-linker", "/lib64/ld-linux-x86-64.so.2", "-pie", "-z", "now", "-o", "traced", "/usr/lib64/gcc/x86_64-alt-linux/"..., "/usr/lib64/gcc/x86_64-alt-linux/"..., "/usr/lib64/gcc/x86_64-alt-linux/"..., "-L/usr/lib64/gcc/x86_64-alt-linu"..., "-L/usr/lib64/gcc/x86_64-alt-linu"..., "-L/lib/../lib64", "-L/usr/lib/../lib64", "-L/usr/lib64/gcc/x86_64-alt-linu"..., ...], 0x7ffd9dc22fa0 /* 27 vars */) = 0
++ cp args.h saved.h
++ sed -i '/^#endif/i void duplicate(void) {}' args.h
++ expect_error 'multiple definition.*duplicate' cc main.c output.c counter.c -o duplicate
++ local 'pattern=multiple definition.*duplicate' status=0
++ shift
++ cc main.c output.c counter.c -o duplicate
++ status=1
++ cat error.txt
+ld: /tmp/.private/user/cc99Ed4q.o: in function `duplicate':
+output.c:(.text+0x0): multiple definition of `duplicate'; /tmp/.private/user/ccGIbAEY.o:main.c:(.text+0x0): first defined here
+ld: /tmp/.private/user/ccAMRLte.o: in function `duplicate':
+counter.c:(.text+0x0): multiple definition of `duplicate'; /tmp/.private/user/ccGIbAEY.o:main.c:(.text+0x0): first defined here
+collect2: error: ld returned 1 exit status
++ echo exit=1
+exit=1
++ test 1 -ne 0
++ grep -Ei 'multiple definition.*duplicate' error.txt
+output.c:(.text+0x0): multiple definition of `duplicate'; /tmp/.private/user/ccGIbAEY.o:main.c:(.text+0x0): first defined here
+counter.c:(.text+0x0): multiple definition of `duplicate'; /tmp/.private/user/ccGIbAEY.o:main.c:(.text+0x0): first defined here
++ mv saved.h args.h

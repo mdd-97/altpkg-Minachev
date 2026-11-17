@@ -1,0 +1,58 @@
++ cc -fno-pic -fno-pie -c output.c -o nonpic.o
++ expect_error 'relocation.*(cannot|can not)' cc -shared -o broken.so nonpic.o counter.o
++ local 'pattern=relocation.*(cannot|can not)' status=0
++ shift
++ cc -shared -o broken.so nonpic.o counter.o
++ status=1
++ cat error.txt
+ld: nonpic.o: relocation R_X86_64_32 against `.rodata' can not be used when making a shared object; recompile with -fPIC
+ld: failed to set dynamic section sizes: bad value
+collect2: error: ld returned 1 exit status
++ echo exit=1
+exit=1
++ test 1 -ne 0
++ grep -Ei 'relocation.*(cannot|can not)' error.txt
+ld: nonpic.o: relocation R_X86_64_32 against `.rodata' can not be used when making a shared object; recompile with -fPIC
++ make librdsuargs.so rdsu-args-shared
+cc  -O2 -Wall -Wextra -fPIC -c output.c -o output.pic.o
+cc  -O2 -Wall -Wextra -fPIC -c counter.c -o counter.pic.o
+cc  -shared -Wl,-soname,librdsuargs.so -o librdsuargs.so output.pic.o counter.pic.o 
+cc -O2 -Wall -Wextra   -c -o main.o main.c
+cc  -o rdsu-args-shared main.o -L. -lrdsuargs 
++ nm -D librdsuargs.so
+                 w _ITM_deregisterTMCloneTable
+                 w _ITM_registerTMCloneTable
+                 w __cxa_finalize@GLIBC_2.2.5
+                 w __gmon_start__
+                 U __printf_chk@GLIBC_2.3.4
+0000000000004014 B counter
+                 U fwrite@GLIBC_2.2.5
+0000000000001120 T print_arg
+0000000000001150 T print_help
+                 U stderr@GLIBC_2.2.5
++ expect_error 'librdsuargs.so.*cannot open shared object file' env -u LD_LIBRARY_PATH ./rdsu-args-shared alpha beta gamma
++ local 'pattern=librdsuargs.so.*cannot open shared object file' status=0
++ shift
++ env -u LD_LIBRARY_PATH ./rdsu-args-shared alpha beta gamma
++ status=127
++ cat error.txt
+./rdsu-args-shared: error while loading shared libraries: librdsuargs.so: cannot open shared object file: No such file or directory
++ echo exit=127
+exit=127
++ test 127 -ne 0
++ grep -Ei 'librdsuargs.so.*cannot open shared object file' error.txt
+./rdsu-args-shared: error while loading shared libraries: librdsuargs.so: cannot open shared object file: No such file or directory
++ env -u LD_LIBRARY_PATH ldd ./rdsu-args-shared
+	linux-vdso.so.1 (0x00007fbfde740000)
+	librdsuargs.so => not found
+	libc.so.6 => /lib64/libc.so.6 (0x00007fbfde541000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fbfde742000)
++ LD_LIBRARY_PATH=/home/user/rdsu-lab03/experiments.RjSm6v
++ ldd ./rdsu-args-shared
+	linux-vdso.so.1 (0x00007f11a1186000)
+	librdsuargs.so => /home/user/rdsu-lab03/experiments.RjSm6v/librdsuargs.so (0x00007f11a1176000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007f11a0f82000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f11a1188000)
++ LD_LIBRARY_PATH=/home/user/rdsu-lab03/experiments.RjSm6v
++ ./rdsu-args-shared alpha beta gamma
++ cmp arguments.txt shared.out

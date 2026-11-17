@@ -1,0 +1,26 @@
++ hsh-install /home/user/rdsu-lab03/rpm/hasher gcc make glibc-devel-static
+<13>Nov 17 23:09:04 rpmi: glibc-devel-static-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
++ hsh-run -- /home/user/rdsu-lab03/rpm/hasher /bin/bash -ec '
+    rpm -q glibc-devel-static
+    work=$(mktemp -d)
+    cd "$work"
+    tar xf -
+    cd rdsu-args-1.0
+    make rdsu-args-static
+    cc -static -o fully-static main.o -L. -lrdsuargs
+    stat -c "%n %s bytes" rdsu-args-static fully-static
+    for exe in rdsu-args-static fully-static; do
+        printf "%s symbol count: " "$exe"
+        nm "$exe" | wc -l
+        status=0
+        ldd "./$exe" || status=$?
+        echo "ldd exit=$status"
+    done
+    ./rdsu-args-static alpha beta gamma > normal.out
+    ./fully-static alpha beta gamma > full.out
+    cmp normal.out full.out
+    echo "static comparison exit=$?"
+  '
+glibc-devel-static-2.38.0.223.f053ff-alt1.p11.1.x86_64
+tar: Archive is compressed. Use -z option
+tar: Error is not recoverable: exiting now

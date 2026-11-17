@@ -1,0 +1,43 @@
++ hsh-install /home/user/rdsu-lab03/rpm/hasher gcc make glibc-devel-static
++ hsh-run -- /home/user/rdsu-lab03/rpm/hasher /bin/bash -ec '
+    rpm -q glibc-devel-static
+    work=$(mktemp -d)
+    cd "$work"
+    tar xzf -
+    cd rdsu-args-1.0
+    make rdsu-args-static
+    cc -static -o fully-static main.o -L. -lrdsuargs
+    stat -c "%n %s bytes" rdsu-args-static fully-static
+    for exe in rdsu-args-static fully-static; do
+        printf "%s symbol count: " "$exe"
+        nm "$exe" | wc -l
+        status=0
+        ldd "./$exe" || status=$?
+        echo "ldd exit=$status"
+    done
+    ./rdsu-args-static alpha beta gamma > normal.out
+    ./fully-static alpha beta gamma > full.out
+    cmp normal.out full.out
+    echo "static comparison exit=$?"
+  '
+glibc-devel-static-2.38.0.223.f053ff-alt1.p11.1.x86_64
+cc -O2 -Wall -Wextra   -c -o main.o main.c
+cc -O2 -Wall -Wextra   -c -o output.o output.c
+ar -rv librdsuargs.a output.o
+ar: creating librdsuargs.a
+a - output.o
+cc -O2 -Wall -Wextra   -c -o counter.o counter.c
+ar -rv librdsuargs.a counter.o
+a - counter.o
+cc  -o rdsu-args-static main.o librdsuargs.a 
+rdsu-args-static 18808 bytes
+fully-static 3044320 bytes
+rdsu-args-static symbol count: 36
+	linux-vdso.so.1 (0x00007f0833967000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007f0833772000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f0833969000)
+ldd exit=0
+fully-static symbol count: 1930
+	not a dynamic executable
+ldd exit=1
+static comparison exit=0

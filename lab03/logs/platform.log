@@ -1,0 +1,14 @@
+rdsu-alt
+x86_64
+PRETTY_NAME="alt-platform-builder 11.0 (Salvia)"
+ALT_BRANCH_ID="p11"
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3        32G   14G   16G  47% /
+gcc-13-alt1.x86_64
+make-4.4.0-alt2.x86_64
+binutils-2.41-alt1.x86_64
+rpm-build-4.0.4.212-alt1.x86_64
+hasher-1.7.7-alt1.noarch
+hasher-priv-2.0.14-alt1.x86_64
+/usr/bin /usr/lib64
+0721e6b

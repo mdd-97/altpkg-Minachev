@@ -1,0 +1,29 @@
+librdsuargs.so()(64bit) = set:fdpW8po0
+rdsu-args = 1.0-alt1
+librdsuargs.so()(64bit) = set:fdpW8po0
++ rpm -qp --requires /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt1.x86_64.rpm
+/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.2.5)(64bit)
+libc.so.6(GLIBC_2.3.4)(64bit)
+libc.so.6(GLIBC_2.34)(64bit)
+rtld(GNU_HASH)
+rpmlib(PayloadIsLzma)
++ hsh-run /home/user/rdsu-lab03/rpm/hasher /bin/sh -ec '
+    unset LD_LIBRARY_PATH
+    rpm -q rdsu-args
+    rdsu-args-static alpha beta gamma > /tmp/rdsu-static
+    rdsu-args-shared alpha beta gamma > /tmp/rdsu-shared
+    cmp /tmp/rdsu-static /tmp/rdsu-shared
+    cat /tmp/rdsu-shared
+    readelf -d /usr/bin/rdsu-args-shared | grep -F "[librdsuargs.so]"
+    ldd /usr/bin/rdsu-args-static > /tmp/rdsu-deps-static
+    ldd /usr/bin/rdsu-args-shared > /tmp/rdsu-deps-shared
+    cat /tmp/rdsu-deps-static /tmp/rdsu-deps-shared
+    ! grep -F "not found" /tmp/rdsu-deps-shared
+    ! grep -F librdsuargs.so /tmp/rdsu-deps-static
+    grep -E "librdsuargs.so => (/usr)?/lib64/librdsuargs.so" /tmp/rdsu-deps-shared
+    rpm -qf /usr/lib64/librdsuargs.so
+'
+hsh-run: invalid option -- 'e'
+hsh-run: invalid option -- 'c'
+Try `hsh-run --help' for more information.

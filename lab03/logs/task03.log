@@ -1,0 +1,79 @@
++ makefile=/home/user/rdsu-lab03/experiments.RjSm6v/Makefile
++ mkdir rules
++ cd rules
++ cp ../counter.c ../main.c ../output.c ../args.h .
++ cat
++ cp Makefile builtin.mk
++ for module in main output counter
++ printf '%s.o: %s.c\n\t$(CC) -o $@ $(CFLAGS) -c $<\n' main main
++ for module in main output counter
++ printf '%s.o: %s.c\n\t$(CC) -o $@ $(CFLAGS) -c $<\n' output output
++ for module in main output counter
++ printf '%s.o: %s.c\n\t$(CC) -o $@ $(CFLAGS) -c $<\n' counter counter
++ make -n
++ cp builtin.mk Makefile
++ printf '%%.o: %%.c\n\t$(CC) -o $@ $(CFLAGS) -c $<\n'
++ make -n
++ cat explicit.txt pattern.txt
+cc -o main.o -O2 -Wall -c main.c
+cc -o output.o -O2 -Wall -c output.c
+cc -o counter.o -O2 -Wall -c counter.c
+cc  -o program main.o output.o counter.o 
+cc -o main.o -O2 -Wall -c main.c
+cc -o output.o -O2 -Wall -c output.c
+cc -o counter.o -O2 -Wall -c counter.c
+cc  -o program main.o output.o counter.o 
++ cmp explicit.txt pattern.txt
++ cp builtin.mk Makefile
++ make
+cc -O2 -Wall   -c -o main.o main.c
+cc -O2 -Wall   -c -o output.o output.c
+cc -O2 -Wall   -c -o counter.o counter.c
+cc  -o program main.o output.o counter.o 
++ make -p
++ awk '/^%.o: %.c$/ {show=1} show {print} show && /^$/ {show=0}'
+%.o: %.c
+#  recipe to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
++ touch main.c
++ make -n
++ tee source.txt
+cc -O2 -Wall   -c -o main.o main.c
+cc  -o program main.o output.o counter.o 
+++ wc -l
++ test 2 -eq 2
++ make
+cc -O2 -Wall   -c -o main.o main.c
+cc  -o program main.o output.o counter.o 
++ touch args.h
++ make
+make: 'program' is up to date.
++ printf '$(objects): args.h\n'
++ make -n CFLAGS=-O0
++ tee header.txt
+cc -O0   -c -o main.o main.c
+cc -O0   -c -o output.o output.c
+cc -O0   -c -o counter.o counter.c
+cc  -o program main.o output.o counter.o 
+++ grep -c -- '-O0.*-c' header.txt
++ test 3 -eq 3
++ make
+cc -O2 -Wall   -c -o main.o main.c
+cc -O2 -Wall   -c -o output.o output.c
+cc -O2 -Wall   -c -o counter.o counter.c
+cc  -o program main.o output.o counter.o 
++ touch clean
++ make clean
+rm -f main.o output.o counter.o program
++ test '!' -e main.o
++ make
+cc -O2 -Wall   -c -o main.o main.c
+cc -O2 -Wall   -c -o output.o output.c
+cc -O2 -Wall   -c -o counter.o counter.c
+cc  -o program main.o output.o counter.o 
++ sed -i '/^\.PHONY/d' Makefile
++ make clean
+make: 'clean' is up to date.
++ test -e main.o
++ cd ..

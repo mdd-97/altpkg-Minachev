@@ -1,0 +1,2 @@
++ hsh-install /home/user/rdsu-lab03/rpm/hasher rdsu-args
+hsh-install: /home/user/rdsu-lab03/rpm/hasher/chroot: cannot find chroot.

@@ -1,0 +1,18 @@
+++ mktemp -d /home/user/rdsu-lab03/static.XXXXXX
++ work=/home/user/rdsu-lab03/static.UQ4Olf
++ cp sources/counter.c sources/main.c sources/output.c sources/args.h /home/user/rdsu-lab03/static.UQ4Olf/
++ cd /home/user/rdsu-lab03/static.UQ4Olf
++ cc -O2 -c main.c output.c counter.c
++ ar rcs librdsuargs.a output.o counter.o
++ cc -o archive main.o -L. -lrdsuargs
++ flags=()
++ rpm -q glibc-devel-static
+package glibc-devel-static is not installed
+++ rpm -q --qf '%{VERSION}-%{RELEASE}.%{ARCH}' glibc-devel
++ filename=glibc-devel-static-2.38.0.223.f053ff-alt1.p11.1.x86_64.rpm
++ curl -fSL --max-time 90 -o glibc-devel-static-2.38.0.223.f053ff-alt1.p11.1.x86_64.rpm https://ftp.altlinux.org/pub/distributions/ALTLinux/p11/branch/x86_64/RPMS.classic/glibc-devel-static-2.38.0.223.f053ff-alt1.p11.1.x86_64.rpm
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100  7.33M 100  7.33M   0      0 10.66M      0                              0100  7.33M 100  7.33M   0      0 10.63M      0                              0100  7.33M 100  7.33M   0      0 10.61M      0                              0
++ rpm -K glibc-devel-static-2.38.0.223.f053ff-alt1.p11.1.x86_64.rpm
+glibc-devel-static-2.38.0.223.f053ff-alt1.p11.1.x86_64.rpm: (RSA) sha1 md5 (GPG) NOT OK (MISSING KEYS: RSA#925e1ff4 GPG#925e1ff4) 
