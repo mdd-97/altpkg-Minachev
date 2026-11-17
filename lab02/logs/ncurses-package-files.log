@@ -1,0 +1,28 @@
+=== libncurses-devel: заголовки ===
+/usr/include/curses.h
+/usr/include/eti.h
+/usr/include/form.h
+/usr/include/menu.h
+/usr/include/ncurses.h
+=== libncurses-devel: символические ссылки .so ===
+lrwxrwxrwx 1 rooter rooter 13 Jul 12  2025 /usr/lib64/libcurses.so -> libncurses.so
+lrwxrwxrwx 1 rooter rooter 12 Jul 12  2025 /usr/lib64/libform.so -> libform.so.6
+lrwxrwxrwx 1 rooter rooter 12 Jul 12  2025 /usr/lib64/libmenu.so -> libmenu.so.6
+lrwxrwxrwx 1 rooter rooter 13 Jul 12  2025 /usr/lib64/libpanel.so -> libpanel.so.6
+=== libncurses6 и libncursesw6: файлы для запуска ===
+/usr/lib64/libform.so.6
+/usr/lib64/libform.so.6.5
+/usr/lib64/libmenu.so.6
+/usr/lib64/libmenu.so.6.5
+/usr/lib64/libncurses.so.6
+/usr/lib64/libncurses.so.6.5
+/usr/lib64/libpanel.so.6
+/usr/lib64/libpanel.so.6.5
+/usr/lib64/libformw.so.6
+/usr/lib64/libformw.so.6.5
+/usr/lib64/libmenuw.so.6
+/usr/lib64/libmenuw.so.6.5
+/usr/lib64/libncursesw.so.6
+/usr/lib64/libncursesw.so.6.5
+/usr/lib64/libpanelw.so.6
+/usr/lib64/libpanelw.so.6.5
