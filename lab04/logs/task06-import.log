@@ -1,0 +1,23 @@
++ git init -b master
+Initialized empty Git repository in /home/user/rdsu-lab04/gear/.git/
++ git config user.name 'Damir Minachev'
++ git config user.email mdd97@yandex.ru
++ gear-srpmimport /home/user/rdsu-lab04/rpm/top/SRPMS/rdsu-tasks-1.0-alt1.src.rpm
+[srpms (root-commit) 0656905] 1.0-alt1
+ 3 files changed, 123 insertions(+)
+ create mode 100644 .gear/rules
+ create mode 100755 rdsu-tasks
+ create mode 100644 rdsu-tasks.spec
+gear-srpmimport: Imported /home/user/rdsu-lab04/rpm/top/SRPMS/rdsu-tasks-1.0-alt1.src.rpm
+gear-srpmimport: Created master branch
++ git branch -a
+* master
+  srpms
++ git tag -n
+1.0-alt1        rdsu-tasks 1.0-alt1
++ git ls-files
+.gear/rules
+rdsu-tasks
+rdsu-tasks.spec
++ cat .gear/rules
+copy: rdsu-tasks

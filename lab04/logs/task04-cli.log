@@ -1,0 +1,30 @@
++ set -x
+++ mktemp -d
++ temp=/tmp/.private/user/tmp.t5CqI7rml9
++ trap 'rm -rf -- "$temp"' EXIT
++ export XDG_CONFIG_HOME=/tmp/.private/user/tmp.t5CqI7rml9/config TMPDIR=/tmp/.private/user/tmp.t5CqI7rml9/tmp
++ XDG_CONFIG_HOME=/tmp/.private/user/tmp.t5CqI7rml9/config
++ TMPDIR=/tmp/.private/user/tmp.t5CqI7rml9/tmp
++ mkdir /tmp/.private/user/tmp.t5CqI7rml9/tmp
++ sources/rdsu-tasks add 'Check package contents'
+Added 1
++ sources/rdsu-tasks add 'Build the task list'
+Added 2
++ sources/rdsu-tasks add 'Review notes'
+Added 3
++ sources/rdsu-tasks done 2
+Done 2
++ sources/rdsu-tasks list
++ tee /tmp/.private/user/tmp.t5CqI7rml9/list.out
+Open:
+1. Check package contents
+3. Review notes
+Done:
+2. Build the task list
++ diff -u check/tasks.expected /tmp/.private/user/tmp.t5CqI7rml9/list.out
+++ wc -l
++ test 3 = 3
+++ ls -A /tmp/.private/user/tmp.t5CqI7rml9/tmp
++ test -z ''
++ echo 'CLI exit=0'
+CLI exit=0

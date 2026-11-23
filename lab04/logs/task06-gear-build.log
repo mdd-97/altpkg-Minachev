@@ -1,0 +1,29 @@
+Executing(%install): /bin/sh -e /tmp/.private/user/rpmb-tmp.DR8dp8
++ umask 022
++ /bin/mkdir -p /home/user/rdsu-lab04/rpm/gear-old/BUILD
++ cd /home/user/rdsu-lab04/rpm/gear-old/BUILD
++ /bin/chmod -Rf u+rwX -- /tmp/.private/user/rdsu-tasks-buildroot
++ :
++ /bin/rm -rf -- /tmp/.private/user/rdsu-tasks-buildroot
++ PATH=/usr/libexec/rpm-build:/bin:/usr/bin:/usr/local/bin
++ install -D -m755 /tmp/.private/user/gear.bX7pq1k9/out/rdsu-tasks /tmp/.private/user/rdsu-tasks-buildroot/usr/bin/rdsu-tasks
++ /usr/lib/rpm/brp-alt
+Cleaning files in /tmp/.private/user/rdsu-tasks-buildroot (auto)
+Verifying and fixing files in /tmp/.private/user/rdsu-tasks-buildroot (binconfig,pkgconfig,libtool,desktop,gnuconfig)
+Checking contents of files in /tmp/.private/user/rdsu-tasks-buildroot/ (default)
+Compressing files in /tmp/.private/user/rdsu-tasks-buildroot (auto)
+Verifying ELF objects in /tmp/.private/user/rdsu-tasks-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
+Splitting links to aliased files under /{,s}bin in /tmp/.private/user/rdsu-tasks-buildroot
+Hardlinking identical .pyc and .opt-?.pyc files
+Processing files: rdsu-tasks-1.0-alt1
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /tmp/.private/user/rpmb-autodep.UhnCqp
+find-provides: running scripts (alternatives,debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /tmp/.private/user/rpmb-autodep.6ew13b
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+shell.req: /tmp/.private/user/rdsu-tasks-buildroot/usr/bin/rdsu-tasks: dialog not found (skip)
+find-requires: FINDPACKAGE-COMMANDS: awk dialog grep mkdir mktemp mv rm sed touch
+Requires: /bin/bash, coreutils, gawk, grep, sed
+Wrote: /home/user/rdsu-lab04/rpm/gear-old/SRPMS/rdsu-tasks-1.0-alt1.src.rpm (w2.lzdio)
+Wrote: /home/user/rdsu-lab04/rpm/gear-old/RPMS/noarch/rdsu-tasks-1.0-alt1.noarch.rpm (w2.lzdio)

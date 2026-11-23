@@ -1,0 +1,94 @@
++ set -eu -o pipefail
+++ mktemp -d
++ work=/tmp/.private/user/tmp.l6hQh8DICu
++ trap 'rm -rf -- "$work"' EXIT
++ cd /tmp/.private/user/tmp.l6hQh8DICu
++ shopt -s expand_aliases
++ alias 'll=ls -l'
++ type -a read printf ll rpm sed grep
+read is a shell builtin
+printf is a shell builtin
+printf is /bin/printf
+printf is /usr/bin/printf
+ll is aliased to `ls -l'
+rpm is /bin/rpm
+rpm is /usr/bin/rpm
+sed is /bin/sed
+sed is /usr/bin/sed
+grep is /bin/grep
+grep is /usr/bin/grep
++ for cmd in rpm sed grep
+++ command -v rpm
++ rpm -qf /bin/rpm
+rpm-4.13.0.1-alt45.x86_64
+rpm-4.13.0.1-alt45.x86_64
++ for cmd in rpm sed grep
+++ command -v sed
++ rpm -qf /bin/sed
+sed-4.9.0.32.5420-alt1.x86_64
++ for cmd in rpm sed grep
+++ command -v grep
++ rpm -qf /bin/grep
+grep-3.11.0.20.dd8f-alt1.x86_64
++ unset LAB04_VALUE
++ LAB04_VALUE=parent
++ bash -c 'printf "before=<%s>\n" "${LAB04_VALUE-}"'
+before=<>
+++ bash -c 'printf "%s" "${LAB04_VALUE-}"'
++ test -z ''
++ export LAB04_VALUE
++ bash -c 'printf "exported=<%s>\n" "$LAB04_VALUE"; LAB04_VALUE=child'
+exported=<parent>
++ printf 'parent=<%s>\n' parent
+parent=<parent>
++ test parent = parent
++ V=one/two/three
++ printf 'short prefix=%s\nlong prefix=%s\nshort suffix=%s\nlong suffix=%s\n' two/three three one/two one
+short prefix=two/three
+long prefix=three
+short suffix=one/two
+long suffix=one
++ emit
++ emit
++ emit
++ printf 'stdout\n'
++ printf 'stderr\n'
+stderr
++ cat combined stdout-only original-stdout no-descriptor
++ printf 'stdout\n'
+stdout
++ printf 'stderr\n'
+stderr
+stdout
++ printf 'stdout\n'
++ printf 'stderr\n'
+stderr
+stdout
++ rc=0
++ diff -u stdout-only combined
+--- stdout-only	2026-11-23 18:15:42.355212333 +0300
++++ combined	2026-11-23 18:15:42.355212333 +0300
+@@ -1 +1,4 @@
+++ printf 'stdout\n'
+ stdout
+++ printf 'stderr\n'
++stderr
++ rc=1
++ printf 'diff exit=%s\n' 1
+diff exit=1
++ test 1 = 1
++ IFS=
++ read -r key
++ uname -s
++ head -1
++ cut -d ' ' -f 1
++ tr '[:upper:]' '[:lower:]'
++ printf 'pipeline exit=0\n'
+pipeline exit=0
++ IFS=
++ read -r key
++ printf 'linux\n'
++ diff -u system.expected system
++ cat system
+linux
++ rm -rf -- /tmp/.private/user/tmp.l6hQh8DICu

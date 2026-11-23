@@ -1,0 +1,104 @@
+#!/bin/bash
+set -euo pipefail
+umask 077
+
+directory=${XDG_CONFIG_HOME:-$HOME/.config}/rdsu-tasks
+database=$directory/tasks.tsv
+mkdir -p -- "$directory"
+touch -- "$database"
+choice_file=
+edit_file=
+cleanup() {
+    if [[ -n $choice_file ]]; then rm -f -- "$choice_file"; fi
+    if [[ -n $edit_file ]]; then rm -f -- "$edit_file"; fi
+}
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+add_task() {
+    local description=$1 id
+    if [[ -z $description || $description == *$'\n'* || $description == *$'\r'* || $description == *$'\t'* ]]; then
+        printf 'Task must be one nonempty line without tabs.\n' >&2
+        return 2
+    fi
+    id=$(awk -F '\t' '$1 > max {max=$1} END {print max+1}' "$database")
+    printf '%s\topen\t%s\n' "$id" "$description" >> "$database"
+    printf 'Added %s\n' "$id"
+}
+
+finish_task() {
+    local id=$1
+    if [[ ! $id =~ ^[1-9][0-9]*$ ]]; then
+        printf 'Invalid ID: %s\n' "$id" >&2
+        return 2
+    fi
+    if ! grep -q "^$id"$'\t' "$database"; then
+        printf 'Task not found: %s\n' "$id" >&2
+        return 1
+    fi
+    edit_file=$(mktemp -- "$directory/.tasks.XXXXXXXX")
+    sed -E "s/^($id"$'\t'")open("$'\t'")/\1done\2/" "$database" > "$edit_file"
+    mv -f -- "$edit_file" "$database"
+    edit_file=
+    printf 'Done %s\n' "$id"
+}
+
+list_tasks() {
+    local id state description
+    printf 'Open:\n'
+    while IFS=$'\t' read -r id state description; do
+        if [[ $state == open ]]; then printf '%s. %s\n' "$id" "$description"; fi
+    done < "$database"
+    printf 'Done:\n'
+    while IFS=$'\t' read -r id state description; do
+        if [[ $state == done ]]; then printf '%s. %s\n' "$id" "$description"; fi
+    done < "$database"
+}
+
+ui() {
+    local selection message id state description
+    local -a open_tasks
+    choice_file=$(mktemp "${TMPDIR:-/tmp}/rdsu-tasks.XXXXXXXX")
+    while dialog --title 'RDSU Tasks' --menu 'Select an operation' 14 62 4 \
+        add 'Add task' list 'Show tasks' done 'Mark done' quit 'Exit' 2>"$choice_file"; do
+        selection=$(<"$choice_file")
+        case $selection in
+            add)
+                if dialog --inputbox 'Enter task text' 9 62 2>"$choice_file"; then
+                    if ! message=$(add_task "$(<"$choice_file")" 2>&1); then :; fi
+                    dialog --msgbox "$message" 8 62
+                fi ;;
+            list)
+                message=$(list_tasks)
+                dialog --msgbox "$message" 18 62 ;;
+            done)
+                open_tasks=()
+                while IFS=$'\t' read -r id state description; do
+                    if [[ $state == open ]]; then open_tasks+=("$id" "$description"); fi
+                done < "$database"
+                if ((${#open_tasks[@]} == 0)); then
+                    dialog --msgbox 'No open tasks' 8 62
+                elif dialog --menu 'Mark done' 18 62 8 "${open_tasks[@]}" 2>"$choice_file"; then
+                    finish_task "$(<"$choice_file")" >/dev/null
+                fi ;;
+            quit) break ;;
+        esac
+    done
+}
+
+usage() {
+    printf 'Usage: rdsu-tasks [add TEXT | list | done ID | count]\n' >&2
+    return 2
+}
+
+case ${1:-} in
+    '') if (( $# == 0 )); then ui; else usage; fi ;;
+    add) if (( $# == 2 )); then add_task "$2"; else usage; fi ;;
+    list) if (( $# == 1 )); then list_tasks; else usage; fi ;;
+    done) if (( $# == 2 )); then finish_task "$2"; else usage; fi ;;
+    count) if (( $# == 1 )); then
+        awk -F '\t' '$2 == "open" {n++} END {print n+0}' "$database"
+    else usage; fi ;;
+    *) usage ;;
+esac

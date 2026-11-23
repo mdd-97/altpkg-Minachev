@@ -1,0 +1,74 @@
++ gear-commit --no-edit -a
+[master f649af8] 1.1-alt2
+ 2 files changed, 9 insertions(+), 3 deletions(-)
++ git tag -a 1.1-alt2 -m 'rdsu-tasks 1.1-alt2'
++ git log -1 --format=%B
+1.1-alt2
+
+- Add a command to count open tasks.
+
++ git tag -n
+1.0-alt1        rdsu-tasks 1.0-alt1
+1.1-alt2        rdsu-tasks 1.1-alt2
++ gear-rpm -ba --define '_topdir /home/user/rdsu-lab04/rpm/gear-new'
+Executing(%install): /bin/sh -e /tmp/.private/user/rpmb-tmp.DC8yNI
++ umask 022
++ /bin/mkdir -p /home/user/rdsu-lab04/rpm/gear-new/BUILD
++ cd /home/user/rdsu-lab04/rpm/gear-new/BUILD
++ /bin/chmod -Rf u+rwX -- /tmp/.private/user/rdsu-tasks-buildroot
++ /bin/rm -rf -- /tmp/.private/user/rdsu-tasks-buildroot
++ PATH=/usr/libexec/rpm-build:/bin:/usr/bin:/usr/local/bin
++ install -D -m755 /tmp/.private/user/gear.N40Fm65L/out/rdsu-tasks /tmp/.private/user/rdsu-tasks-buildroot/usr/bin/rdsu-tasks
++ /usr/lib/rpm/brp-alt
+Cleaning files in /tmp/.private/user/rdsu-tasks-buildroot (auto)
+Verifying and fixing files in /tmp/.private/user/rdsu-tasks-buildroot (binconfig,pkgconfig,libtool,desktop,gnuconfig)
+Checking contents of files in /tmp/.private/user/rdsu-tasks-buildroot/ (default)
+Compressing files in /tmp/.private/user/rdsu-tasks-buildroot (auto)
+Verifying ELF objects in /tmp/.private/user/rdsu-tasks-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
+Splitting links to aliased files under /{,s}bin in /tmp/.private/user/rdsu-tasks-buildroot
+Hardlinking identical .pyc and .opt-?.pyc files
+Processing files: rdsu-tasks-1.1-alt2
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /tmp/.private/user/rpmb-autodep.z458kr
+find-provides: running scripts (alternatives,debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /tmp/.private/user/rpmb-autodep.g9QW3m
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+shell.req: /tmp/.private/user/rdsu-tasks-buildroot/usr/bin/rdsu-tasks: dialog not found (skip)
+find-requires: FINDPACKAGE-COMMANDS: awk dialog grep mkdir mktemp mv rm sed touch
+Requires: /bin/bash, coreutils, gawk, grep, sed
+Wrote: /home/user/rdsu-lab04/rpm/gear-new/SRPMS/rdsu-tasks-1.1-alt2.src.rpm (w2.lzdio)
+Wrote: /home/user/rdsu-lab04/rpm/gear-new/RPMS/noarch/rdsu-tasks-1.1-alt2.noarch.rpm (w2.lzdio)
++ git worktree add --detach /home/user/rdsu-lab04/gear-old-tag 1.0-alt1
+Preparing worktree (detached HEAD 0656905)
+HEAD is now at 0656905 1.0-alt1
++ cd /home/user/rdsu-lab04/gear-old-tag
++ gear-rpm -ba --define '_topdir /home/user/rdsu-lab04/rpm/gear-old-tag'
+Executing(%install): /bin/sh -e /tmp/.private/user/rpmb-tmp.A7jErB
++ umask 022
++ /bin/mkdir -p /home/user/rdsu-lab04/rpm/gear-old-tag/BUILD
++ cd /home/user/rdsu-lab04/rpm/gear-old-tag/BUILD
++ /bin/chmod -Rf u+rwX -- /tmp/.private/user/rdsu-tasks-buildroot
++ /bin/rm -rf -- /tmp/.private/user/rdsu-tasks-buildroot
++ PATH=/usr/libexec/rpm-build:/bin:/usr/bin:/usr/local/bin
++ install -D -m755 /tmp/.private/user/gear.kYpelrCR/out/rdsu-tasks /tmp/.private/user/rdsu-tasks-buildroot/usr/bin/rdsu-tasks
++ /usr/lib/rpm/brp-alt
+Cleaning files in /tmp/.private/user/rdsu-tasks-buildroot (auto)
+Verifying and fixing files in /tmp/.private/user/rdsu-tasks-buildroot (binconfig,pkgconfig,libtool,desktop,gnuconfig)
+Checking contents of files in /tmp/.private/user/rdsu-tasks-buildroot/ (default)
+Compressing files in /tmp/.private/user/rdsu-tasks-buildroot (auto)
+Verifying ELF objects in /tmp/.private/user/rdsu-tasks-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
+Splitting links to aliased files under /{,s}bin in /tmp/.private/user/rdsu-tasks-buildroot
+Hardlinking identical .pyc and .opt-?.pyc files
+Processing files: rdsu-tasks-1.0-alt1
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /tmp/.private/user/rpmb-autodep.cs5rzv
+find-provides: running scripts (alternatives,debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /tmp/.private/user/rpmb-autodep.xHgyj7
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+shell.req: /tmp/.private/user/rdsu-tasks-buildroot/usr/bin/rdsu-tasks: dialog not found (skip)
+find-requires: FINDPACKAGE-COMMANDS: awk dialog grep mkdir mktemp mv rm sed touch
+Requires: /bin/bash, coreutils, gawk, grep, sed
+Wrote: /home/user/rdsu-lab04/rpm/gear-old-tag/SRPMS/rdsu-tasks-1.0-alt1.src.rpm (w2.lzdio)
+Wrote: /home/user/rdsu-lab04/rpm/gear-old-tag/RPMS/noarch/rdsu-tasks-1.0-alt1.noarch.rpm (w2.lzdio)

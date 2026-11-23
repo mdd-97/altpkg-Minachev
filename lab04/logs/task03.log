@@ -1,0 +1,46 @@
++ set -eu -o pipefail
++ out=logs
++ ps -eo pid=,comm=,user=
++ awk '{print $1, $2}' logs/ps-snapshot.txt
++ awk '{print $1, $3}' logs/ps-snapshot.txt
++ LC_ALL=C
++ sort -k1,1 logs/ps-command.txt
++ LC_ALL=C
++ sort -k1,1 logs/ps-user.txt
++ LC_ALL=C
++ join --check-order logs/ps-command.sorted logs/ps-user.sorted
+++ wc -l
+++ wc -l
++ test 138 -eq 138
++ cut -d ' ' -f 2 logs/ps-joined.txt
++ tr '[:lower:]' '[:upper:]'
++ wc -l logs/ps-joined.txt
+138 logs/ps-joined.txt
++ head -3 logs/ps-names.txt
+SYSTEMD
+KWORKER/0:1-EVE
+KWORKER/2:3-EVE
++ tail -3 logs/ps-names.txt
+CROND
+AGETTY
+SSHD
++ for cmd in hexdump od xxd
+++ command -v hexdump
++ rpm -qf /bin/hexdump
+util-linux-2.39.2-alt2.x86_64
++ for cmd in hexdump od xxd
+++ command -v od
++ rpm -qf /bin/od
+coreutils-9.4.0.75.7f2c97-alt1.x86_64
++ for cmd in hexdump od xxd
+++ command -v xxd
++ rpm -qf /bin/xxd
+xxd-9.2.0537-alt1.x86_64
++ printf 'ALT\n'
++ hexdump -C logs/bytes.txt
+00000000  41 4c 54 0a                                       |ALT.|
+00000004
++ od -An -tx1 logs/bytes.txt
+ 41 4c 54 0a
++ xxd logs/bytes.txt
+00000000: 414c 540a                                ALT.

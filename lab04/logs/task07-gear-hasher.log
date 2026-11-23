@@ -1,0 +1,49 @@
+<86>Nov 23 15:31:38 userdel[15865]: delete user 'rooter'
+<86>Nov 23 15:31:38 userdel[15865]: removed group 'rooter' owned by 'rooter'
+<86>Nov 23 15:31:38 userdel[15865]: removed shadow group 'rooter' owned by 'rooter'
+<86>Nov 23 15:31:38 groupadd[15872]: group added to /etc/group: name=rooter, GID=1001
+<86>Nov 23 15:31:38 groupadd[15872]: group added to /etc/gshadow: name=rooter
+<86>Nov 23 15:31:38 groupadd[15872]: new group: name=rooter, GID=1001
+<86>Nov 23 15:31:38 useradd[15878]: new user: name=rooter, UID=1001, GID=1001, home=/root, shell=/bin/bash, from=none
+<86>Nov 23 15:31:39 userdel[15888]: delete user 'builder'
+<86>Nov 23 15:31:39 userdel[15888]: removed group 'builder' owned by 'builder'
+<86>Nov 23 15:31:39 userdel[15888]: removed shadow group 'builder' owned by 'builder'
+<86>Nov 23 15:31:39 groupadd[15895]: group added to /etc/group: name=builder, GID=1002
+<86>Nov 23 15:31:39 groupadd[15895]: group added to /etc/gshadow: name=builder
+<86>Nov 23 15:31:39 groupadd[15895]: new group: name=builder, GID=1002
+<86>Nov 23 15:31:39 useradd[15901]: new user: name=builder, UID=1002, GID=1002, home=/usr/src, shell=/bin/bash, from=none
+Building target platforms: x86_64
+Building for target x86_64
+Wrote: /usr/src/in/srpm/rdsu-tasks-1.1-alt2.src.rpm (w1.gzdio)
+Installing rdsu-tasks-1.1-alt2.src.rpm
+Building target platforms: x86_64
+Building for target x86_64
+Executing(%install): /bin/sh -e /usr/src/tmp/rpmb-tmp.1kFdZY
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ /bin/chmod -Rf u+rwX -- /usr/src/tmp/rdsu-tasks-buildroot
++ :
++ /bin/rm -rf -- /usr/src/tmp/rdsu-tasks-buildroot
++ PATH=/usr/libexec/rpm-build:/usr/src/bin:/usr/bin:/bin:/usr/local/bin:/usr/games
++ install -D -m755 /usr/src/RPM/SOURCES/rdsu-tasks /usr/src/tmp/rdsu-tasks-buildroot/usr/bin/rdsu-tasks
++ /usr/lib/rpm/brp-alt
+Cleaning files in /usr/src/tmp/rdsu-tasks-buildroot (auto)
+Verifying and fixing files in /usr/src/tmp/rdsu-tasks-buildroot (binconfig,pkgconfig,libtool,desktop,gnuconfig)
+Checking contents of files in /usr/src/tmp/rdsu-tasks-buildroot/ (default)
+Compressing files in /usr/src/tmp/rdsu-tasks-buildroot (auto)
+Verifying ELF objects in /usr/src/tmp/rdsu-tasks-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
+Splitting links to aliased files under /{,s}bin in /usr/src/tmp/rdsu-tasks-buildroot
+Processing files: rdsu-tasks-1.1-alt2
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.XJHQuQ
+find-provides: running scripts (debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.MToCfd
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+find-requires: FINDPACKAGE-COMMANDS: awk dialog grep mkdir mktemp mv rm sed touch
+Requires: /bin/bash, coreutils, dialog, gawk, grep, sed
+Wrote: /usr/src/RPM/SRPMS/rdsu-tasks-1.1-alt2.src.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/noarch/rdsu-tasks-1.1-alt2.noarch.rpm (w2.lzdio)
+2.65user 3.88system 0:07.05elapsed 92%CPU (0avgtext+0avgdata 7984maxresident)k
+0inputs+240outputs (0major+98806minor)pagefaults 0swaps

@@ -1,0 +1,18 @@
+600 /tmp/.private/user/rdsu-lab04.X5SRSR
+removed '/tmp/.private/user/rdsu-lab04.X5SRSR'
+ok None: /tmp/.private/user/rdsu-lab04.X5SRSR exit=0 exists=False
+600 /tmp/.private/user/rdsu-lab04.5Jmtiu
+removed '/tmp/.private/user/rdsu-lab04.5Jmtiu'
+ok None: /tmp/.private/user/rdsu-lab04.5Jmtiu exit=0 exists=False
+removed '/tmp/.private/user/rdsu-lab04.3U61bK'
+error None: /tmp/.private/user/rdsu-lab04.3U61bK exit=7 exists=False
+observer: /tmp/.private/user/rdsu-lab04.xEZCmr exists=True mode=600
+removed '/tmp/.private/user/rdsu-lab04.xEZCmr'
+wait 2: /tmp/.private/user/rdsu-lab04.xEZCmr exit=130 exists=False
+observer: /tmp/.private/user/rdsu-lab04.8dPa4X exists=True mode=600
+removed '/tmp/.private/user/rdsu-lab04.8dPa4X'
+wait 15: /tmp/.private/user/rdsu-lab04.8dPa4X exit=143 exists=False
+['mktemp', '-d', '/tmp/.private/user/tmp0oyxbu5u/dir.XXXXXX'] /tmp/.private/user/tmp0oyxbu5u/dir.1uuNSS  exit=0
+['mktemp', '-u', '/tmp/.private/user/tmp0oyxbu5u/dry.XXXXXX'] /tmp/.private/user/tmp0oyxbu5u/dry.5zp3Dv  exit=0
+['mktemp', '-u', '/tmp/.private/user/tmp0oyxbu5u/dry.XXX'] /tmp/.private/user/tmp0oyxbu5u/dry.1nd  exit=0
+['mktemp', '-u', '/tmp/.private/user/tmp0oyxbu5u/short.XX']  mktemp: too few X's in template '/tmp/.private/user/tmp0oyxbu5u/short.XX' exit=1

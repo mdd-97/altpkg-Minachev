@@ -1,0 +1,39 @@
+++ mktemp -d
++ temp=/tmp/.private/user/tmp.JHPLytUkVb
++ trap 'rm -rf -- "$temp"' EXIT
++ export XDG_CONFIG_HOME=/tmp/.private/user/tmp.JHPLytUkVb/config
++ XDG_CONFIG_HOME=/tmp/.private/user/tmp.JHPLytUkVb/config
++ rpm -qp --queryformat '%{NAME} %{VERSION} %{RELEASE}\n' /home/user/rdsu-lab04/rpm/gear-new/RPMS/noarch/rdsu-tasks-1.1-alt2.noarch.rpm /home/user/rdsu-lab04/rpm/gear-old-tag/RPMS/noarch/rdsu-tasks-1.0-alt1.noarch.rpm
+rdsu-tasks 1.1 alt2
+rdsu-tasks 1.0 alt1
++ rpm -qp --changelog /home/user/rdsu-lab04/rpm/gear-new/RPMS/noarch/rdsu-tasks-1.1-alt2.noarch.rpm
+* Mon Nov 23 2026 Damir Minachev <mdd97@yandex.ru> 1.1-alt2
+- Add a command to count open tasks.
+
+* Mon Nov 23 2026 Damir Minachev <mdd97@yandex.ru> 1.0-alt1
+- Add task list application.
+
++ mkdir /tmp/.private/user/tmp.JHPLytUkVb/old /tmp/.private/user/tmp.JHPLytUkVb/new
++ cd /tmp/.private/user/tmp.JHPLytUkVb/old
++ rpm2cpio /home/user/rdsu-lab04/rpm/gear-old-tag/RPMS/noarch/rdsu-tasks-1.0-alt1.noarch.rpm
++ cpio -id
+8 blocks
++ cd /tmp/.private/user/tmp.JHPLytUkVb/new
++ cpio -id
++ rpm2cpio /home/user/rdsu-lab04/rpm/gear-new/RPMS/noarch/rdsu-tasks-1.1-alt2.noarch.rpm
+8 blocks
++ /tmp/.private/user/tmp.JHPLytUkVb/new/usr/bin/rdsu-tasks add 'Open task'
+Added 1
+++ /tmp/.private/user/tmp.JHPLytUkVb/new/usr/bin/rdsu-tasks count
++ test 1 = 1
+++ /tmp/.private/user/tmp.JHPLytUkVb/new/usr/bin/rdsu-tasks count
++ printf 'new count=%s\n' 1
+new count=1
++ rc=0
++ /tmp/.private/user/tmp.JHPLytUkVb/old/usr/bin/rdsu-tasks count
+Usage: rdsu-tasks [add TEXT | list | done ID]
++ rc=2
++ echo 'old count exit=2'
+old count exit=2
++ test 2 = 2
+++ rm -rf -- /tmp/.private/user/tmp.JHPLytUkVb

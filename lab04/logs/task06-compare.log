@@ -1,0 +1,40 @@
++ export LC_ALL=C
++ LC_ALL=C
++ for format in name files requires
++ case $format in
++ args=(--queryformat '%{NAME} %{VERSION} %{RELEASE}\n')
++ rpm -qp --queryformat '%{NAME} %{VERSION} %{RELEASE}\n' /home/user/rdsu-lab04/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-tasks-1.0-alt1.noarch.rpm
++ sort
++ rpm -qp --queryformat '%{NAME} %{VERSION} %{RELEASE}\n' /home/user/rdsu-lab04/rpm/gear-hasher/repo/x86_64/RPMS.hasher/rdsu-tasks-1.0-alt1.noarch.rpm
++ sort
++ diff -u logs/standalone-name.txt logs/gear-name.txt
++ cat logs/gear-name.txt
+rdsu-tasks 1.0 alt1
++ for format in name files requires
++ case $format in
++ args=(-l)
++ rpm -qp -l /home/user/rdsu-lab04/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-tasks-1.0-alt1.noarch.rpm
++ sort
++ rpm -qp -l /home/user/rdsu-lab04/rpm/gear-hasher/repo/x86_64/RPMS.hasher/rdsu-tasks-1.0-alt1.noarch.rpm
++ sort
++ diff -u logs/standalone-files.txt logs/gear-files.txt
++ cat logs/gear-files.txt
+/usr/bin/rdsu-tasks
++ for format in name files requires
++ case $format in
++ args=(--requires)
++ sort
++ rpm -qp --requires /home/user/rdsu-lab04/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-tasks-1.0-alt1.noarch.rpm
++ rpm -qp --requires /home/user/rdsu-lab04/rpm/gear-hasher/repo/x86_64/RPMS.hasher/rdsu-tasks-1.0-alt1.noarch.rpm
++ sort
++ diff -u logs/standalone-requires.txt logs/gear-requires.txt
++ cat logs/gear-requires.txt
+/bin/bash
+coreutils
+dialog
+gawk
+grep
+rpmlib(PayloadIsLzma)
+sed
++ echo 'GEAR comparison exit=0'
+GEAR comparison exit=0

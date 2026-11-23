@@ -1,0 +1,7 @@
+/bin/bash
+coreutils
+dialog
+gawk
+grep
+rpmlib(PayloadIsLzma)
+sed

@@ -1,0 +1,39 @@
++ hsh-run -- /home/user/rdsu-lab04/rpm/hasher /bin/bash -ec '
+        set -x
+        t=$(mktemp -d)
+        trap "rm -rf -- \"$t\"" EXIT
+        cd "$t"
+        rpm -q moreutils
+        printf "alpha\nbeta\n" > text
+        tr a-z A-Z < text > text
+        wc -c text
+        test ! -s text
+        printf "alpha\nbeta\n" > text
+        tr a-z A-Z < text | sponge text
+        printf "ALPHA\nBETA\n" | diff -u - text
+        cat text
+        printf "event\n" | ts
+    '
+++ mktemp -d
++ t=/usr/src/tmp/tmp.fHqxUoerJs
++ trap 'rm -rf -- "/usr/src/tmp/tmp.fHqxUoerJs"' EXIT
++ cd /usr/src/tmp/tmp.fHqxUoerJs
++ rpm -q moreutils
+moreutils-0.69-alt1.x86_64
++ printf 'alpha\nbeta\n'
++ tr a-z A-Z
++ wc -c text
+0 text
++ test '!' -s text
++ printf 'alpha\nbeta\n'
++ tr a-z A-Z
++ sponge text
++ printf 'ALPHA\nBETA\n'
++ diff -u - text
++ cat text
+ALPHA
+BETA
++ printf 'event\n'
++ ts
+Nov 23 15:32:15 event
++ rm -rf -- /usr/src/tmp/tmp.fHqxUoerJs

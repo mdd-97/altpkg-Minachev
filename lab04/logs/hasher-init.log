@@ -1,0 +1,209 @@
+/.host/cpio: ./usr/bin/cat not created: newer or same age version exists
+/.host/cpio: ./usr/bin/cut not created: newer or same age version exists
+/.host/cpio: ./usr/bin/du not created: newer or same age version exists
+/.host/cpio: ./usr/bin/head not created: newer or same age version exists
+/.host/cpio: ./usr/bin/install not created: newer or same age version exists
+/.host/cpio: ./usr/bin/kill not created: newer or same age version exists
+/.host/cpio: ./usr/bin/mkfifo not created: newer or same age version exists
+/.host/cpio: ./usr/bin/sort not created: newer or same age version exists
+/.host/cpio: ./usr/bin/tail not created: newer or same age version exists
+/.host/cpio: ./usr/bin/wc not created: newer or same age version exists
+/.host/cpio: ./usr/sbin/chroot not created: newer or same age version exists
+/.host/cpio: ./usr/bin/getopt not created: newer or same age version exists
+/.host/cpio: ./usr/bin/find not created: newer or same age version exists
+/.host/cpio: ./usr/bin/xargs not created: newer or same age version exists
+/.host/cpio: ./usr/bin/awk not created: newer or same age version exists
+/.host/cpio: ./usr/bin/gawk not created: newer or same age version exists
+/.host/cpio: ./usr/bin/rpm not created: newer or same age version exists
+<13>Nov 23 15:13:01 rpmi: setup-2.2.21-alt1 p11+348780.100.1.1 1716835182 installed
+<13>Nov 23 15:13:01 rpmi: filesystem-3.1-alt1 p11+348780.200.1.1 1716835208 installed
+<13>Nov 23 15:13:01 rpmi: glibc-preinstall-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:01 rpmi: glibc-core-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:01 rpmi: libgcc1-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:01 rpmi: libacl-2.3.1.0.20.d265-alt1 p11+348779.300.1.1 1716502641 installed
+<13>Nov 23 15:13:01 rpmi: libcap-1:2.69-alt2 p11+364189.200.11.1 1738139020 installed
+<13>Nov 23 15:13:01 rpmi: libpcre2-10.46-alt1 p11+393424.100.2.1 1757182560 installed
+<13>Nov 23 15:13:01 rpmi: libselinux-1:3.8-alt2 p11+375090.100.2.1 1741857925 installed
+<13>Nov 23 15:13:01 rpmi: getopt-2.39.2-alt2 p11+375427.100.8.1 1744210694 installed
+<13>Nov 23 15:13:01 rpmi: zlib-1.3.1-alt1 sisyphus+342532.100.1.1 1710232285 installed
+<13>Nov 23 15:13:01 rpmi: libzstd-1.5.5-alt2 p11+348780.1700.1.1 1716838450 installed
+<13>Nov 23 15:13:01 rpmi: libpopt-1:1.18-alt1 p11+348963.100.1.1 1716579157 installed
+<13>Nov 23 15:13:01 rpmi: libelf-0.191-alt1 sisyphus+347509.100.1.1 1714859321 installed
+<13>Nov 23 15:13:01 rpmi: findutils-4.9.0.0.9.e5c6-alt1 sisyphus+327286.4700.14.1 1711486980 installed
+<13>Nov 23 15:13:01 rpmi: sed-1:4.9.0.32.5420-alt1 sisyphus+336930.2500.1.1 1703107483 installed
+<13>Nov 23 15:13:01 rpmi: bzlib-1:1.0.8-alt3 sisyphus+327286.5000.14.1 1711487039 installed
+<13>Nov 23 15:13:01 rpmi: libattr-2.5.1-alt2 p11+348779.400.1.1 1716502692 installed
+<13>Nov 23 15:13:01 rpmi: libgmp10-6.3.0-alt1 sisyphus+328118.100.2.1 1693294124 installed
+<13>Nov 23 15:13:01 rpmi: libdb4.7-4.7.25-alt13 sisyphus+341099.200.4.1 1709732031 installed
+<13>Nov 23 15:13:01 rpmi: libgpg-error-1.61-alt2 p11+429274.100.10.1 1791562137 installed
+<13>Nov 23 15:13:01 rpmi: libgcrypt20-1.12.2-alt3 p11+429274.200.10.1 1791562269 installed
+<13>Nov 23 15:13:01 rpmi: liblua5.3-5.3.6-alt3 p11+349176.100.1.1 1716623083 installed
+<13>Nov 23 15:13:01 rpmi: liblzma-5.4.5-alt1 p11+348780.1600.1.1 1716837944 installed
+<13>Nov 23 15:13:01 rpmi: libsha1detectcoll1-1.0.3-alt1 p11+349540.100.1.1 1716808625 installed
+<13>Nov 23 15:13:01 rpmi: librpm7-4.13.0.1-alt45 p11+418689.100.2.1 1781016121 installed
+<13>Nov 23 15:13:01 rpmi: bashrc-1.0-alt1 1533298978 installed
+<13>Nov 23 15:13:01 rpmi: sh5-5.2.37-alt1 p11+364786.100.1.1 1733981156 installed
+<13>Nov 23 15:13:01 rpmi: sh-5.2.15-alt1 p11+348780.500.1.1 1716835625 installed
+<13>Nov 23 15:13:01 rpmi: grep-3.11.0.20.dd8f-alt1 p11+348779.1000.1.1 1716503040 installed
+<13>Nov 23 15:13:01 rpmi: terminfo-6.5.20250705-alt1 p11+414777.100.1.1 1775807998 installed
+<13>Nov 23 15:13:01 rpmi: libtinfo6-6.5.20250705-alt1 p11+414777.100.1.1 1775807998 installed
+<13>Nov 23 15:13:01 rpmi: libreadline8-8.2.10-alt1 sisyphus+338911.100.4.1 1706717067 installed
+<13>Nov 23 15:13:01 rpmi: coreutils-9.4.0.75.7f2c97-alt1 p11+350390.200.2.1 1717585049 installed
+<13>Nov 23 15:13:02 rpmi: bash5-5.2.37-alt1 p11+364786.100.1.1 1733981156 installed
+<13>Nov 23 15:13:02 rpmi: bash-5.2.15-alt1 p11+348780.500.1.1 1716835625 installed
+<13>Nov 23 15:13:02 rpmi: gawk-5.1.0.0.213.d04f-alt1 p11+348780.1000.1.1 1716836074 installed
+<13>Nov 23 15:13:02 rpmi: rpm-4.13.0.1-alt45 p11+418689.100.2.1 1781016121 installed
+<13>Nov 23 15:13:02 rpmi: fakeroot-1.29-alt3 p11+348779.600.1.1 1716502783 installed
+<13>Nov 23 15:13:07 rpmi: libcrypt-4.4.36-alt1 sisyphus+335411.100.1.1 1701329049 installed
+<13>Nov 23 15:13:07 rpmi: perl-parent-0.241-alt1 sisyphus+315289.100.1.1 1676475376 installed
+<13>Nov 23 15:13:07 rpmi: perl-base-1:5.38.4-alt1.p11 p11+415674.400.4.1 1776697020 installed
+<13>Nov 23 15:13:08 rpmi: diffutils-3.10.0.207.774b-alt1 sisyphus+336930.1000.1.1 1703105501 installed
+<13>Nov 23 15:13:08 rpmi: glibc-pthread-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:08 rpmi: gnu-config-2023.01.21-alt1 sisyphus+313857.100.1.1 1674301506 installed
+<13>Nov 23 15:13:08 rpmi: libstdc++6-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:08 rpmi: automake-common-0.4.2-alt1 sisyphus+264199.200.1.1 1609281542 installed
+<13>Nov 23 15:13:08 rpmi: m4-1.4.19.0.15.bb35-alt1 sisyphus+336930.2000.1.1 1703106995 installed
+<13>Nov 23 15:13:08 rpmi: xz-5.4.5-alt1 p11+348780.1600.1.1 1716837944 installed
+<13>Nov 23 15:13:08 rpmi: tar-1.35.0.20.1cdad4cc-alt1 p11+348780.1400.1.1 1716837788 installed
+<13>Nov 23 15:13:08 rpmi: libtcb-1.2-alt2 p11+349608.100.1.3 1716834520 installed
+<13>Nov 23 15:13:08 rpmi: glibc-utils-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:09 rpmi: glibc-kernheaders-generic-6.18-alt1 p11+413702.100.2.1 1775223363 installed
+<13>Nov 23 15:13:10 rpmi: glibc-kernheaders-x86-6.18-alt1 p11+413702.100.2.1 1775223363 installed
+<13>Nov 23 15:13:10 rpmi: glibc-kernheaders-6.18-alt1 p11+413702.100.2.1 1775223363 installed
+<13>Nov 23 15:13:10 rpmi: libmagic-5.45-alt1 p11+348779.700.1.1 1716502839 installed
+<13>Nov 23 15:13:10 rpmi: libseccomp-2.6.1-alt1 p11+431709.100.2.1 1789652265 installed
+<13>Nov 23 15:13:10 rpmi: psmisc-23.6-alt3 p11+349381.100.1.1 1716737260 installed
+<13>Nov 23 15:13:10 rpmi: libdw-0.191-alt1 sisyphus+347509.100.1.1 1714859321 installed
+<13>Nov 23 15:13:10 rpmi: libmpfr6-4.2.1-alt1 sisyphus+327740.100.1.1 1692720847 installed
+<13>Nov 23 15:13:10 rpmi: autoconf-common-0.3.2-alt1 sisyphus+264199.100.1.1 1609281515 installed
+<13>Nov 23 15:13:10 rpmi: gzip-1.13-alt3 p11+348780.1100.1.1 1716836206 installed
+<13>Nov 23 15:13:11 rpmi: common-licenses-3.29.0-alt1 p11+434193.100.2.2 1790914544 installed
+<13>Nov 23 15:13:11 rpmi: libcap-ng-0.8.5-alt1 sisyphus+348204.100.1.1 1715863011 installed
+<13>Nov 23 15:13:11 rpmi: autoconf_2.71-2.71-alt3 sisyphus+327753.100.1.1 1692735633 installed
+<13>Nov 23 15:13:11 rpmi: autoconf-2:2.71-alt1 sisyphus+325013.300.1.1 1690141700 installed
+<13>Nov 23 15:13:11 rpmi: libmpc3-1.3.1-alt1 sisyphus+322962.200.2.1 1686691678 installed
+<13>Nov 23 15:13:11 rpmi: debugedit-5.0.0.27.6dd2-alt1 sisyphus+347441.100.1.1 1714777408 installed
+<13>Nov 23 15:13:11 rpmi: libasm-0.191-alt1 sisyphus+347509.100.1.1 1714859321 installed
+<13>Nov 23 15:13:11 rpmi: elfutils-0.191-alt1 sisyphus+347509.100.1.1 1714859321 installed
+<13>Nov 23 15:13:11 rpmi: file-5.45-alt1 p11+348779.700.1.1 1716502839 installed
+<13>Nov 23 15:13:11 rpmi: librpmbuild7-4.13.0.1-alt45 p11+418689.100.2.1 1781016121 installed
+<13>Nov 23 15:13:11 rpmi: rpmspec-4.13.0.1-alt45 p11+418689.100.2.1 1781016121 installed
+<13>Nov 23 15:13:11 rpmi: nss_tcb-1.2-alt2 p11+349608.100.1.3 1716834520 installed
+<13>Nov 23 15:13:12 rpmi: libubsan1-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:12 rpmi: glibc-nss-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:24 rpmi: glibc-locales-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:24 rpmi: glibc-gconv-modules-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:24 rpmi: iconv-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:25 rpmi: tzdata-2026e-alt0.p11.1 p11+436974.140.3.1 1792498903 installed
+<13>Nov 23 15:13:25 rpmi: glibc-timezones-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:25 rpmi: glibc-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:26 rpmi: perl-threads-1:5.38.4-alt1.p11 p11+415674.400.4.1 1776697020 installed
+<13>Nov 23 15:13:26 rpmi: automake_1.16-1.16.5-alt1 sisyphus+325642.300.5.1 1690582104 installed
+<13>Nov 23 15:13:26 rpmi: automake-1:1.16-alt1 sisyphus+226889.100.2.1 1554763109 installed
+<13>Nov 23 15:13:26 rpmi: perl-CPAN-Meta-Requirements-2.143-alt1 sisyphus+323462.100.1.1 1687421801 installed
+<13>Nov 23 15:13:26 rpmi: rpm-build-perl-0.85-alt6 sisyphus+335974.100.1.1 1701887945 installed
+<13>Nov 23 15:13:26 rpmi: which-2.20-alt2.qa1 p11+349768.100.1.1 1716936615 installed
+<13>Nov 23 15:13:26 rpmi: rpm-macros-systemd-6-alt2 p11+356646.100.26.1 1729360985 installed
+<13>Nov 23 15:13:26 rpmi: rpm-macros-python-0.43.2-alt1 sisyphus+271106.100.1.1 1619868598 installed
+<13>Nov 23 15:13:26 rpmi: rpm-build-file-4.26-alt18 p11+349465.100.1.1 1716791164 installed
+<13>Nov 23 15:13:26 rpmi: patch-2.7.6.0.27.7623-alt1 sisyphus+336930.2300.1.1 1703107341 installed
+<13>Nov 23 15:13:26 rpmi: make-2:4.4.0-alt2 p11+349160.100.1.1 1716618644 installed
+<13>Nov 23 15:13:26 rpmi: libtool-common-0.2.3-alt1 p11+349000.100.1.1 1716588432 installed
+<13>Nov 23 15:13:26 rpmi: libproc2_1-4.0.7-alt2 p11+438925.200.2.1 1794384209 installed
+<13>Nov 23 15:13:26 rpmi: libbeecrypt7-4.2.1-alt8 p11+348779.500.1.1 1716502739 installed
+<13>Nov 23 15:13:26 rpmi: librpm-4.0.4.212-alt1 p11+418655.300.5.1 1782823081 installed
+<13>Nov 23 15:13:26 rpmi: librpmbuild-4.0.4.212-alt1 p11+418655.300.5.1 1782823081 installed
+<13>Nov 23 15:13:26 rpmi: libzio-1.06-alt1 p11+349029.100.1.2 1716613752 installed
+<13>Nov 23 15:13:26 rpmi: info-install-7.1-alt1 sisyphus+338907.200.3.1 1706718831 installed
+<13>Nov 23 15:13:26 rpmi: xml-common-0.6.3-alt15 sisyphus+276099.100.1.1 1624817971 installed
+<13>Nov 23 15:13:26 rpmi: libxml2-1:2.12.10-alt3 p11+438062.100.4.1 1793344761 installed
+<13>Nov 23 15:13:27 rpmi: libunistring2-0.9.10-alt1 p11+349006.100.1.2 1716604783 installed
+<13>Nov 23 15:13:27 rpmi: gettext-0.21-alt2 sisyphus+328153.300.3.1 1693315380 installed
+<13>Nov 23 15:13:27 rpmi: libvtv0-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:27 rpmi: liblsan0-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:27 rpmi: libhwasan0-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:27 rpmi: libitm1-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:27 rpmi: libtsan2-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:27 rpmi: libasan8-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:27 rpmi: libatomic1-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:27 rpmi: libffi8-1:3.5.1-alt1 p11+392680.100.2.1 1757920520 installed
+<13>Nov 23 15:13:27 rpmi: glib2-locales-2.84.4-alt1 p11+396318.100.2.1 1760211330 installed
+<13>Nov 23 15:13:28 rpmi: glib2-2.84.4-alt1 p11+396318.100.2.1 1760211330 installed
+<13>Nov 23 15:13:28 rpmi: pkg-config-0.29.2-alt3 p11+349359.100.1.1 1716728182 installed
+<13>Nov 23 15:13:28 rpmi: libcrypt-devel-4.4.36-alt1 sisyphus+335411.100.1.1 1701329049 installed
+<13>Nov 23 15:13:28 rpmi: sysvinit-utils-3.00-alt2 p11+349606.100.1.1 1716833073 installed
+<13>Nov 23 15:13:28 rpmi: emacs-base-0.0.11-alt1 sisyphus+307458.200.1.1 1664286951 installed
+<13>Nov 23 15:13:28 rpmi: gcc-common-1.4.28-alt1 sisyphus+348678.100.1.1 1716396142 installed
+<13>Nov 23 15:13:30 rpmi: cpp13-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:30 rpmi: cpp-13-alt1 sisyphus+323337.300.1.1 1687267966 installed
+<13>Nov 23 15:13:30 rpmi: cpio-2.15-alt1 sisyphus+338924.100.1.1 1706126736 installed
+<13>Nov 23 15:13:30 rpmi: chkconfig-1.3.59-alt4 p11+348779.100.1.1 1716502552 installed
+<13>Nov 23 15:13:30 rpmi: bzip2-1:1.0.8-alt3 sisyphus+327286.5000.14.1 1711487039 installed
+<13>Nov 23 15:13:30 rpmi: bison-runtime-3.8.2-alt1 sisyphus+336930.400.1.1 1703105149 installed
+<13>Nov 23 15:13:30 rpmi: bison-3.8.2-alt1 sisyphus+336930.400.1.1 1703105149 installed
+<13>Nov 23 15:13:30 rpmi: libsframe1-1:2.41-alt2 p11+425562.100.1.1 1784279362 installed
+<13>Nov 23 15:13:30 rpmi: libctf-nobfd0-1:2.41-alt2 p11+425562.100.1.1 1784279362 installed
+<13>Nov 23 15:13:32 rpmi: binutils-1:2.41-alt2 p11+425562.100.1.1 1784279362 installed
+<13>Nov 23 15:13:32 rpmi: gettext-tools-0.21-alt2 sisyphus+328153.300.3.1 1693315380 installed
+<13>Nov 23 15:13:32 rpmi: libtool_2.4-2.4.7-alt5 sisyphus+341963.200.3.1 1711659208 installed
+<13>Nov 23 15:13:32 rpmi: libtool-3:2.4.2-alt7 1533461531 installed
+<13>Nov 23 15:13:33 rpmi: zstd-1.5.5-alt2 p11+348780.1700.1.1 1716838450 installed
+<13>Nov 23 15:13:33 rpmi: vim-minimal-4:9.2.1067-alt1 p11+432562.100.1.1 1789141908 installed
+<13>Nov 23 15:13:33 rpmi: vitmp-1.0-alt4.qa1 p11+349756.100.1.1 1716928764 installed
+<13>Nov 23 15:13:33 rpmi: rootfiles-alt-alt14 p11+370924.100.1.1 1737597750 installed
+<13>Nov 23 15:13:33 rpmi: setarch-2.39.2-alt2 p11+375427.100.8.1 1744210694 installed
+<13>Nov 23 15:13:33 rpmi: libsmartcols-2.39.2-alt2 p11+375427.100.8.1 1744210694 installed
+<13>Nov 23 15:13:33 rpmi: libuuid-2.39.2-alt2 p11+375427.100.8.1 1744210694 installed
+<13>Nov 23 15:13:33 rpmi: libblkid-2.39.2-alt2 p11+375427.100.8.1 1744210694 installed
+<13>Nov 23 15:13:33 rpmi: libmount-2.39.2-alt2 p11+375427.100.8.1 1744210694 installed
+<13>Nov 23 15:13:33 rpmi: libudev1-1:258.9-alt1 p11+424648.100.13.1 1791305222 installed
+<13>Nov 23 15:13:33 rpmi: libgpm-1.20.1-alt19 sisyphus+328124.100.1.1 1693248097 installed
+<13>Nov 23 15:13:33 rpmi: libncursesw6-6.5.20250705-alt1 p11+414777.100.1.1 1775807998 installed
+<13>Nov 23 15:13:33 rpmi: procps-4.0.7-alt2 p11+438925.200.2.1 1794384209 installed
+<13>Nov 23 15:13:33 rpmi: libaudit-common-4.2.1-alt1 p11+426513.200.2.1 1785397221 installed
+<13>Nov 23 15:13:33 rpmi: libaudit1-4.2.1-alt1 p11+426513.200.2.1 1785397221 installed
+<13>Nov 23 15:13:33 rpmi: shadow-convert-1:4.17.4-alt4 p11+434070.200.2.1 1790187847 installed
+<13>Nov 23 15:13:33 rpmi: libcap-utils-1:2.69-alt2 p11+364189.200.11.1 1738139020 installed
+<13>Nov 23 15:13:33 rpmi: control-0.8.0-alt3 p11+361706.100.1.1 1730789114 installed
+<13>Nov 23 15:13:33 rpmi: passwdqc-control-2.0.3-alt3 p11+405461.100.1.1 1768762099 installed
+<13>Nov 23 15:13:33 rpmi: libpasswdqc-2.0.3-alt3 p11+405461.100.1.1 1768762099 installed
+<13>Nov 23 15:13:34 rpmi: pam-config-control-1.10.0-alt0.p11.2 p11+405959.20.5.1 1781550898 installed
+<13>Nov 23 15:13:34 rpmi: pam0_tcb-1.2-alt2 p11+349608.100.1.3 1716834520 installed
+<13>Nov 23 15:13:34 rpmi: pam-1.7.1-alt1 p11+390642.100.1.1 1753279873 installed
+<13>Nov 23 15:13:34 rpmi: pam0_mktemp-1.1.1-alt4 p11+349331.100.1.1 1716719151 installed
+<13>Nov 23 15:13:34 rpmi: pam0_passwdqc-2.0.3-alt3 p11+405461.100.1.1 1768762099 installed
+<13>Nov 23 15:13:34 rpmi: pam-config-1.10.0-alt0.p11.2 p11+405959.20.5.1 1781550898 installed
+<13>Nov 23 15:13:35 rpmi: libpam0-1.7.1-alt1 p11+390642.100.1.1 1753279873 installed
+<13>Nov 23 15:13:35 rpmi: pam0_userpass-1.0.2-alt7 p11+349333.100.1.1 1716720034 installed
+<13>Nov 23 15:13:35 rpmi: tcb-utils-1.2-alt2 p11+349608.100.1.3 1716834520 installed
+<13>Nov 23 15:13:36 rpmi: shadow-utils-1:4.17.4-alt4 p11+434070.200.2.1 1790187847 installed
+<13>Nov 23 15:13:36 rpmi: etcskel-2.0.17-alt1 p11+348780.700.1.1 1716836002 installed
+<13>Nov 23 15:13:36 rpmi: util-linux-control-2.39.2-alt2 p11+375427.100.8.1 1744210694 installed
+<13>Nov 23 15:13:37 rpmi: util-linux-2.39.2-alt2 p11+375427.100.8.1 1744210694 installed
+<13>Nov 23 15:13:37 rpmi: libtic6-6.5.20250705-alt1 p11+414777.100.1.1 1775807998 installed
+<13>Nov 23 15:13:37 rpmi: termutils-6.5.20250705-alt1 p11+414777.100.1.1 1775807998 installed
+<13>Nov 23 15:13:37 rpmi: libshell-0.4.13-alt1 sisyphus+340108.100.1.1 1707399175 installed
+<13>Nov 23 15:13:37 rpmi: service-0.5.34-alt1 p11+404496.100.1.1 1767600927 installed
+<13>Nov 23 15:13:37 rpmi: kernel-headers-common-1.2.9-alt1 sisyphus+320648.100.1.1 1684309073 installed
+<13>Nov 23 15:13:38 rpmi: glibc-devel-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 23 15:13:41 rpmi: gcc13-13.2.1-alt3 sisyphus+339335.100.1.1 1706563486 installed
+<13>Nov 23 15:13:41 rpmi: gcc-13-alt1 sisyphus+323337.300.1.1 1687267966 installed
+<13>Nov 23 15:13:41 rpmi: alt-os-release-0.3.0-alt1 p11+397470.100.2.1 1762855343 installed
+<13>Nov 23 15:13:41 rpmi: branding-xalt-kworkstation-release-11.5.0-alt1 p11+437105.200.3.1 1794834239 installed
+<13>Nov 23 15:13:41 rpmi: rpm-macros-python3-0.1.29-alt1 p11+398031.540.1.1 1762796334 installed
+<13>Nov 23 15:13:41 rpmi: rpm-build-4.0.4.212-alt1 p11+418655.300.5.1 1782823081 installed
+<13>Nov 23 15:13:41 rpmi: basesystem-1:sisyphus-alt25 p11+349623.100.2.1 1716844434 installed
+<13>Nov 23 15:13:41 rpmi: time-1:1.7-alt4 p11+349641.100.1.1 1716880527 installed
+<13>Nov 23 15:13:41 rpmi: sisyphus_check-0.8.71-alt1 p11+383039.100.3.1 1749570640 installed
+<86>Nov 23 15:13:48 groupadd[3155]: group added to /etc/group: name=caller, GID=1000
+<86>Nov 23 15:13:48 groupadd[3155]: group added to /etc/gshadow: name=caller
+<86>Nov 23 15:13:48 groupadd[3155]: new group: name=caller, GID=1000
+<86>Nov 23 15:13:48 useradd[3161]: new user: name=caller, UID=1000, GID=1000, home=/, shell=/bin/bash, from=none
+<86>Nov 23 15:13:48 groupadd[3170]: group added to /etc/group: name=rooter, GID=1001
+<86>Nov 23 15:13:48 groupadd[3170]: group added to /etc/gshadow: name=rooter
+<86>Nov 23 15:13:48 groupadd[3170]: new group: name=rooter, GID=1001
+<86>Nov 23 15:13:48 useradd[3176]: new user: name=rooter, UID=1001, GID=1001, home=/root, shell=/bin/bash, from=none
+<86>Nov 23 15:13:48 groupadd[3185]: group added to /etc/group: name=builder, GID=1002
+<86>Nov 23 15:13:48 groupadd[3185]: group added to /etc/gshadow: name=builder
+<86>Nov 23 15:13:48 groupadd[3185]: new group: name=builder, GID=1002
+<86>Nov 23 15:13:48 useradd[3191]: new user: name=builder, UID=1002, GID=1002, home=/usr/src, shell=/bin/bash, from=none

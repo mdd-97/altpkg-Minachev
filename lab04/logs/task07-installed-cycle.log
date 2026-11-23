@@ -1,0 +1,30 @@
++ hsh-run --rooter -- /home/user/rdsu-lab04/rpm/hasher /bin/bash -ec 'cat >/tmp/rdsu-tasks-new.rpm; rpm -U /tmp/rdsu-tasks-new.rpm; rpm -q rdsu-tasks'
+<13>Nov 23 15:33:14 rpm: rdsu-tasks-1.1-alt2 1795447911 installed
+<13>Nov 23 15:33:14 rpm: rdsu-tasks-1.0-alt1 1795447184 removed
+rdsu-tasks-1.1-alt2.noarch
++ hsh-run -- /home/user/rdsu-lab04/rpm/hasher /bin/bash -ec '
+        t=$(mktemp -d)
+        trap "rm -rf -- \"$t\"" EXIT
+        export XDG_CONFIG_HOME=$t
+        rdsu-tasks add "One open task"
+        n=$(rdsu-tasks count)
+        echo "count=$n"
+        test "$n" = 1
+    '
+Added 1
+count=1
++ hsh-run --rooter -- /home/user/rdsu-lab04/rpm/hasher /bin/bash -ec 'cat >/tmp/rdsu-tasks-previous.rpm; rpm -U --oldpackage /tmp/rdsu-tasks-previous.rpm; rpm -q rdsu-tasks'
+<13>Nov 23 15:33:16 rpm: rdsu-tasks-1.0-alt1 1795447708 installed
+<13>Nov 23 15:33:16 rpm: rdsu-tasks-1.1-alt2 1795447911 removed
+rdsu-tasks-1.0-alt1.noarch
++ hsh-run -- /home/user/rdsu-lab04/rpm/hasher /bin/bash -ec '
+        t=$(mktemp -d)
+        trap "rm -rf -- \"$t\"" EXIT
+        export XDG_CONFIG_HOME=$t
+        rc=0
+        rdsu-tasks count || rc=$?
+        echo "old count exit=$rc"
+        test "$rc" = 2
+    '
+Usage: rdsu-tasks [add TEXT | list | done ID]
+old count exit=2
