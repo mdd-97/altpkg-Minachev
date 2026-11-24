@@ -1,0 +1,2 @@
+hasher-privd: setup_mountpoints: /proc: mount point is not allowed
+with proc requested exit=1

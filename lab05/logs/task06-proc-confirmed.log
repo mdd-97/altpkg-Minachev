@@ -1,0 +1,13 @@
+proc /proc proc rw,nosuid,nodev,noexec,relatime,gid=19,hidepid=invisible 0 0
+Breakpoint 1 at 0x1224: file /tmp/lab05-progression.c, line 16.
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, emit (index=0, value=1) at /tmp/lab05-progression.c:16
+16	    printf("%ld\n", value);
+index = 0
+value = 1

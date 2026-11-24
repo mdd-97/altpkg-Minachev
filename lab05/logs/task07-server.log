@@ -1,0 +1,10 @@
+Process ./progression-debug created; pid = 30183
+Listening on port 45461
+Remote debugging from host 127.0.0.1, port 59036
+1
+3
+5
+7
+9
+
+Child exited with status 0

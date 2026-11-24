@@ -1,0 +1,45 @@
++ export LC_ALL=C
++ LC_ALL=C
++++ dirname env/check-strip.sh
+++ cd env/..
+++ pwd
++ root=/home/user/rdsu-lab05/repo/lab05
++ cd /home/user/rdsu-lab05/repo/lab05/sources
++ make debug
+make: Nothing to be done for 'debug'.
+++ mktemp -d
++ tmp=/tmp/.private/user/tmp.v1KZ1eLBos
++ trap 'rm -rf -- "$tmp"' EXIT
++ cp progression-debug /tmp/.private/user/tmp.v1KZ1eLBos/stripped
++ strip --strip-all /tmp/.private/user/tmp.v1KZ1eLBos/stripped
++ stat -c '%s %n' progression-debug /tmp/.private/user/tmp.v1KZ1eLBos/stripped
+22600 progression-debug
+15192 /tmp/.private/user/tmp.v1KZ1eLBos/stripped
++ file progression-debug /tmp/.private/user/tmp.v1KZ1eLBos/stripped
+progression-debug:                          ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=14fb17ca164d91df4436d83b495b80ff665d084b, for GNU/Linux 3.2.0, with debug_info, not stripped
+/tmp/.private/user/tmp.v1KZ1eLBos/stripped: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=14fb17ca164d91df4436d83b495b80ff665d084b, for GNU/Linux 3.2.0, stripped
+++ stat -c %s /tmp/.private/user/tmp.v1KZ1eLBos/stripped
+++ stat -c %s progression-debug
++ test 15192 -lt 22600
++ ./progression-debug 1 9 2
++ /tmp/.private/user/tmp.v1KZ1eLBos/stripped 1 9 2
++ diff -u /tmp/.private/user/tmp.v1KZ1eLBos/expected /tmp/.private/user/tmp.v1KZ1eLBos/observed
++ command -v gdb
++ DEBUGINFOD_URLS=
++ gdb -nx -batch -ex 'info sources' progression-debug
+/home/user/rdsu-lab05/repo/lab05/sources/progression-debug:
+(Full debug information has not yet been read for this file.)
+
+/usr/src/RPM/BUILD/glibc-2.38.0.223.f053ff-alt1.p11.1/csu/../sysdeps/x86/abi-note.c, /usr/src/RPM/BUILD/glibc-2.38.0.223.f053ff-alt1.p11.1/csu/../posix/bits/types.h, /usr/src/RPM/BUILD/glibc-2.38.0.223.f053ff-alt1.p11.1/csu/../bits/stdint-intn.h, /usr/src/RPM/BUILD/glibc-2.38.0.223.f053ff-alt1.p11.1/csu/../bits/stdint-uintn.h, /usr/src/RPM/BUILD/glibc-2.38.0.223.f053ff-alt1.p11.1/csu/../elf/elf.h, /usr/src/RPM/BUILD/glibc-2.38.0.223.f053ff-alt1.p11.1/csu/../csu/abi-note.c, /usr/src/RPM/BUILD/glibc-2.38.0.223.f053ff-alt1.p11.1/csu/init.c, /usr/src/RPM/BUILD/glibc-2.38.0.223.f053ff-alt1.p11.1/csu/static-reloc.c, /home/user/rdsu-lab05/repo/lab05/sources/progression.c, /usr/lib64/gcc/x86_64-alt-linux/13/include/stddef.h, /usr/include/bits/types.h, /usr/include/bits/types/struct_FILE.h, /usr/include/bits/types/FILE.h, /usr/include/stdio.h, /usr/include/stdlib.h, /usr/include/errno.h
+
++ rc=0
++ DEBUGINFOD_URLS=
++ gdb -nx -batch -ex 'info sources' /tmp/.private/user/tmp.v1KZ1eLBos/stripped
++ rc=1
++ cat /tmp/.private/user/tmp.v1KZ1eLBos/gdb-stripped
+No symbol table is loaded.  Use the "file" command.
++ printf 'stripped GDB exit=%s\n' 1
+stripped GDB exit=1
++ grep -F 'No symbol table is loaded' /tmp/.private/user/tmp.v1KZ1eLBos/gdb-stripped
+No symbol table is loaded.  Use the "file" command.
++ rm -rf -- /tmp/.private/user/tmp.v1KZ1eLBos

@@ -1,0 +1,66 @@
+make: Entering directory '/home/user/rdsu-lab05/oracle.nnljQ5/sources'
+bash ../check/check-gdb.sh
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+conditional run 1: 3 matching lines
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+conditional run 2: 3 matching lines
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+conditional run 3: 3 matching lines
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+--- ../check/range.expected	2026-11-24 11:29:01.804633409 +0300
++++ /tmp/.private/user/tmp.zzrm0F6CiB/extract	2026-11-24 11:29:04.152646603 +0300
+@@ -1,5 +1,3 @@
+ LAB05 range index=1 value=3
+ LAB05 range index=2 value=5
+ LAB05 range index=3 value=7
+-
+-BROKEN
+make: *** [Makefile:24: check] Error 1
+make: Leaving directory '/home/user/rdsu-lab05/oracle.nnljQ5/sources'
+damaged make exit=2
+make: Entering directory '/home/user/rdsu-lab05/oracle.nnljQ5/sources'
+bash ../check/check-gdb.sh
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+conditional run 1: 3 matching lines
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+conditional run 2: 3 matching lines
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+conditional run 3: 3 matching lines
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+range run 1: 3 matching lines
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+range run 2: 3 matching lines
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+range run 3: 3 matching lines
+make: Leaving directory '/home/user/rdsu-lab05/oracle.nnljQ5/sources'
+restored-make-exit=0

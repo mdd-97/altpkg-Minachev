@@ -1,0 +1,10 @@
+kernel.yama.ptrace_scope=1
+Missing separate debuginfo for /usr/bin/sleep.
+Try to install the hash file /usr/lib/debug/.build-id/78/37873ee465065463c7f8b1d4b37aaa6f8bda5c.debug
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+0x00007f85ab9abcd1 in _dl_map_object () from /lib64/ld-linux-x86-64.so.2
+  Num  Description       Connection           Executable        
+* 1    process 32905     1 (native)           /usr/bin/sleep    
+[Inferior 1 (process 32905) detached]
+child attach exit=0

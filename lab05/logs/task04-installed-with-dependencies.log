@@ -1,0 +1,22 @@
++ curl -fsSL --max-time 200 --retry 1 https://ftp.altlinux.org/pub/distributions/ALTLinux/p11/branch/x86_64/RPMS.debuginfo/glibc-core-debuginfo-2.38.0.223.f053ff-alt1.p11.1.x86_64.rpm -o /home/user/rdsu-lab05/debug-rpms/glibc-core-debuginfo-2.38.0.223.f053ff-alt1.p11.1.x86_64.rpm
++ rpm -qp --provides /home/user/rdsu-lab05/debug-rpms/glibc-core-debuginfo-2.38.0.223.f053ff-alt1.p11.1.x86_64.rpm
++ grep -F 'debug64(libc.so.6)'
+debug64(libc.so.6)
++ hsh-run --rooter -- /home/user/rdsu-lab05/hasher /bin/bash -ec 'cat > /tmp/lab05-glibc-debuginfo.rpm'
++ hsh-run --rooter -- /home/user/rdsu-lab05/hasher /bin/bash -ec 'cat > /tmp/lab05-libexpat-debuginfo.rpm; rpm -i /tmp/lab05-glibc-debuginfo.rpm /tmp/lab05-libexpat-debuginfo.rpm; rpm -q libexpat-debuginfo; rpm -ql libexpat-debuginfo | head -9'
+<13>Nov 24 08:46:38 rpm: glibc-core-debuginfo-6:2.38.0.223.f053ff-alt1.p11.1 p11+422743.100.3.2 1782898848 installed
+<13>Nov 24 08:46:38 rpm: libexpat-debuginfo-2.7.1-alt1 p11+379972.100.3.1 1744981636 installed
+libexpat-debuginfo-2.7.1-alt1.x86_64
+/usr/lib/debug/.build-id/a0
+/usr/lib/debug/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810
+/usr/lib/debug/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810.debug
+/usr/lib/debug/lib64/libexpat.so.1.10.2.debug
+/usr/lib/debug/lib64/libexpat.so.1.debug
+/usr/src/debug/expat-2.7.1
+/usr/src/debug/expat-2.7.1/expat
+/usr/src/debug/expat-2.7.1/expat/lib
+/usr/src/debug/expat-2.7.1/expat/lib/expat.h
++ hsh-run -- /home/user/rdsu-lab05/hasher /bin/bash -ec 'set -o pipefail; DEBUGINFOD_URLS= gdb -nx -batch -iex "set debuginfod enabled off" -ex "info sources" /lib64/libexpat.so.1 | grep -oE "[^, ]*xmlparse[.]c" | head -3'
+/usr/src/debug/expat-2.7.1/expat/lib/xmlparse.c
++ echo 'installed debuginfo exit=0'
+installed debuginfo exit=0

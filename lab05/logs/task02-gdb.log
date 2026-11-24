@@ -1,0 +1,123 @@
++ export LC_ALL=C DEBUGINFOD_URLS=
++ LC_ALL=C
++ DEBUGINFOD_URLS=
++++ dirname env/check-build-modes.sh
+++ cd env/..
+++ pwd
++ root=/home/user/rdsu-lab05/repo/lab05
++ cd /home/user/rdsu-lab05/repo/lab05/sources
++ make all
+make: Nothing to be done for 'all'.
+++ mktemp -d
++ tmp=/tmp/.private/user/tmp.sH4Mbt0DJE
++ trap 'rm -rf -- "$tmp"' EXIT
++ for program in progression progression-debug progression-opt
++ gdb -nx -batch -ex 'set debuginfod enabled off' -ex 'break main' -ex 'run 1 9 2' -ex list -ex 'info locals' -ex next -ex step ./progression
+Breakpoint 1 at 0x401233
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, 0x0000000000401233 in main ()
+warning: 1	static-reloc.c: No such file or directory
+No symbol table info available.
+Single stepping until exit from function main,
+which has no line number information.
+0x00007ffff7df4c8c in ?? () from /lib64/libc.so.6
+Cannot find bounds of current function
++ :
++ for program in progression progression-debug progression-opt
++ gdb -nx -batch -ex 'set debuginfod enabled off' -ex 'break main' -ex 'run 1 9 2' -ex list -ex 'info locals' -ex next -ex step ./progression-debug
+Breakpoint 1 at 0x40123e: file progression.c, line 20.
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, main (argc=4, argv=0x7fffffffea78) at progression.c:20
+20	{
+15	    (void)index;
+16	    printf("%ld\n", value);
+17	}
+18	
+19	int main(int argc, char **argv)
+20	{
+21	    long first = 0;
+22	    long last = 0;
+23	    long step = 1;
+24	    if (argc == 1) {
+first = 0
+last = 0
+step = 0
+valid = 0
+index = 140737354028512
+21	    long first = 0;
+22	    long last = 0;
++ for program in progression progression-debug progression-opt
++ gdb -nx -batch -ex 'set debuginfod enabled off' -ex 'break main' -ex 'run 1 9 2' -ex list -ex 'info locals' -ex next -ex step ./progression-opt
+Breakpoint 1 at 0x401090: file progression.c, line 20.
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, main (argc=4, argv=0x7fffffffea78) at progression.c:20
+20	{
+15	    (void)index;
+16	    printf("%ld\n", value);
+17	}
+18	
+19	int main(int argc, char **argv)
+20	{
+21	    long first = 0;
+22	    long last = 0;
+23	    long step = 1;
+24	    if (argc == 1) {
+first = 0
+last = 0
+step = 0
+valid = <optimized out>
+index = <optimized out>
+21	    long first = 0;
+22	    long last = 0;
++ mkdir /tmp/.private/user/tmp.sH4Mbt0DJE/build /tmp/.private/user/tmp.sH4Mbt0DJE/moved
++ cp progression.c /tmp/.private/user/tmp.sH4Mbt0DJE/build/
++ cd /tmp/.private/user/tmp.sH4Mbt0DJE/build
++ cc -O0 -g -Wall -Wextra -o progression progression.c
++ gdb -nx -batch -ex 'list main' ./progression
+15	    (void)index;
+16	    printf("%ld\n", value);
+17	}
+18	
+19	int main(int argc, char **argv)
+20	{
+21	    long first = 0;
+22	    long last = 0;
+23	    long step = 1;
+24	    if (argc == 1) {
++ mv /tmp/.private/user/tmp.sH4Mbt0DJE/build/progression /tmp/.private/user/tmp.sH4Mbt0DJE/moved/progression
++ mv /tmp/.private/user/tmp.sH4Mbt0DJE/build /tmp/.private/user/tmp.sH4Mbt0DJE/hidden
++ cd /tmp/.private/user/tmp.sH4Mbt0DJE/moved
++ gdb -nx -batch -ex 'list main' ./progression
+warning: 15	progression.c: No such file or directory
++ mv /tmp/.private/user/tmp.sH4Mbt0DJE/hidden /tmp/.private/user/tmp.sH4Mbt0DJE/build
++ cd /tmp/.private/user/tmp.sH4Mbt0DJE/build
++ gdb -nx -batch -ex 'list main' /tmp/.private/user/tmp.sH4Mbt0DJE/moved/progression
+15	    (void)index;
+16	    printf("%ld\n", value);
+17	}
+18	
+19	int main(int argc, char **argv)
+20	{
+21	    long first = 0;
+22	    long last = 0;
+23	    long step = 1;
+24	    if (argc == 1) {
++ rm -rf -- /tmp/.private/user/tmp.sH4Mbt0DJE

@@ -1,0 +1,80 @@
++ export LC_ALL=C
++ LC_ALL=C
++++ dirname env/check-stack.sh
+++ cd env/..
+++ pwd
++ root=/home/user/rdsu-lab05/repo/lab05
++ cd /home/user/rdsu-lab05/repo/lab05/sources
+++ mktemp -d
++ tmp=/tmp/.private/user/tmp.rek5GWSOOk
++ trap 'rm -rf -- "$tmp"' EXIT
++ cc -O0 -g -Wall -Wextra -fsyntax-only warning-demo.c
++ cc -O0 -g -Wall -Wextra -c warning-demo.c -o /tmp/.private/user/tmp.rek5GWSOOk/warning.o
++ cat /tmp/.private/user/tmp.rek5GWSOOk/warning
+warning-demo.c: In function 'warning_demo':
+warning-demo.c:5:12: warning: 'value' is used uninitialized [-Wuninitialized]
+    5 |     return value;
+      |            ^~~~~
+warning-demo.c:4:9: note: 'value' was declared here
+    4 |     int value;
+      |         ^~~~~
++ grep -i uninitialized /tmp/.private/user/tmp.rek5GWSOOk/warning
+warning-demo.c:5:12: warning: 'value' is used uninitialized [-Wuninitialized]
++ cc -O0 -g -Wall -Wextra stack-demo.c -o /tmp/.private/user/tmp.rek5GWSOOk/before
++ cc -O0 -g -Wall -Wextra -DFIXED stack-demo.c -o /tmp/.private/user/tmp.rek5GWSOOk/after
++ printf '15\n'
++ /tmp/.private/user/tmp.rek5GWSOOk/before
++ /tmp/.private/user/tmp.rek5GWSOOk/after
++ rc=0
++ diff -u /tmp/.private/user/tmp.rek5GWSOOk/expected /tmp/.private/user/tmp.rek5GWSOOk/before.out
+--- /tmp/.private/user/tmp.rek5GWSOOk/expected	2026-11-24 11:24:44.255984685 +0300
++++ /tmp/.private/user/tmp.rek5GWSOOk/before.out	2026-11-24 11:24:44.263984721 +0300
+@@ -1 +1 @@
+-15
++12
++ rc=1
++ test 1 = 1
++ echo 'before diff exit=1'
+before diff exit=1
++ diff -u /tmp/.private/user/tmp.rek5GWSOOk/expected /tmp/.private/user/tmp.rek5GWSOOk/after.out
++ echo 'after diff exit=0'
+after diff exit=0
++ command -v gdb
++ gdb -nx --quiet --batch -x ../gdb/stack.gdb /tmp/.private/user/tmp.rek5GWSOOk/before
+Breakpoint 1 at 0x116a: file stack-demo.c, line 15.
+Breakpoint 2 at 0x1145: file stack-demo.c, line 5.
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, process (input=10, adjustment=5) at stack-demo.c:15
+15	    return calculate(input, 2);
+input = 10
+adjustment = 5
+
+Breakpoint 2, calculate (value=10, adjustment=2) at stack-demo.c:5
+5	    long result = value + adjustment;
+#0  calculate (value=10, adjustment=2) at stack-demo.c:5
+#1  0x000055555555517b in process (input=10, adjustment=5) at stack-demo.c:15
+#2  0x0000555555555190 in main () at stack-demo.c:21
+value = 10
+adjustment = 2
+6	    return result;
+result = 12
+$1 = (long *) 0x7fffffffe978
+0x7fffffffe980:	0x00007fffffffe9a0	0x000055555555517b
+0x7fffffffe990:	0x0000000000000005	0x000000000000000a
+#1  0x000055555555517b in process (input=10, adjustment=5) at stack-demo.c:15
+15	    return calculate(input, 2);
+input = 10
+adjustment = 5
+#0  calculate (value=10, adjustment=2) at stack-demo.c:6
+6	    return result;
+value = 10
+adjustment = 2
+12
+[Inferior 1 (process 29672) exited normally]
++ rm -rf -- /tmp/.private/user/tmp.rek5GWSOOk

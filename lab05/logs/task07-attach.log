@@ -1,0 +1,4 @@
+kernel.yama.ptrace_scope=1
+ptrace: Operation not permitted.
+The program is not being run.
+attach exit=1

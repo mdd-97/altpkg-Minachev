@@ -1,0 +1,39 @@
++ curl -fsSL --retry 2 --max-time 100 https://ftp.altlinux.org/pub/distributions/ALTLinux/p11/branch/x86_64/RPMS.debuginfo/libexpat-debuginfo-2.7.1-alt1.x86_64.rpm -o /home/user/rdsu-lab05/debuginfo.go1WWx/libexpat-debuginfo-2.7.1-alt1.x86_64.rpm
++ rpm -qpl /home/user/rdsu-lab05/debuginfo.go1WWx/libexpat-debuginfo-2.7.1-alt1.x86_64.rpm
+/usr/lib/debug/.build-id/a0
+/usr/lib/debug/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810
+/usr/lib/debug/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810.debug
+/usr/lib/debug/lib64/libexpat.so.1.10.2.debug
+/usr/lib/debug/lib64/libexpat.so.1.debug
+/usr/src/debug/expat-2.7.1
+/usr/src/debug/expat-2.7.1/expat
+/usr/src/debug/expat-2.7.1/expat/lib
+/usr/src/debug/expat-2.7.1/expat/lib/expat.h
+/usr/src/debug/expat-2.7.1/expat/lib/expat_external.h
+/usr/src/debug/expat-2.7.1/expat/lib/internal.h
+/usr/src/debug/expat-2.7.1/expat/lib/nametab.h
+/usr/src/debug/expat-2.7.1/expat/lib/siphash.h
+/usr/src/debug/expat-2.7.1/expat/lib/xmlparse.c
+/usr/src/debug/expat-2.7.1/expat/lib/xmlrole.c
+/usr/src/debug/expat-2.7.1/expat/lib/xmlrole.h
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok.c
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok.h
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok_impl.c
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok_impl.h
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok_ns.c
++ mkdir /home/user/rdsu-lab05/debuginfo.go1WWx/root
++ rpm2cpio /home/user/rdsu-lab05/debuginfo.go1WWx/libexpat-debuginfo-2.7.1-alt1.x86_64.rpm
++ cd /home/user/rdsu-lab05/debuginfo.go1WWx/root
++ cpio -id --quiet
++ DEBUGINFOD_URLS=
++ gdb -nx -batch -iex 'set debuginfod enabled off' -ex 'info sources' /lib64/libexpat.so.1
++ :
++ cat /home/user/rdsu-lab05/debuginfo.go1WWx/baseline
+Missing separate debuginfo for /usr/lib64/libexpat.so.1.10.2.
+Try to install the hash file /usr/lib/debug/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810.debug
+No symbol table is loaded.  Use the "file" command.
++ DEBUGINFOD_URLS=
++ gdb -nx -batch -iex 'set debug-file-directory /home/user/rdsu-lab05/debuginfo.go1WWx/root/usr/lib/debug' -iex 'set debuginfod enabled off' -ex 'info sources' /lib64/libexpat.so.1
++ grep -oE '[^, ]*xmlparse\.c' /home/user/rdsu-lab05/debuginfo.go1WWx/local
++ head -3
+/usr/src/debug/expat-2.7.1/expat/lib/xmlparse.c

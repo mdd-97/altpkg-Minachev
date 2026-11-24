@@ -1,0 +1,9 @@
+Build ID=a0e7428cd802821107e0aa8f07fe016f6d92c810
+DEBUGINFOD_URLS=http://127.0.0.1:43383
+Downloading separate debug info for /usr/lib64/libexpat.so.1.10.2...
+/usr/src/debug/expat-2.7.1/expat/lib/xmlparse.c
+cache bytes=370168 path=/home/user/rdsu-lab05/debug-http.zrmfwH/cache/a0e7428cd802821107e0aa8f07fe016f6d92c810/debuginfo
+No symbol table is loaded.  Use the "file" command.
+Serving HTTP on 127.0.0.1 port 43383 (http://127.0.0.1:43383/) ...
+127.0.0.1 - - [24/Nov/2026 11:40:35] "GET /buildid/a0e7428cd802821107e0aa8f07fe016f6d92c810/debuginfo HTTP/1.1" 200 -
+local debuginfod protocol check exit=0

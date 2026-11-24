@@ -1,0 +1,13 @@
+proc-absent
+Breakpoint 1 at 0x1224: file /tmp/lab05-progression.c, line 16.
+warning: /proc is not accessible.
+warning: opening /proc/self/mem file failed: No such file or directory (2)
+warning: opening /proc/PID/mem file for lwp 30784.30784 failed: No such file or directory (2)
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Warning:
+Cannot insert breakpoint 1.
+Cannot access memory at address 0x1214
+
+No symbol table info available.
+without configured mount exit=0

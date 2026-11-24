@@ -1,0 +1,30 @@
+++ mktemp -d
++ temp=/tmp/.private/user/tmp.DminziMmR1
++ trap 'rm -rf -- "$temp"' EXIT
++ cd /tmp/.private/user/tmp.DminziMmR1
++ printf '%s\n' 'define lab05hello' '  echo LAB05 init loaded\n' end
++ rc=0
++ gdb -nh -batch -iex 'set auto-load safe-path /nonexistent' -ex lab05hello
++ rc=1
++ cat denied
+warning: File "/tmp/.private/user/tmp.DminziMmR1/.gdbinit" auto-loading has been declined by your `auto-load safe-path' set to "/nonexistent".
+To enable execution of this file add
+	add-auto-load-safe-path /tmp/.private/user/tmp.DminziMmR1/.gdbinit
+line to your configuration file "/home/user/.config/gdb/gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/user/.config/gdb/gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+Undefined command: "lab05hello".  Try "help".
++ grep -F 'Undefined command' denied
+Undefined command: "lab05hello".  Try "help".
++ printf 'untrusted init exit=%s\n' 1
+untrusted init exit=1
++ gdb -nh -batch -iex 'set auto-load safe-path /tmp/.private/user/tmp.DminziMmR1/.gdbinit' -ex lab05hello
++ tee enabled
+LAB05 init loaded
++ grep -Fx 'LAB05 init loaded' enabled
+LAB05 init loaded
+++ rm -rf -- /tmp/.private/user/tmp.DminziMmR1
