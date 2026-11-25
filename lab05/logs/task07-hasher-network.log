@@ -1,0 +1,9 @@
+uid=1000(user) gid=1000(user) groups=1000(user),10(wheel),36(vmusers),100(users),995(hashman),1001(user_a),1002(user_b),1003(user_c),1004(user_d)
+Hasher pair 1
+62.152.55.238   STREAM ftp.altlinux.org
+62.152.55.238   DGRAM  
+62.152.55.238   RAW    
+Hasher pair 2
+62.152.55.238   STREAM ftp.altlinux.org
+62.152.55.238   DGRAM  
+62.152.55.238   RAW    

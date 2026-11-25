@@ -1,0 +1,69 @@
++ rm -f /home/user/rdsu-lab05/yama-sleep.pid
++ launcher=42293
++ runuser -u user -- bash -c 'sleep 300 & child=$!; echo "$child" > "$HOME/rdsu-lab05/yama-sleep.pid"; wait "$child"'
++ for i in {1..30}
++ [[ -s /home/user/rdsu-lab05/yama-sleep.pid ]]
++ sleep 0.1
++ for i in {1..30}
++ [[ -s /home/user/rdsu-lab05/yama-sleep.pid ]]
++ break
+++ cat /home/user/rdsu-lab05/yama-sleep.pid
++ target=42296
++ ps -o pid,user,comm -p 42296
+    PID USER     COMMAND
+  42296 user     sleep
++ sysctl kernel.yama.ptrace_scope
+kernel.yama.ptrace_scope = 1
++ attach denied
++ local phase=denied rc=0
++ runuser -u user -- env DEBUGINFOD_URLS= gdb -nx -batch -iex 'set debuginfod enabled off' -ex 'attach 42296' -ex 'info threads' -ex detach
++ rc=1
++ cat /home/user/rdsu-lab05/yama-denied.log
+ptrace: Operation not permitted.
+No threads.
+The program is not being run.
++ echo 'denied exit=1'
+denied exit=1
++ [[ denied = allowed ]]
++ [[ 1 != 0 ]]
++ grep -i 'Operation not permitted' /home/user/rdsu-lab05/yama-denied.log
+ptrace: Operation not permitted.
++ sysctl -w kernel.yama.ptrace_scope=0
++ attach allowed
++ local phase=allowed rc=0
++ runuser -u user -- env DEBUGINFOD_URLS= gdb -nx -batch -iex 'set debuginfod enabled off' -ex 'attach 42296' -ex 'info threads' -ex detach
++ cat /home/user/rdsu-lab05/yama-allowed.log
+Missing separate debuginfo for /usr/bin/sleep.
+Try to install the hash file /usr/lib/debug/.build-id/78/37873ee465065463c7f8b1d4b37aaa6f8bda5c.debug
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+__GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7fff0e7b1a00, rem=0x7fff0e7b19f0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:71
+71	  return -r;
+  Id   Target Id                                 Frame 
+* 1    Thread 0x7f2db3aa9740 (LWP 42296) "sleep" __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7fff0e7b1a00, rem=0x7fff0e7b19f0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:71
+[Inferior 1 (process 42296) detached]
++ echo 'allowed exit=0'
+allowed exit=0
++ [[ allowed = allowed ]]
++ [[ 0 = 0 ]]
++ grep -E '0x[0-9a-f]+ in|\[New LWP|\[Thread debugging' /home/user/rdsu-lab05/yama-allowed.log
+[Thread debugging using libthread_db enabled]
++ sysctl -w kernel.yama.ptrace_scope=1
++ attach restored
++ local phase=restored rc=0
++ runuser -u user -- env DEBUGINFOD_URLS= gdb -nx -batch -iex 'set debuginfod enabled off' -ex 'attach 42296' -ex 'info threads' -ex detach
++ rc=1
++ cat /home/user/rdsu-lab05/yama-restored.log
+ptrace: Operation not permitted.
+No threads.
+The program is not being run.
++ echo 'restored exit=1'
+restored exit=1
++ [[ restored = allowed ]]
++ [[ 1 != 0 ]]
++ grep -i 'Operation not permitted' /home/user/rdsu-lab05/yama-restored.log
+ptrace: Operation not permitted.
++ sysctl kernel.yama.ptrace_scope
+kernel.yama.ptrace_scope = 1
++ echo 'yama cycle exit=0'
+yama cycle exit=0

@@ -1,0 +1,80 @@
++ printf '%s\n' 'rpm [p11] http://ftp.altlinux.org/pub/distributions/ALTLinux p11/branch/x86_64 debuginfo'
++ apt-get update
+Get:1 http://ftp.altlinux.org p11/branch/x86_64 release [4210B]
+Get:2 http://ftp.altlinux.org p11/branch/x86_64-i586 release [1665B]
+Get:3 http://ftp.altlinux.org p11/branch/noarch release [2831B]
+Fetched 8706B in 0s (27.8kB/s)
+Get:1 http://ftp.altlinux.org p11/branch/x86_64/classic pkglist [29.8MB]
+Get:2 http://ftp.altlinux.org p11/branch/x86_64/classic release [137B]
+Get:3 http://ftp.altlinux.org p11/branch/x86_64-i586/classic pkglist [20.4MB]
+Get:4 http://ftp.altlinux.org p11/branch/x86_64-i586/classic release [142B]
+Get:5 http://ftp.altlinux.org p11/branch/noarch/classic pkglist [7996kB]
+Get:6 http://ftp.altlinux.org p11/branch/noarch/classic release [137B]
+Get:7 http://ftp.altlinux.org p11/branch/x86_64/debuginfo pkglist [5838kB]
+Get:8 http://ftp.altlinux.org p11/branch/x86_64/debuginfo release [139B]
+Fetched 64.0MB in 3m15s (327kB/s)
+Reading Package Lists...
+Building Dependency Tree...
++ apt-cache search '^libexpat-debuginfo$'
+libexpat-debuginfo - XML parser library (debug files)
++ apt-get install -y libexpat-debuginfo gdb gdbserver
+Reading Package Lists...
+Building Dependency Tree...
+The following extra packages will be installed:
+  gdb-common  glibc-core-debuginfo
+The following NEW packages will be installed:
+  gdb  gdb-common  gdbserver  glibc-core-debuginfo  libexpat-debuginfo
+0 upgraded, 5 newly installed, 0 removed and 181 not upgraded.
+Need to get 11.3MB of archives.
+After unpacking 46.3MB of additional disk space will be used.
+Get:1 http://ftp.altlinux.org p11/branch/noarch/classic gdb-common 14.1.0.56.d739d4fd457-alt1:sisyphus+338901.300.3.1@1706109034 [736kB]
+Get:2 http://ftp.altlinux.org p11/branch/x86_64/classic gdbserver 14.1.0.56.d739d4fd457-alt1:sisyphus+338901.300.3.1@1706109034 [236kB]
+Get:3 http://ftp.altlinux.org p11/branch/x86_64/debuginfo glibc-core-debuginfo 6:2.38.0.223.f053ff-alt1.p11.1:p11+422743.100.3.2@1782898848 [6495kB]
+Get:4 http://ftp.altlinux.org p11/branch/x86_64/debuginfo libexpat-debuginfo 2.7.1-alt1:p11+379972.100.3.1@1744981636 [219kB]
+Get:5 http://ftp.altlinux.org p11/branch/x86_64/classic gdb 14.1.0.56.d739d4fd457-alt1:sisyphus+338901.300.3.1@1706109034 [3598kB]
+Fetched 11.3MB in 36s (312kB/s)
+Committing changes...
+Preparing...                            ################################# [100%]
+Updating / installing...
+1: glibc-core-debuginfo-6:2.38.0.223.f053ff-alt1.p11.1 ################################# [ 20%]
+2: gdb-common-14.1.0.56.d739d4fd457-alt1 ################################# [ 40%]
+3: gdb-14.1.0.56.d739d4fd457-alt1       ################################# [ 60%]
+4: libexpat-debuginfo-2.7.1-alt1        ################################# [ 80%]
+5: gdbserver-14.1.0.56.d739d4fd457-alt1 ################################# [100%]
+Done.
++ rpm -q libexpat-debuginfo glibc-core-debuginfo gdb
+libexpat-debuginfo-2.7.1-alt1.x86_64
+glibc-core-debuginfo-2.38.0.223.f053ff-alt1.p11.1.x86_64
+gdb-14.1.0.56.d739d4fd457-alt1.x86_64
++ rpm -ql libexpat-debuginfo
+/usr/lib/debug/.build-id/a0
+/usr/lib/debug/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810
+/usr/lib/debug/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810.debug
+/usr/lib/debug/lib64/libexpat.so.1.10.2.debug
+/usr/lib/debug/lib64/libexpat.so.1.debug
+/usr/src/debug/expat-2.7.1
+/usr/src/debug/expat-2.7.1/expat
+/usr/src/debug/expat-2.7.1/expat/lib
+/usr/src/debug/expat-2.7.1/expat/lib/expat.h
+/usr/src/debug/expat-2.7.1/expat/lib/expat_external.h
+/usr/src/debug/expat-2.7.1/expat/lib/internal.h
+/usr/src/debug/expat-2.7.1/expat/lib/nametab.h
+/usr/src/debug/expat-2.7.1/expat/lib/siphash.h
+/usr/src/debug/expat-2.7.1/expat/lib/xmlparse.c
+/usr/src/debug/expat-2.7.1/expat/lib/xmlrole.c
+/usr/src/debug/expat-2.7.1/expat/lib/xmlrole.h
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok.c
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok.h
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok_impl.c
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok_impl.h
+/usr/src/debug/expat-2.7.1/expat/lib/xmltok_ns.c
++ runuser -u user -- env DEBUGINFOD_URLS= gdb -nx -batch -iex 'set debuginfod enabled off' -ex 'info sources' /lib64/libexpat.so.1
+/usr/lib/debug/lib64/libexpat.so.1.10.2.debug:
+(Full debug information has not yet been read for this file.)
+
+/usr/src/debug/expat-2.7.1/expat/lib/<artificial>, /usr/src/debug/expat-2.7.1/expat/lib/siphash.h, /usr/src/debug/expat-2.7.1/expat/lib/xmlparse.c, /usr/src/debug/expat-2.7.1/expat/lib/xmltok.c, /usr/include/bits/string_fortified.h, /usr/src/debug/expat-2.7.1/expat/lib/xmlrole.c, /usr/src/debug/expat-2.7.1/expat/lib/xmltok_ns.c, /usr/include/bits/stdio2.h, /usr/src/debug/expat-2.7.1/expat/lib/<built-in>, /usr/src/debug/expat-2.7.1/expat/lib/xmltok_impl.c, /usr/lib64/gcc/x86_64-alt-linux/13/include/stddef.h, /usr/include/bits/types.h, /usr/include/bits/types/struct_FILE.h, /usr/include/bits/types/FILE.h, /usr/include/bits/stdint-uintn.h, /usr/src/debug/expat-2.7.1/expat/lib/expat_external.h, /usr/src/debug/expat-2.7.1/expat/lib/expat.h, /usr/include/stdio.h, /usr/src/debug/expat-2.7.1/expat/lib/internal.h, /usr/src/debug/expat-2.7.1/expat/lib/xmltok.h, /usr/src/debug/expat-2.7.1/expat/lib/xmlrole.h, /usr/include/stdlib.h, /usr/include/string.h, /usr/include/bits/stdio2-decl.h, /usr/include/assert.h, /usr/include/errno.h, /usr/src/debug/expat-2.7.1/expat/lib/nametab.h, /usr/src/debug/expat-2.7.1/expat/lib/xmltok_impl.h
+
+/usr/lib64/libexpat.so.1.10.2:
+
++ printf '%s\n' 'host debuginfo exit=0'
+host debuginfo exit=0
