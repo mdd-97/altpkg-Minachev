@@ -4,6 +4,10 @@ lab=$(cd "$(dirname "$0")/.." && pwd)
 tmp=$(mktemp -d) || exit 1
 trap 'rm -rf -- "$tmp"' EXIT
 pass=0 fail=0 skip=0
+if [[ $(hostname) != rdsu-alt || $(uname -m) != x86_64 ]]; then
+    echo 'FAIL Требуется стенд rdsu-alt x86_64'; exit 1
+fi
+echo 'Группа LIVE: проверки, выполняемые сейчас' 
 check() {
     local name=$1
     shift
@@ -25,11 +29,13 @@ check '03 Предупреждение и исправление ошибки п
 check '04 Уменьшение ELF и сохранение вывода после strip' bash "$lab/env/check-strip.sh"
 if command -v gdb >/dev/null; then
     check '02 Три режима и поиск исходников' bash "$lab/env/check-build-modes.sh"
+    check '03 Указатель, совпадение адресов, три уровня стека и исправление' bash "$lab/env/check-memory.sh"
     check '05 Пакетные сценарии GDB и три повторения' make -C "$lab/sources" check
 else
     skip '02 Отладчик GDB недоступен'
     skip '05 Отладчик GDB недоступен'
 fi
+echo 'Группа RECORDED: проверка сохранённых протоколов; опыты сейчас не повторяются'
 if [[ -r "$lab/logs/task04-local-debuginfod.log" ]]; then
     check '04 Загрузка символов по Build ID с локального сервера' grep -Fx 'local debuginfod protocol check exit=0' "$lab/logs/task04-local-debuginfod.log"
 else
@@ -54,6 +60,17 @@ if [[ -r "$lab/logs/task07-attach-child.log" ]]; then
     check '07 Разрешённое подключение к дочернему процессу' grep -Fx 'child attach exit=0' "$lab/logs/task07-attach-child.log"
 else
     skip '07 Нет протокола подключения к дочернему процессу'
+fi
+echo 'Группа ADMIN: сохранённые протоколы административных опытов'
+if [[ -r "$lab/logs/task04-host-debuginfo.log" ]]; then
+    check '04 Компонент APT и системные символы на хосте' grep -Fx 'host debuginfo exit=0' "$lab/logs/task04-host-debuginfo.log"
+else
+    skip '04 Нет протокола административной настройки APT'
+fi
+if [[ -r "$lab/logs/task07-yama-cycle.log" ]]; then
+    check '07 Отказ, разрешение и повторный отказ Yama' grep -Fx 'yama cycle exit=0' "$lab/logs/task07-yama-cycle.log"
+else
+    skip '07 Нет протокола изменения и восстановления Yama'
 fi
 printf 'PASS=%d FAIL=%d SKIP=%d\n' "$pass" "$fail" "$skip"
 ((fail == 0))

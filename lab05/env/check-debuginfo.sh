@@ -23,10 +23,10 @@ url="https://ftp.altlinux.org/pub/distributions/ALTLinux/p11/branch/x86_64/RPMS.
     set -x
     mkdir "$tmp/cache" "$tmp/empty-cache"
     DEBUGINFOD_CACHE_PATH="$tmp/cache" DEBUGINFOD_URLS=https://debuginfod.altlinux.org DEBUGINFOD_MAXTIME=35 DEBUGINFOD_PROGRESS=1 \
-      timeout 70 gdb -nx -batch -iex 'set debuginfod enabled on' -ex 'info sources' "$lib" > "$tmp/server" 2>&1 || :
+      timeout 70 gdb -nx -batch -iex 'set debug-file-directory /nonexistent-lab05-symbols' -iex 'set debuginfod enabled on' -ex 'info sources' "$lib" > "$tmp/server" 2>&1 || :
     grep -Ei 'Downloading|xmlparse.c|debuginfod|symbol table' "$tmp/server" | cut -c1-220
     find "$tmp/cache" -type f -printf '%s %P\n'
-    DEBUGINFOD_CACHE_PATH="$tmp/empty-cache" DEBUGINFOD_URLS= gdb -nx -batch -iex 'set debuginfod enabled on' -ex 'info sources' "$lib" > "$tmp/empty" 2>&1 || :
+    DEBUGINFOD_CACHE_PATH="$tmp/empty-cache" DEBUGINFOD_URLS= gdb -nx -batch -iex 'set debug-file-directory /nonexistent-lab05-symbols' -iex 'set debuginfod enabled on' -ex 'info sources' "$lib" > "$tmp/empty" 2>&1 || :
     cat "$tmp/empty"
     find "$tmp/empty-cache" -type f -printf '%s %P\n'
 } > logs/task04-debuginfod.log 2>&1

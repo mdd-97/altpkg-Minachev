@@ -1,0 +1,70 @@
+/home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c: In function 'damage':
+/home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:18:14: warning: 'pointer' is used uninitialized [-Wuninitialized]
+   18 |     *pointer = 12;
+      |     ~~~~~~~~~^~~~
+/home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:17:11: note: 'pointer' was declared here
+   17 |     long *pointer;
+      |           ^~~~~~~
+/home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:18:14: warning: 'pointer' is used uninitialized [-Wuninitialized]
+BEFORE:
+12
+AFTER:
+15
+--- /tmp/.private/user/tmp.Bx2ZFiUxqu/expected	2026-11-25 11:33:23.610435028 +0300
++++ /tmp/.private/user/tmp.Bx2ZFiUxqu/before.out	2026-11-25 11:33:23.616435015 +0300
+@@ -1 +1 @@
+-15
++12
+before diff exit=1
+after diff exit=0
+Breakpoint 1 at 0x1141: file /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c, line 5.
+Breakpoint 2 at 0x115a: file /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c, line 18.
+Missing separate debuginfo for /lib64/ld-linux-x86-64.so.2.
+Try to install the hash file /usr/lib/debug/.build-id/62/429d699c6000d36d1a89b6a7def69e8ce8144a.debug
+Missing separate debuginfo for /lib64/libc.so.6.
+Try to install the hash file /usr/lib/debug/.build-id/16/9e9c77efa2e23950e429aa9b36a179832d8ae6.debug
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, prime (address=0x7fffffffe9b8) at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:5
+5	    long *previous = address;
+6	    return *previous;
+PRIME_SLOT=0x7fffffffe990 TARGET=0x7fffffffe9b8
+0x7fffffffe988:	0x0000000000000000	0x00007fffffffe9b8
+0x7fffffffe998:	0x00007fffffffe9c0	0x0000555555555188
+0x7fffffffe9a8:	0x000000000000000f	0x0000000000000000
+0x7fffffffe9b8:	0x000000000000000f	0x00007fffffffe9d0
+0x7fffffffe9c8:	0x00005555555551a8	0x0000000000000001
+
+Breakpoint 2, damage (address=0x7fffffffe9b8) at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:18
+18	    *pointer = 12;
+DAMAGE_SLOT=0x7fffffffe990 POINTER=0x7fffffffe9b8
+$1 = 1
+$2 = 1
+0x7fffffffe988:	0x0000000000000000	0x00007fffffffe9b8
+0x7fffffffe998:	0x00007fffffffe9c0	0x0000555555555194
+0x7fffffffe9a8:	0x000000000000000f	0x0000000000000000
+0x7fffffffe9b8:	0x000000000000000f	0x00007fffffffe9d0
+0x7fffffffe9c8:	0x00005555555551a8	0x0000000000000001
+#0  damage (address=0x7fffffffe9b8) at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:18
+#1  0x0000555555555194 in process (initial=15) at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:26
+#2  0x00005555555551a8 in main () at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:32
+address = 0x7fffffffe9b8
+#1  0x0000555555555194 in process (initial=15) at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:26
+26	    damage(&value);
+initial = 15
+$3 = 15
+#0  damage (address=0x7fffffffe9b8) at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:18
+18	    *pointer = 12;
+20	}
+#1  0x0000555555555194 in process (initial=15) at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:26
+26	    damage(&value);
+$4 = 12
+#0  damage (address=0x7fffffffe9b8) at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:20
+20	}
+12
+[Inferior 1 (process 40322) exited normally]
+$1 = 1
+$2 = 1
+#2  0x00005555555551a8 in main () at /home/user/rdsu-lab05/repo/lab05/sources/memory-demo.c:32
+memory check exit=0

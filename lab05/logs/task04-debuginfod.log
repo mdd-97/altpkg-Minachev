@@ -1,24 +1,24 @@
 + set -x
-+ mkdir /home/user/rdsu-lab05/debuginfo.go1WWx/cache /home/user/rdsu-lab05/debuginfo.go1WWx/empty-cache
-+ DEBUGINFOD_CACHE_PATH=/home/user/rdsu-lab05/debuginfo.go1WWx/cache
++ mkdir /home/user/rdsu-lab05/debuginfo.7VVPg1/cache /home/user/rdsu-lab05/debuginfo.7VVPg1/empty-cache
++ DEBUGINFOD_CACHE_PATH=/home/user/rdsu-lab05/debuginfo.7VVPg1/cache
 + DEBUGINFOD_URLS=https://debuginfod.altlinux.org
 + DEBUGINFOD_MAXTIME=35
 + DEBUGINFOD_PROGRESS=1
-+ timeout 70 gdb -nx -batch -iex 'set debuginfod enabled on' -ex 'info sources' /lib64/libexpat.so.1
++ timeout 70 gdb -nx -batch -iex 'set debug-file-directory /nonexistent-lab05-symbols' -iex 'set debuginfod enabled on' -ex 'info sources' /lib64/libexpat.so.1
 + :
-+ grep -Ei 'Downloading|xmlparse.c|debuginfod|symbol table' /home/user/rdsu-lab05/debuginfo.go1WWx/server
++ grep -Ei 'Downloading|xmlparse.c|debuginfod|symbol table' /home/user/rdsu-lab05/debuginfo.7VVPg1/server
 + cut -c1-220
 Downloading separate debug info for /usr/lib64/libexpat.so.1.10.2...
 No symbol table is loaded.  Use the "file" command.
-+ find /home/user/rdsu-lab05/debuginfo.go1WWx/cache -type f -printf '%s %P\n'
++ find /home/user/rdsu-lab05/debuginfo.7VVPg1/cache -type f -printf '%s %P\n'
 5 cache_clean_interval_s
 0 a0e7428cd802821107e0aa8f07fe016f6d92c810/debuginfo
-+ DEBUGINFOD_CACHE_PATH=/home/user/rdsu-lab05/debuginfo.go1WWx/empty-cache
++ DEBUGINFOD_CACHE_PATH=/home/user/rdsu-lab05/debuginfo.7VVPg1/empty-cache
 + DEBUGINFOD_URLS=
-+ gdb -nx -batch -iex 'set debuginfod enabled on' -ex 'info sources' /lib64/libexpat.so.1
++ gdb -nx -batch -iex 'set debug-file-directory /nonexistent-lab05-symbols' -iex 'set debuginfod enabled on' -ex 'info sources' /lib64/libexpat.so.1
 + :
-+ cat /home/user/rdsu-lab05/debuginfo.go1WWx/empty
++ cat /home/user/rdsu-lab05/debuginfo.7VVPg1/empty
 Missing separate debuginfo for /usr/lib64/libexpat.so.1.10.2.
-Try to install the hash file /usr/lib/debug/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810.debug
+Try to install the hash file /nonexistent-lab05-symbols/.build-id/a0/e7428cd802821107e0aa8f07fe016f6d92c810.debug
 No symbol table is loaded.  Use the "file" command.
-+ find /home/user/rdsu-lab05/debuginfo.go1WWx/empty-cache -type f -printf '%s %P\n'
++ find /home/user/rdsu-lab05/debuginfo.7VVPg1/empty-cache -type f -printf '%s %P\n'
