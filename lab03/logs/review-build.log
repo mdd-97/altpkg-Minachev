@@ -1,0 +1,153 @@
++++ dirname env/build-rpm.sh
+++ cd env/..
+++ pwd
++ lab=/home/user/rdsu-lab03/fix-repo/lab03
+++ realpath -m /home/user/rdsu-lab03/rpm
++ work=/home/user/rdsu-lab03/rpm
++ mkdir -p /home/user/rdsu-lab03/rpm/rpmbuild/SOURCES /home/user/rdsu-lab03/rpm/hasher /home/user/rdsu-lab03/rpm/archive/rdsu-args-1.0
++ cp /home/user/rdsu-lab03/fix-repo/lab03/sources/Makefile /home/user/rdsu-lab03/fix-repo/lab03/sources/counter.c /home/user/rdsu-lab03/fix-repo/lab03/sources/main.c /home/user/rdsu-lab03/fix-repo/lab03/sources/output.c /home/user/rdsu-lab03/fix-repo/lab03/sources/args.h /home/user/rdsu-lab03/rpm/archive/rdsu-args-1.0/
++ tar -C /home/user/rdsu-lab03/rpm/archive -czf /home/user/rdsu-lab03/rpm/rpmbuild/SOURCES/rdsu-args-1.0.tar.gz rdsu-args-1.0
++ rpmbuild -bs --define '_topdir /home/user/rdsu-lab03/rpm/rpmbuild' /home/user/rdsu-lab03/fix-repo/lab03/specs/rdsu-args.spec
+Wrote: /home/user/rdsu-lab03/rpm/rpmbuild/SRPMS/rdsu-args-1.0-alt2.src.rpm (w2.lzdio)
+++ awk '$1 == "Release:" {print $2; exit}' /home/user/rdsu-lab03/fix-repo/lab03/specs/rdsu-args.spec
++ release=alt2
++ hsh /home/user/rdsu-lab03/rpm/hasher /home/user/rdsu-lab03/rpm/rpmbuild/SRPMS/rdsu-args-1.0-alt2.src.rpm
+<86>Nov 25 13:06:03 userdel[46544]: delete user 'rooter'
+<86>Nov 25 13:06:03 userdel[46544]: removed group 'rooter' owned by 'rooter'
+<86>Nov 25 13:06:03 userdel[46544]: removed shadow group 'rooter' owned by 'rooter'
+<86>Nov 25 13:06:03 groupadd[46551]: group added to /etc/group: name=rooter, GID=1001
+<86>Nov 25 13:06:03 groupadd[46551]: group added to /etc/gshadow: name=rooter
+<86>Nov 25 13:06:03 groupadd[46551]: new group: name=rooter, GID=1001
+<86>Nov 25 13:06:03 useradd[46557]: new user: name=rooter, UID=1001, GID=1001, home=/root, shell=/bin/bash, from=none
+<86>Nov 25 13:06:03 userdel[46567]: delete user 'builder'
+<86>Nov 25 13:06:03 userdel[46567]: removed group 'builder' owned by 'builder'
+<86>Nov 25 13:06:03 userdel[46567]: removed shadow group 'builder' owned by 'builder'
+<86>Nov 25 13:06:03 groupadd[46574]: group added to /etc/group: name=builder, GID=1002
+<86>Nov 25 13:06:03 groupadd[46574]: group added to /etc/gshadow: name=builder
+<86>Nov 25 13:06:03 groupadd[46574]: new group: name=builder, GID=1002
+<86>Nov 25 13:06:04 useradd[46580]: new user: name=builder, UID=1002, GID=1002, home=/usr/src, shell=/bin/bash, from=none
+warning: user user does not exist - using root
+warning: group user does not exist - using root
+warning: user user does not exist - using root
+warning: group user does not exist - using root
+Building target platforms: x86_64
+Building for target x86_64
+Wrote: /usr/src/in/nosrpm/rdsu-args-1.0-alt2.nosrc.rpm (w1.gzdio)
+Installing rdsu-args-1.0-alt2.src.rpm
+Building target platforms: x86_64
+Building for target x86_64
+Executing(%prep): /bin/sh -e /usr/src/tmp/rpmb-tmp.QTLSBb
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ rm -rf rdsu-args-1.0
++ echo 'Source #0 (rdsu-args-1.0.tar.gz):'
+Source #0 (rdsu-args-1.0.tar.gz):
++ /usr/bin/gzip -dc /usr/src/RPM/SOURCES/rdsu-args-1.0.tar.gz
++ /bin/tar -xf -
++ cd rdsu-args-1.0
++ /bin/chmod -c -Rf u+rwX,go-w .
++ exit 0
+Executing(%build): /bin/sh -e /usr/src/tmp/rpmb-tmp.FoPwWQ
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ cd rdsu-args-1.0
++ make -j4 -j1 'CFLAGS=-pipe -frecord-gcc-switches -Wall -g -O2 -flto=auto'
+make: Entering directory '/usr/src/RPM/BUILD/rdsu-args-1.0'
+cc -pipe -frecord-gcc-switches -Wall -g -O2 -flto=auto   -c -o main.o main.c
+cc -pipe -frecord-gcc-switches -Wall -g -O2 -flto=auto   -c -o output.o output.c
+cc -pipe -frecord-gcc-switches -Wall -g -O2 -flto=auto   -c -o counter.o counter.c
+cc  -o rdsu-args-objects main.o output.o counter.o 
+ar -rv librdsuargs.a output.o
+ar: creating librdsuargs.a
+a - output.o
+ar -rv librdsuargs.a counter.o
+a - counter.o
+cc  -o rdsu-args-static main.o librdsuargs.a 
+cc  -pipe -frecord-gcc-switches -Wall -g -O2 -flto=auto -fPIC -c output.c -o output.pic.o
+cc  -pipe -frecord-gcc-switches -Wall -g -O2 -flto=auto -fPIC -c counter.c -o counter.pic.o
+cc  -shared -Wl,-soname,librdsuargs.so -o librdsuargs.so output.pic.o counter.pic.o 
+cc  -o rdsu-args-shared main.o -L. -lrdsuargs 
+make: Leaving directory '/usr/src/RPM/BUILD/rdsu-args-1.0'
++ exit 0
+Executing(%install): /bin/sh -e /usr/src/tmp/rpmb-tmp.cKmqUG
++ umask 022
++ /bin/mkdir -p /usr/src/RPM/BUILD
++ cd /usr/src/RPM/BUILD
++ /bin/chmod -Rf u+rwX -- /usr/src/tmp/rdsu-args-buildroot
++ :
++ /bin/rm -rf -- /usr/src/tmp/rdsu-args-buildroot
++ PATH=/usr/libexec/rpm-build:/usr/src/bin:/usr/bin:/bin:/usr/local/bin:/usr/games
++ cd rdsu-args-1.0
++ install -Dpm0755 rdsu-args-static /usr/src/tmp/rdsu-args-buildroot/usr/bin/rdsu-args-static
++ install -Dpm0755 rdsu-args-shared /usr/src/tmp/rdsu-args-buildroot/usr/bin/rdsu-args-shared
++ install -Dpm0755 librdsuargs.so /usr/src/tmp/rdsu-args-buildroot/usr/lib64/librdsuargs.so
++ /usr/lib/rpm/brp-alt
+Cleaning files in /usr/src/tmp/rdsu-args-buildroot (auto)
+mode of './usr/lib64/librdsuargs.so' changed from 0755 (rwxr-xr-x) to 0644 (rw-r--r--)
+Verifying and fixing files in /usr/src/tmp/rdsu-args-buildroot (binconfig,pkgconfig,libtool,desktop,gnuconfig)
+Checking contents of files in /usr/src/tmp/rdsu-args-buildroot/ (default)
+Compressing files in /usr/src/tmp/rdsu-args-buildroot (auto)
+Adjusting library links in /usr/src/tmp/rdsu-args-buildroot
+./usr/lib64: (from <cmdline>:0)
+	librdsuargs.so -> librdsuargs.so
+Verifying ELF objects in /usr/src/tmp/rdsu-args-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
+Splitting links to aliased files under /{,s}bin in /usr/src/tmp/rdsu-args-buildroot
+Processing files: rdsu-args-1.0-alt2
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.fZ9ade
+find-provides: running scripts (debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.uWO5wf
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+Requires: /lib64/ld-linux-x86-64.so.2, libc.so.6(GLIBC_2.2.5)(64bit), libc.so.6(GLIBC_2.3.4)(64bit), libc.so.6(GLIBC_2.34)(64bit), librdsuargs.so()(64bit) >= set:fdpW8po0, rtld(GNU_HASH)
+Requires(rpmlib): rpmlib(SetVersions)
+Finding debuginfo files (using /usr/lib/rpm/find-debuginfo-files)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.qsyOV4
+Creating rdsu-args-debuginfo package
+Processing files: librdsuargs-1.0-alt2
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.gqAB3P
+find-provides: running scripts (debuginfo,lib,pam,perl,pkgconfig,python,python3,shell,sysusers)
+lib.prov: /usr/src/tmp/rdsu-args-buildroot/usr/lib64/librdsuargs.so: 3 symbols, 12 bpp
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.HjYHe7
+find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,python3,rpmlib,shebang,shell,static,symlinks,systemd-services)
+Provides: librdsuargs.so()(64bit) = set:fdpW8po0
+Requires: libc.so.6(GLIBC_2.2.5)(64bit), libc.so.6(GLIBC_2.3.4)(64bit), rtld(GNU_HASH)
+Finding debuginfo files (using /usr/lib/rpm/find-debuginfo-files)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.xG2WCi
+Creating librdsuargs-debuginfo package
+Processing files: rdsu-args-debuginfo-1.0-alt2
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.3gAIIG
+find-provides: running scripts (debuginfo)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.jEBlPm
+find-requires: running scripts (debuginfo)
+Requires: rdsu-args = 1.0-alt2, /usr/lib/debug/lib64/ld-linux-x86-64.so.2.debug, debug64(libc.so.6), debug64(librdsuargs.so)
+Processing files: librdsuargs-debuginfo-1.0-alt2
+Finding Provides (using /usr/lib/rpm/find-provides)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.vPcrPq
+find-provides: running scripts (debuginfo)
+Finding Requires (using /usr/lib/rpm/find-requires)
+Executing(+autodep): /bin/sh -e /usr/src/tmp/rpmb-autodep.Se8nfC
+find-requires: running scripts (debuginfo)
+Provides: debug64(librdsuargs.so)
+Requires: librdsuargs = 1.0-alt2, debug64(libc.so.6)
+Adding to rdsu-args a strict dependency on librdsuargs
+Adding to rdsu-args-debuginfo a strict dependency on librdsuargs-debuginfo
+Removing from rdsu-args-debuginfo 3 sources provided by librdsuargs-debuginfo
+Removing 2 extra deps from rdsu-args due to dependency on librdsuargs
+Removing 1 extra deps from rdsu-args-debuginfo due to dependency on librdsuargs-debuginfo
+Removing 3 extra deps from rdsu-args due to repentancy on librdsuargs
+Removing 1 extra deps from rdsu-args-debuginfo due to repentancy on librdsuargs-debuginfo
+Wrote: /usr/src/RPM/SRPMS/rdsu-args-1.0-alt2.src.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/x86_64/rdsu-args-1.0-alt2.x86_64.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/x86_64/librdsuargs-1.0-alt2.x86_64.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/x86_64/rdsu-args-debuginfo-1.0-alt2.x86_64.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/x86_64/librdsuargs-debuginfo-1.0-alt2.x86_64.rpm (w2.lzdio)
+9.80user 13.44system 0:23.94elapsed 97%CPU (0avgtext+0avgdata 24492maxresident)k
+0inputs+2880outputs (1major+325748minor)pagefaults 0swaps

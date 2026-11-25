@@ -1,0 +1,17 @@
+SOURCE: logs/review-build.log (computed dependencies)
+Requires: /lib64/ld-linux-x86-64.so.2, libc.so.6(GLIBC_2.2.5)(64bit), libc.so.6(GLIBC_2.3.4)(64bit), libc.so.6(GLIBC_2.34)(64bit), librdsuargs.so()(64bit) >= set:fdpW8po0, rtld(GNU_HASH)
+Provides: librdsuargs.so()(64bit) = set:fdpW8po0
+Requires: rdsu-args = 1.0-alt2, /usr/lib/debug/lib64/ld-linux-x86-64.so.2.debug, debug64(libc.so.6), debug64(librdsuargs.so)
+SOURCE: logs/review-metadata.log (final RPM metadata)
+MAIN_REQUIRES
+/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.34)(64bit)
+librdsuargs = 1.0-alt2
+rpmlib(PayloadIsLzma)
+LIBRARY_PROVIDES
+librdsuargs.so()(64bit) = set:fdpW8po0
+librdsuargs = 1.0-alt2
+SOURCE: logs/review-old-rpm.log (old alt1 rejected)
++ library_requirement='librdsuargs = 1.0-alt2'
++ grep -Fx 'librdsuargs = 1.0-alt2'
++ grep -E '^librdsuargs[.]so[(][)][(]64bit[)]([[:space:]]|$)'

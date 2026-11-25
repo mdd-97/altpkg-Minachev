@@ -1,0 +1,8 @@
+Исходный RPM alt1: новая проверка завершилась кодом 1 (Requires отсутствует)
+Исправленная версия alt2:
+PASS=26 FAIL=0 SKIP=0
+FAIL 01 Формат и пять строк
+PASS=25 FAIL=1 SKIP=0
+PASS=26 FAIL=0 SKIP=0
+exit codes=0/1/0
+revision verification exit=0

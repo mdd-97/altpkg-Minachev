@@ -1,0 +1,37 @@
+++ realpath /home/user/rdsu-lab03/rpm/hasher
++ work=/home/user/rdsu-lab03/rpm/hasher
++ main=/home/user/rdsu-lab03/fix-repo/lab03/rpm/rdsu-args-1.0-alt1.x86_64.rpm
+++ find /home/user/rdsu-lab03/rpm/hasher/repo -name 'rdsu-args-debuginfo-*.x86_64.rpm' -print
+++ sort -V
+++ tail -1
++ debug=/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-debuginfo-1.0-alt2.x86_64.rpm
+++ find /home/user/rdsu-lab03/rpm/hasher/repo -name 'librdsuargs-[0-9]*.x86_64.rpm' -print
+++ sort -V
+++ tail -1
++ library=/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/librdsuargs-1.0-alt2.x86_64.rpm
++ test -f /home/user/rdsu-lab03/fix-repo/lab03/rpm/rdsu-args-1.0-alt1.x86_64.rpm
++ test -f /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-debuginfo-1.0-alt2.x86_64.rpm
+++ rpm -qp --requires /home/user/rdsu-lab03/fix-repo/lab03/rpm/rdsu-args-1.0-alt1.x86_64.rpm
++ requires='/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.2.5)(64bit)
+libc.so.6(GLIBC_2.3.4)(64bit)
+libc.so.6(GLIBC_2.34)(64bit)
+rtld(GNU_HASH)
+rpmlib(PayloadIsLzma)'
++ printf '%s\n' '/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.2.5)(64bit)
+libc.so.6(GLIBC_2.3.4)(64bit)
+libc.so.6(GLIBC_2.34)(64bit)
+rtld(GNU_HASH)
+rpmlib(PayloadIsLzma)'
+/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.2.5)(64bit)
+libc.so.6(GLIBC_2.3.4)(64bit)
+libc.so.6(GLIBC_2.34)(64bit)
+rtld(GNU_HASH)
+rpmlib(PayloadIsLzma)
++ test -f /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/librdsuargs-1.0-alt2.x86_64.rpm
+++ rpm -qp --qf '%{NAME} = %{VERSION}-%{RELEASE}' /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/librdsuargs-1.0-alt2.x86_64.rpm
++ library_requirement='librdsuargs = 1.0-alt2'
++ grep -Fx 'librdsuargs = 1.0-alt2'
++ grep -E '^librdsuargs[.]so[(][)][(]64bit[)]([[:space:]]|$)'

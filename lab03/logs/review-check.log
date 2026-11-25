@@ -1,0 +1,162 @@
+cc -O2 -Wall -Wextra   -c -o main.o main.c
+cc -O2 -Wall -Wextra   -c -o output.o output.c
+cc -O2 -Wall -Wextra   -c -o counter.o counter.c
+cc  -o rdsu-args-objects main.o output.o counter.o 
+ar -rv librdsuargs.a output.o
+ar: creating librdsuargs.a
+a - output.o
+ar -rv librdsuargs.a counter.o
+a - counter.o
+cc  -o rdsu-args-static main.o librdsuargs.a 
+cc  -O2 -Wall -Wextra -fPIC -c output.c -o output.pic.o
+cc  -O2 -Wall -Wextra -fPIC -c counter.c -o counter.pic.o
+cc  -shared -Wl,-soname,librdsuargs.so -o librdsuargs.so output.pic.o counter.pic.o 
+cc  -o rdsu-args-shared main.o -L. -lrdsuargs 
+PASS Сборка трёх вариантов
+PASS 01 Справка в stderr
+PASS 01 Формат и пять строк
+PASS 01 Препроцессирование
+PASS 01 Объектные файлы
+PASS 01 Трассировка компоновщика
+PASS 01 Повторное определение
+PASS 02 Единственное определение счётчика
+PASS 02 Все внешние символы найдены в libc
+PASS 02 Динамические зависимости разрешены
+PASS 03 Пересборка одного модуля
+PASS 03 Заголовок и CFLAGS
+PASS 03 Встроенное правило
+PASS 03 Фиктивная цель
+PASS 04 Два модуля в архиве
+PASS 04 Совпадение статического варианта
+PASS 04 Диагностика отсутствия статической libc
+PASS 04 Полная статическая компоновка
+PASS 05 Диагностика без PIC
+PASS 05 Экспорт библиотеки
+PASS 05 Библиотека не найдена
+PASS 05 Загрузка библиотеки и совпадение вывода
+PASS 06 Девять совпадающих выводов
+PASS 06 Отказ при расхождении
+PASS 06 Полная очистка
+++ realpath /home/user/rdsu-lab03/rpm/hasher
++ work=/home/user/rdsu-lab03/rpm/hasher
+++ find /home/user/rdsu-lab03/rpm/hasher/repo -name 'rdsu-args-[0-9]*.x86_64.rpm' -print
+++ sort -V
+++ tail -1
++ main=/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt2.x86_64.rpm
+++ find /home/user/rdsu-lab03/rpm/hasher/repo -name 'rdsu-args-debuginfo-*.x86_64.rpm' -print
+++ sort -V
+++ tail -1
++ debug=/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-debuginfo-1.0-alt2.x86_64.rpm
+++ find /home/user/rdsu-lab03/rpm/hasher/repo -name 'librdsuargs-[0-9]*.x86_64.rpm' -print
+++ sort -V
+++ tail -1
++ library=/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/librdsuargs-1.0-alt2.x86_64.rpm
++ test -f /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt2.x86_64.rpm
++ test -f /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-debuginfo-1.0-alt2.x86_64.rpm
+++ rpm -qp --requires /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt2.x86_64.rpm
++ requires='/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.34)(64bit)
+librdsuargs = 1.0-alt2
+rpmlib(PayloadIsLzma)'
++ printf '%s\n' '/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.34)(64bit)
+librdsuargs = 1.0-alt2
+rpmlib(PayloadIsLzma)'
+/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.34)(64bit)
+librdsuargs = 1.0-alt2
+rpmlib(PayloadIsLzma)
++ test -f /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/librdsuargs-1.0-alt2.x86_64.rpm
+++ rpm -qp --qf '%{NAME} = %{VERSION}-%{RELEASE}' /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/librdsuargs-1.0-alt2.x86_64.rpm
++ library_requirement='librdsuargs = 1.0-alt2'
++ grep -Fx 'librdsuargs = 1.0-alt2'
+librdsuargs = 1.0-alt2
++ find /home/user/rdsu-lab03/rpm/hasher/repo -name 'rdsu-args-*.rpm'
++ sort
+/home/user/rdsu-lab03/rpm/hasher/repo/SRPMS.hasher/rdsu-args-1.0-alt1.src.rpm
+/home/user/rdsu-lab03/rpm/hasher/repo/SRPMS.hasher/rdsu-args-1.0-alt2.src.rpm
+/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt1.x86_64.rpm
+/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt2.x86_64.rpm
+/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-debuginfo-1.0-alt1.x86_64.rpm
+/home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-debuginfo-1.0-alt2.x86_64.rpm
+++ rpm -qpl /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt2.x86_64.rpm /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/librdsuargs-1.0-alt2.x86_64.rpm
++ files='/usr/bin/rdsu-args-shared
+/usr/bin/rdsu-args-static
+/usr/lib64/librdsuargs.so'
++ printf '%s\n' '/usr/bin/rdsu-args-shared
+/usr/bin/rdsu-args-static
+/usr/lib64/librdsuargs.so'
+/usr/bin/rdsu-args-shared
+/usr/bin/rdsu-args-static
+/usr/lib64/librdsuargs.so
++ grep -Fxq /usr/lib64/librdsuargs.so
++ for exe in rdsu-args-static rdsu-args-shared
++ rpm -qpl /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt2.x86_64.rpm
++ grep -Fx /usr/bin/rdsu-args-static
+/usr/bin/rdsu-args-static
++ for exe in rdsu-args-static rdsu-args-shared
++ rpm -qpl /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt2.x86_64.rpm
++ grep -Fx /usr/bin/rdsu-args-shared
+/usr/bin/rdsu-args-shared
++ rpm -qpl /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-debuginfo-1.0-alt2.x86_64.rpm
+/usr/lib/debug/.build-id/6f
+/usr/lib/debug/.build-id/6f/b6d3335b6ed4f4ce33b35c67915ffeb95cbb9f
+/usr/lib/debug/.build-id/6f/b6d3335b6ed4f4ce33b35c67915ffeb95cbb9f.debug
+/usr/lib/debug/.build-id/e6
+/usr/lib/debug/.build-id/e6/9ee898289113a6342aaa479960e85f8401908a
+/usr/lib/debug/.build-id/e6/9ee898289113a6342aaa479960e85f8401908a.debug
+/usr/lib/debug/usr/bin/rdsu-args-shared.debug
+/usr/lib/debug/usr/bin/rdsu-args-static.debug
+/usr/src/debug/rdsu-args-1.0
+/usr/src/debug/rdsu-args-1.0/main.c
+++ rpm -qp --provides /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/librdsuargs-1.0-alt2.x86_64.rpm
++ provides='librdsuargs.so()(64bit) = set:fdpW8po0
+librdsuargs = 1.0-alt2'
++ printf '%s\n' 'librdsuargs.so()(64bit) = set:fdpW8po0
+librdsuargs = 1.0-alt2'
+librdsuargs.so()(64bit) = set:fdpW8po0
+librdsuargs = 1.0-alt2
++ grep -E '^librdsuargs[.]so[(][)][(]64bit[)]([[:space:]]|$)'
+librdsuargs.so()(64bit) = set:fdpW8po0
++ rpm -qp --requires /home/user/rdsu-lab03/rpm/hasher/repo/x86_64/RPMS.hasher/rdsu-args-1.0-alt2.x86_64.rpm
+/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.34)(64bit)
+librdsuargs = 1.0-alt2
+rpmlib(PayloadIsLzma)
++ hsh-run -- /home/user/rdsu-lab03/rpm/hasher /bin/sh -ec '
+    unset LD_LIBRARY_PATH
+    rpm -q rdsu-args librdsuargs
+    rdsu-args-static alpha beta gamma > /tmp/rdsu-static
+    rdsu-args-shared alpha beta gamma > /tmp/rdsu-shared
+    cmp /tmp/rdsu-static /tmp/rdsu-shared
+    cat /tmp/rdsu-shared
+    readelf -d /usr/bin/rdsu-args-shared | grep -F "[librdsuargs.so]"
+    ldd /usr/bin/rdsu-args-static > /tmp/rdsu-deps-static
+    ldd /usr/bin/rdsu-args-shared > /tmp/rdsu-deps-shared
+    cat /tmp/rdsu-deps-static /tmp/rdsu-deps-shared
+    ! grep -F "not found" /tmp/rdsu-deps-shared
+    ! grep -F librdsuargs.so /tmp/rdsu-deps-static
+    grep -E "librdsuargs.so => (/usr)?/lib64/librdsuargs.so" /tmp/rdsu-deps-shared
+    rpm -qf /usr/lib64/librdsuargs.so
+'
+rdsu-args-1.0-alt2.x86_64
+librdsuargs-1.0-alt2.x86_64
+BEGIN
+1: alpha
+2: beta
+3: gamma
+END
+ 0x0000000000000001 (NEEDED)             Shared library: [librdsuargs.so]
+	linux-vdso.so.1 (0x00007f677b5af000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007f677b3ba000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f677b5b1000)
+	linux-vdso.so.1 (0x00007ff6e3c26000)
+	librdsuargs.so => /lib64/librdsuargs.so (0x00007ff6e3c14000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007ff6e3a2c000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007ff6e3c28000)
+	librdsuargs.so => /lib64/librdsuargs.so (0x00007ff6e3c14000)
+librdsuargs-1.0-alt2.x86_64
++ echo 'split RPM dependency check exit=0'
+split RPM dependency check exit=0
+PASS 07 Установленный RPM в Hasher
+PASS=26 FAIL=0 SKIP=0

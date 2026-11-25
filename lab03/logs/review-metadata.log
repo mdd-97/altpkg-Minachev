@@ -1,0 +1,8 @@
+MAIN_REQUIRES
+/lib64/ld-linux-x86-64.so.2
+libc.so.6(GLIBC_2.34)(64bit)
+librdsuargs = 1.0-alt2
+rpmlib(PayloadIsLzma)
+LIBRARY_PROVIDES
+librdsuargs.so()(64bit) = set:fdpW8po0
+librdsuargs = 1.0-alt2
