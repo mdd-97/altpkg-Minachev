@@ -1,0 +1,14 @@
+emit > combined 2>&1; cat combined:
+stdout
+stderr
+emit 2>&1 > stdout-only; cat stdout-only:
+stdout
+stderr captured from the original stdout:
+stderr
+--- stdout-only	2026-11-25 17:59:37.328421333 +0300
++++ combined	2026-11-25 17:59:37.327421338 +0300
+@@ -1 +1,2 @@
+ stdout
++stderr
+diff stdout-only combined exit=1
+redirect proof exit=0

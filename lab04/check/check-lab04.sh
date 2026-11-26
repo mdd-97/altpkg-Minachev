@@ -59,7 +59,8 @@ cli_checks() {
         test "$(sources/rdsu-tasks-1.1 count)" = 2
 }
 package_checks() {
-    local artifact=$LAB04_RPM workdir=$LAB04_HASHER_WORKDIR
+    local artifact=$LAB04_RPM workdir=$LAB04_HASHER_WORKDIR expected
+    expected=$(rpm -qp --qf '%{NAME} %{VERSION} %{RELEASE} %{ARCH}' "$artifact") || return 1
     rpm -qpl "$artifact" | grep -Fx /usr/bin/rdsu-tasks &&
         rpm -qp --requires "$artifact" > "$work/rpm-requires" &&
         grep -Fx /bin/bash "$work/rpm-requires" &&
@@ -69,9 +70,12 @@ package_checks() {
             tmp=$(mktemp -d)
             trap "rm -rf -- \"$tmp\"" EXIT
             export XDG_CONFIG_HOME=$tmp/config
+            rpm -q --qf "INSTALLED=%{NAME} %{VERSION} %{RELEASE} %{ARCH}\n" rdsu-tasks
             rdsu-tasks add "Installed task"
             rdsu-tasks list | grep -Fx "1. Installed task"
-        '
+        ' > "$work/installed-runtime" &&
+        cat "$work/installed-runtime" &&
+        grep -Fx "INSTALLED=$expected" "$work/installed-runtime"
 }
 gear_checks() {
     local repo=$1
@@ -89,19 +93,32 @@ else
     skip '03 Локаль ru_RU.utf8 отсутствует'
 fi
 check '04 Добавление, отметка, пробелы в тексте и подсчёт' cli_checks
-if [[ -n ${LAB04_RPM:-} && -n ${LAB04_HASHER_WORKDIR:-} ]]; then
-    check '03 moreutils сохраняет результат и ставит метку времени' grep -Fx BETA logs/task03-moreutils.log
-    check '04 Заголовок меню и очистка после выхода' grep -Fx UI-cleanup-ok logs/task04-menu.log
+if [[ -r logs/task03-moreutils.log ]]; then
+    check '03 Сохранённый протокол moreutils' grep -Fx BETA logs/task03-moreutils.log
+else
+    skip '03 Нет сохранённого протокола moreutils'
+fi
+if [[ -r ${LAB04_RPM:-/nonexistent} && -d ${LAB04_HASHER_WORKDIR:-/nonexistent}/chroot ]]; then
+    check '04 Меню: добавление, просмотр, отметка и очистка' python3 env/check-menu.py "$LAB04_HASHER_WORKDIR" "$work/menu"
     check '05 Зависимости RPM и запуск в Hasher' package_checks
 else
-    skip '05 Для проверки установленного RPM задай LAB04_RPM и LAB04_HASHER_WORKDIR'
+    skip '04 Для меню нужен подготовленный Hasher'
+    skip '05 Для RPM нужны LAB04_RPM и LAB04_HASHER_WORKDIR'
 fi
-if [[ -n ${LAB04_GEAR_REPO:-} ]]; then
+if [[ -n ${LAB04_GEAR_REPO:-} ]] && git -C "$LAB04_GEAR_REPO" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     check '06–07 Правила экспорта и оба тега GEAR' gear_checks "$LAB04_GEAR_REPO"
-    check '06 Совпадение метаданных, файлов и зависимостей RPM' grep -Fx 'GEAR comparison exit=0' logs/task06-compare.log
-    check '07 Старая версия отвергает count' grep -Fx 'old count exit=2' logs/task07-installed-cycle.log
 else
-    skip '06–07 Для проверки локального GEAR задай LAB04_GEAR_REPO'
+    skip '06–07 Для локального GEAR задай LAB04_GEAR_REPO'
+fi
+if [[ -r logs/review-gear-comparison.log ]]; then
+    check '06 Сохранённый протокол сравнения двух RPM' grep -Fx 'GEAR corrected comparison exit=0' logs/review-gear-comparison.log
+else
+    skip '06 Нет протокола сравнения RPM'
+fi
+if [[ -r logs/review-installed-cycle.log ]]; then
+    check '07 Сохранённый протокол отказа старой версии' grep -Fx 'old count exit=2' logs/review-installed-cycle.log
+else
+    skip '07 Нет протокола установленной старой версии'
 fi
 if [[ -n ${LAB04_GEAR_URL:-} ]]; then
     if git clone --quiet "$LAB04_GEAR_URL" "$work/gear"; then

@@ -1,0 +1,8 @@
+Build-time observation:
+package dialog is not installed
+OBSERVER_DIALOG_ABSENT
+Requires: /bin/bash, coreutils, dialog, gawk, grep, sed
+observer comparison identity exit=0
+observer comparison files exit=0
+observer comparison requires exit=0
+build without dialog exit=0

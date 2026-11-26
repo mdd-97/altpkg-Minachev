@@ -1,0 +1,12 @@
+PHASE=check
+PASS=12 FAIL=0 SKIP=0
+PHASE=wrong-rpm
+FAIL 05 Зависимости RPM и запуск в Hasher
+PASS=11 FAIL=1 SKIP=0
+PHASE=damaged
+FAIL 04 Добавление, отметка, пробелы в тексте и подсчёт
+PASS=11 FAIL=1 SKIP=0
+PHASE=restored
+PASS=12 FAIL=0 SKIP=0
+exit codes=0/1/1/0
+review verification exit=0

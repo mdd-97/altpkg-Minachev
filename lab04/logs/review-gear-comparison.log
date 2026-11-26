@@ -1,0 +1,30 @@
+DIRECT SPEC Requires:
+/bin/bash
+coreutils
+dialog
+gawk
+grep
+sed
+rpmlib(PayloadIsLzma)
+HOST gear-rpm Requires:
+/bin/bash
+coreutils
+gawk
+grep
+sed
+rpmlib(PayloadIsLzma)
+--- /tmp/.private/user/tmp.y3WhNQw3hv/left	2026-11-25 17:47:39.214321320 +0300
++++ /tmp/.private/user/tmp.y3WhNQw3hv/right	2026-11-25 17:47:39.253321058 +0300
+@@ -1,6 +1,5 @@
+ /bin/bash
+ coreutils
+-dialog
+ gawk
+ grep
+ rpmlib(PayloadIsLzma)
+diff requires exit=1
+Hasher gear-hsh versus direct SPEC:
+diff identity exit=0
+diff files exit=0
+diff requires exit=0
+GEAR corrected comparison exit=0

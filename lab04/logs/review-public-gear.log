@@ -1,0 +1,30 @@
+Public GEAR clone:
+https://github.com/mdd-97/rdsu-tasks-gear.git
+1.0-alt1
+1.1-alt2
+Public GEAR RPM:
+rdsu-tasks 1.1 alt2
+/usr/bin/rdsu-tasks
+/bin/bash
+coreutils
+dialog
+gawk
+grep
+sed
+rpmlib(PayloadIsLzma)
+diff identity exit=0
+diff files exit=0
+diff requires exit=0
+public RPM comparison exit=0
+GEAR changelog commit:
+f649af8
+1.1-alt2
+
+- Add a command to count open tasks.
+
+%changelog
+* Mon Nov 23 2026 Damir Minachev <mdd97@yandex.ru> 1.1-alt2
+- Add a command to count open tasks.
+
+* Mon Nov 23 2026 Damir Minachev <mdd97@yandex.ru> 1.0-alt1
+- Add task list application.

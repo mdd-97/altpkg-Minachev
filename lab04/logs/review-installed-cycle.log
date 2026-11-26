@@ -1,0 +1,10 @@
+<13>Nov 25 15:12:59 rpm: rdsu-tasks-1.1-alt2 1795447911 installed
+<13>Nov 25 15:12:59 rpm: rdsu-tasks-1.0-alt1 1795447708 removed
+rdsu-tasks-1.1-alt2.noarch
+new count stdout=1 exit=0
+<13>Nov 25 15:13:01 rpm: rdsu-tasks-1.0-alt1 1795447184 installed
+<13>Nov 25 15:13:01 rpm: rdsu-tasks-1.1-alt2 1795447911 removed
+rdsu-tasks-1.0-alt1.noarch
+Usage: rdsu-tasks [add TEXT | list | done ID]
+old count exit=2
+installed version cycle exit=0; restored=1.0-alt1

@@ -1,0 +1,7 @@
+menu: Add task / Show tasks / Mark done / Exit
+menu add: Added 1
+menu list: 1. Menu task with spaces
+menu done: task is in Done
+menu database: 1 / done / Menu task with spaces
+UI-cleanup-ok
+UI-functional-exit=0
