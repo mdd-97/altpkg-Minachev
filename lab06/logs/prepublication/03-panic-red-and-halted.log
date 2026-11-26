@@ -1,0 +1,35 @@
+COMMAND: /tmp/lab06-live.grEhNY/tools/root/usr/bin/qemu-system-i386 -L /tmp/lab06-live.grEhNY/tools/root/usr/share/seavgabios -nic none -accel tcg -m 16M -bios /tmp/lab06-live.grEhNY/tools/root/usr/share/seabios/bios-256k.bin -drive format=raw,file=/tmp/lab06-live.grEhNY/artifacts/panic.bin,if=ide -display none -serial stdio -monitor none -qmp unix:/tmp/lab06-live.grEhNY/artifacts/panic/qmp.sock,server=on,wait=off -no-reboot -no-shutdown
+QMP {"QMP": {"version": {"qemu": {"micro": 2, "minor": 1, "major": 9}, "package": "qemu-9.1.2-alt1"}, "capabilities": ["oob"]}}
+LAB06 CHECKS START
+PASS clear_all_2000_cells_cursor_zero
+SNAP 01-clear
+CAPTURE 01-clear
+PASS coordinate_formula
+PASS cursor_roundtrip_0_2048_3998
+PASS ports_in_out_cursor_registers_1999
+PASS explicit_position_and_attribute
+PASS current_cursor_default_attribute
+PASS newline_next_row_column_zero
+PASS wrap_at_column_79
+PASS kprint_at_string
+PASS string_color
+SNAP 02-print
+CAPTURE 02-print
+PASS scroll_moves_24_rows_attributes_clears_last
+SNAP 03-scroll-attributes
+CAPTURE 03-scroll-attributes
+PASS long_text_30_lines_top_07_bottom_30
+SNAP 04-long-text
+CAPTURE 04-long-text
+PASS backspace_replaces_X_with_D
+PASS backspace_crosses_row_boundary
+PASS backspace_at_origin_no_underflow
+PASS invalid_coordinates_and_offsets_rejected
+SNAP 05-backspace-bounds
+CAPTURE 05-backspace-bounds
+SUMMARY PASS=16 FAIL=0
+BEFORE_PANIC
+CAPTURE 06-panic
+CAPTURE 07-panic-still-halted
+PANIC_RED_AND_HALTED_PASS
+HOST_VALIDATION_PASS exit=0

@@ -1,0 +1,11 @@
+make: Entering directory '/tmp/lab06-live.grEhNY/sources'
+test "$(wc -c < kernel.bin)" -le 15872
+make: *** [Makefile:22: os-image.bin] Error 1
+make: Leaving directory '/tmp/lab06-live.grEhNY/sources'
+oversize_expected_nonzero_actual=2
+make: Entering directory '/tmp/lab06-live.grEhNY/sources'
+test "$(wc -c < kernel.bin)" -le 15872
+cat boot/bootsect.bin kernel.bin > os-image.bin
+truncate -s 16384 os-image.bin
+make: Leaving directory '/tmp/lab06-live.grEhNY/sources'
+restore_cmp=0

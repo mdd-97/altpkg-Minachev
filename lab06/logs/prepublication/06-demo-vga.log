@@ -1,0 +1,5 @@
+COMMAND: /tmp/lab06-live.grEhNY/tools/root/usr/bin/qemu-system-i386 -L /tmp/lab06-live.grEhNY/tools/root/usr/share/seavgabios -nic none -accel tcg -m 16M -bios /tmp/lab06-live.grEhNY/tools/root/usr/share/seabios/bios-256k.bin -drive format=raw,file=/tmp/lab06-live.grEhNY/artifacts/demo.bin,if=ide -display none -serial stdio -monitor none -qmp unix:/tmp/lab06-live.grEhNY/artifacts/demo/qmp.sock,server=on,wait=off -no-reboot -no-shutdown
+QMP {"QMP": {"version": {"qemu": {"micro": 2, "minor": 1, "major": 9}, "package": "qemu-9.1.2-alt1"}, "capabilities": ["oob"]}}
+CAPTURE 00-demo
+DEMO_CAPTURED
+DEMO VGA: Line 8..30, ABCD, cleared bottom row: OK

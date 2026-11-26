@@ -1,0 +1,9 @@
+LIVE: все опыты запускаются сейчас в QEMU внутри ALT
+RESULTS=/home/user/rdsu-lab06/publication-preflight
+PASS 01-build
+PASS 02-normal-and-reference
+PASS 03-panic-red-and-halted
+PASS 04-oversize-and-restore
+PASS 05-recovery
+PASS 06-demo-vga
+PASS=6 FAIL=0 SKIP=0

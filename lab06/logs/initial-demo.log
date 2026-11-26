@@ -1,0 +1,4 @@
+COMMAND: /home/user/rdsu-lab06/tools/root/usr/bin/qemu-system-i386 -L /home/user/rdsu-lab06/tools/root/usr/share/seavgabios -nic none -accel tcg -m 16M -bios /home/user/rdsu-lab06/tools/root/usr/share/seabios/bios-256k.bin -drive format=raw,file=/home/user/rdsu-lab06/artifacts/demo.bin,if=ide -display none -serial stdio -monitor none -qmp unix:/home/user/rdsu-lab06/artifacts/demo/qmp.sock,server=on,wait=off -no-reboot -no-shutdown
+QMP {"QMP": {"version": {"qemu": {"micro": 2, "minor": 1, "major": 9}, "package": "qemu-9.1.2-alt1"}, "capabilities": ["oob"]}}
+CAPTURE 00-demo
+DEMO_CAPTURED

@@ -15,3 +15,7 @@ RPMS/
 SRPMS/
 lab02/sources/Show
 lab02/sources/Show.o
+
+# Отчёты хранятся на Mac
+*.docx
+.DS_Store

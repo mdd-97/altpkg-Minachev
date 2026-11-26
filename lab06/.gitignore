@@ -1,0 +1,12 @@
+*.docx
+*.pdf
+*.zip
+*.o
+*.elf
+*.bin
+*.ppm
+*.png
+*.sock
+._*
+__pycache__/
+.DS_Store

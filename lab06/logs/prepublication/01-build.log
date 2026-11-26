@@ -1,0 +1,27 @@
+make: Entering directory '/tmp/lab06-live.grEhNY/sources'
+nasm boot/bootsect.asm -f bin -o boot/bootsect.bin
+nasm boot/kernel_entry.asm -f elf32 -o boot/kernel_entry.o
+gcc -m32 -ffreestanding -fno-pie -fno-pic -fno-stack-protector -fno-builtin -fno-asynchronous-unwind-tables -nostdlib -Wall -Wextra -Werror -Wno-main -std=gnu11 -c  kernel/kernel.c -o kernel/kernel.o
+gcc -m32 -ffreestanding -fno-pie -fno-pic -fno-stack-protector -fno-builtin -fno-asynchronous-unwind-tables -nostdlib -Wall -Wextra -Werror -Wno-main -std=gnu11 -c  drivers/ports.c -o drivers/ports.o
+gcc -m32 -ffreestanding -fno-pie -fno-pic -fno-stack-protector -fno-builtin -fno-asynchronous-unwind-tables -nostdlib -Wall -Wextra -Werror -Wno-main -std=gnu11 -c  drivers/screen.c -o drivers/screen.o
+ld -m elf_i386 -T linker.ld -o kernel.elf boot/kernel_entry.o kernel/kernel.o drivers/ports.o drivers/screen.o
+objcopy -O binary kernel.elf kernel.bin
+test "$(wc -c < kernel.bin)" -le 15872
+cat boot/bootsect.bin kernel.bin > os-image.bin
+truncate -s 16384 os-image.bin
+gcc -m32 -ffreestanding -fno-pie -fno-pic -fno-stack-protector -fno-builtin -fno-asynchronous-unwind-tables -nostdlib -Wall -Wextra -Werror -Wno-main -std=gnu11 -c  tests/kernel_checks.c -o tests/kernel_checks.o
+ld -m elf_i386 -T linker.ld -o check-kernel.elf boot/kernel_entry.o tests/kernel_checks.o drivers/screen.o drivers/ports.o
+ld: warning: check-kernel.elf has a LOAD segment with RWX permissions
+objcopy -O binary check-kernel.elf check-kernel.bin
+test "$(wc -c < check-kernel.bin)" -le 15872
+cat boot/bootsect.bin check-kernel.bin > check-image.bin
+truncate -s 16384 check-image.bin
+gcc -m32 -ffreestanding -fno-pie -fno-pic -fno-stack-protector -fno-builtin -fno-asynchronous-unwind-tables -nostdlib -Wall -Wextra -Werror -Wno-main -std=gnu11 -c  -DPANIC_TEST tests/kernel_checks.c -o tests/kernel_panic.o
+ld -m elf_i386 -T linker.ld -o panic-kernel.elf boot/kernel_entry.o tests/kernel_panic.o drivers/screen.o drivers/ports.o
+ld: warning: panic-kernel.elf has a LOAD segment with RWX permissions
+objcopy -O binary panic-kernel.elf panic-kernel.bin
+test "$(wc -c < panic-kernel.bin)" -le 15872
+cat boot/bootsect.bin panic-kernel.bin > panic-image.bin
+truncate -s 16384 panic-image.bin
+make: Leaving directory '/tmp/lab06-live.grEhNY/sources'
+ELF32 build, boot signature 55aa and 3 images of 16384 bytes: OK
